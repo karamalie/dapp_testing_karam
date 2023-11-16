@@ -1,10 +1,11 @@
 import Home from "./pages/Home";
 import { useTriaConnector } from "@tria-sdk/connect";
 import {TriaConnectProvider} from '@tria-sdk/authenticate'
+import { useEffect } from "react";
 
 
 function App() {
-  
+
  const { globalData } = useTriaConnector({ authUrl: "https://auth-7rin.vercel.app", walletUrl:"https://reliable-semifreddo-e8e93e.netlify.app" });
   return (
     <div className="bg-black h-[100vh] w-[100vw]">
