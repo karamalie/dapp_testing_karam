@@ -2,6 +2,7 @@ import Home from "./pages/Home";
 import { useTriaConnector } from "@tria-sdk/connect";
 import {TriaConnectProvider} from '@tria-sdk/authenticate'
 import { useEffect } from "react";
+import Wallet from "./pages/Wallet";
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <div className="bg-black h-[100vh] w-[100vw]">
       <TriaConnectProvider/>
       <Home/>
+      {/* <Wallet/> */}
     </div>
   );
 }
