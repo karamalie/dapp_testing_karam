@@ -14,14 +14,14 @@ useEffect(() => {
   console.log(item);
 }, []);
 
-const { account, isError, isLoading, isSuccess,  } = useSignMessage({
+const { account, isError, isLoading, isSuccess,signMessage  } = useSignMessage({
   message:"lalit this side ",
   chainName:"POLYGON"
 });
 
-const { data, signMessage,sendTransaction } = useSignMessage({
+const { data,sendTransaction } = useSignMessage({
   amount: 0.00001,
-  senderAddress: "Lalitt@tria",
+  senderAddress: "lalitthreely@tria",
   recepientAddress: "dev@tria",
   chainName: "POLYGON",
   tokenAddress:""
@@ -71,7 +71,7 @@ console.log("sign data----------------->",account);
       {/* <button className="absolute top-[50px] left-[50px] w-[80px] bg-pink-500" onClick={handleButtonClick}>click here</button> */}
  <Application dappName={"Empire"} logo={"https://www.empireofsight.com/assets/images/logo-icon.svg"} dappDomain={window.parent.origin} />
  <button className="text-white" onClick={()=>signMessage()}>Sign Message</button>
- <button className="text-white" onClick={()=>signMessage()}>Sign Message</button>
+ <button className="text-white" onClick={()=>sendTransaction()}>Sign Message</button>
       </div>
   )
 }
