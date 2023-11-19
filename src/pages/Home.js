@@ -70,8 +70,8 @@ console.log("sign data----------------->",account);
 
       {/* <button className="absolute top-[50px] left-[50px] w-[80px] bg-pink-500" onClick={handleButtonClick}>click here</button> */}
  <Application dappName={"Empire"} logo={"https://www.empireofsight.com/assets/images/logo-icon.svg"} dappDomain={window.parent.origin} />
- <button className="text-white" onClick={()=>signMessage()}>Sign Message</button>
- <button className="text-white" onClick={()=>sendTransaction()}>send Transaction</button>
+ <button className="text-white bg-blue-500 text-white px-4 py-2 rounded-md mr-2" onClick={()=>signMessage()}>Sign Message</button>
+ <button className="text-white bg-green-500 text-white px-4 py-2 rounded-md" onClick={()=>sendTransaction()}>send Transaction</button>
       </div>
   )
 }
