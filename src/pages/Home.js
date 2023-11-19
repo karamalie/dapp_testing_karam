@@ -3,6 +3,7 @@ import LoginButton from "../components/LoginButton"
 import HomeBackgroundVector from "./HomeBackgroundVector";
 import Application from "@tria-sdk/authenticate"
 import "@tria-sdk/authenticate/dist/index.css";
+import {useSignMessage,useSendTransaction,useContractWrite } from "@tria-sdk/authenticate";
 
 
 const Home = () => {
@@ -13,6 +14,13 @@ useEffect(() => {
   console.log(item);
 }, []);
 
+const { account, isError, isLoading, isSuccess, signMessage } = useSignMessage({
+  message:"lalit this side ",  
+  triaName:"lalitt@tria",
+  chainName:"POLYGON"
+});
+
+console.log("sign data----------------->",account);
 
  const handleButtonClick = () => {
   const data = {triaName:'testName', evmAddress:'sample'};
@@ -55,6 +63,7 @@ useEffect(() => {
 
       {/* <button className="absolute top-[50px] left-[50px] w-[80px] bg-pink-500" onClick={handleButtonClick}>click here</button> */}
  <Application dappName={"Empire"} logo={"https://www.empireofsight.com/assets/images/logo-icon.svg"} />
+ <button onClick={()=>signMessage()}>Sign Message</button>
       </div>
   )
 }
