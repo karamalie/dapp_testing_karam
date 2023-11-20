@@ -32,23 +32,23 @@ const { data :contractwrite,  write }=useContractWrite({
     tokenAddress: undefined,
     contractDetails:  {
       contractAddress: '0x5927Aa58fb36691A4be262c63955b47b67c6e641',
-            abi: [
-                {
+      abi: [
+        {
           inputs: [
-                        { internalType: 'uint256', name: 'id', type: 'uint256' },
-                        { internalType: 'uint256', name: 'amount', type: 'uint256' },
-                    ],
-                    name: 'mint',
-                    outputs: [],
-                    stateMutability: 'payable',
-                    type: 'function',
-                },
-            ],
-            functionName: 'mint',
-            //@ts-ignore
-            args: [100, 1],
-            value :8
-  }});
+            { internalType: 'uint256', name: 'id', type: 'uint256' },
+            { internalType: 'uint256', name: 'amount', type: 'uint256' },
+          ],
+          name: 'mint',
+          outputs: [],
+          stateMutability: 'payable',
+          type: 'function',
+        },
+      ],
+      functionName: 'mint',
+      //@ts-ignore
+      args: [1, 1],
+      value: 0,
+    }});
 
 console.log("send data----------------->",data);
 console.log("sign data----------------->",sign);
