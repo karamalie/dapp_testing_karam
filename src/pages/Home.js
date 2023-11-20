@@ -54,7 +54,7 @@ useEffect(() => {
       */}
 
       {/* <button className="absolute top-[50px] left-[50px] w-[80px] bg-pink-500" onClick={handleButtonClick}>click here</button> */}
- <Application dappName={"Empire"} logo={"https://www.empireofsight.com/assets/images/logo-icon.svg"} />
+ <Application dappName={"Empire"} logo={"https://www.empireofsight.com/assets/images/logo-icon.svg"} primaryColor = "#70CA00" />
       </div>
   )
 }
