@@ -1,6 +1,5 @@
 import { useState } from "react";
 import WalletCloseButton from "../components/WalletCloseButton";
-
 const Wallet = () => {
   const [showWallet, setShowWallet] = useState(true);
   return (
