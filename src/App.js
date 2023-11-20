@@ -4,7 +4,6 @@ import {TriaConnectProvider} from '@tria-sdk/authenticate'
 import { useEffect } from "react";
 import Wallet from "./pages/Wallet";
 
-
 function App() {
 
  const { globalData } = useTriaConnector({ authUrl: "https://auth-7rin.vercel.app", walletUrl:"https://reliable-semifreddo-e8e93e.netlify.app" });
