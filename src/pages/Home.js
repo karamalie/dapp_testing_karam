@@ -97,7 +97,7 @@ console.log("contract write---------------->",contractwrite);
  <Application dappName={"Empire"} logo={"https://www.empireofsight.com/assets/images/logo-icon.svg"} dappDomain={window.parent.origin} primaryColor = "#70CA00" />
  <button className="text-white bg-blue-500  px-4 py-2 rounded-md mr-2" onClick={()=>signMessage()}>Sign Message</button>
  <button className="text-white bg-green-500  px-4 py-2 rounded-md" onClick={()=>sendTransaction()}>send Transaction</button>
- <button className="text-white bg-black-500  px-4 py-2 rounded-md" onClick={()=>write()}>call contract</button>
+ <button className="text-white bg-pink-500  px-4 py-2 rounded-md" onClick={()=>write()}>call contract</button>
       </div>
   )
 }
