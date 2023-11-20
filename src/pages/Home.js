@@ -14,7 +14,7 @@ useEffect(() => {
   console.log(item);
 }, []);
 
-const { account, isError, isLoading, isSuccess,signMessage  } = useSignMessage({
+const { data:sign, isError, isLoading, isSuccess,signMessage  } = useSignMessage({
   message:"lalit this side ",
   chainName:"POLYGON"
 });
@@ -26,8 +26,33 @@ const { data,sendTransaction } = useSendTransaction({
   chainName: "POLYGON",
   tokenAddress:""
 });
+
+const { data :contractwrite,  write }=useContractWrite({
+    chainName: "POLYGON",
+    tokenAddress: undefined,
+    contractDetails:  {
+      contractAddress: '0x5927Aa58fb36691A4be262c63955b47b67c6e641',
+            abi: [
+                {
+          inputs: [
+                        { internalType: 'uint256', name: 'id', type: 'uint256' },
+                        { internalType: 'uint256', name: 'amount', type: 'uint256' },
+                    ],
+                    name: 'mint',
+                    outputs: [],
+                    stateMutability: 'payable',
+                    type: 'function',
+                },
+            ],
+            functionName: 'mint',
+            //@ts-ignore
+            args: [100, 1],
+            value :8
+  }});
+
 console.log("send data----------------->",data);
-console.log("sign data----------------->",account);
+console.log("sign data----------------->",sign);
+console.log("contract write---------------->",contractwrite);
 
  const handleButtonClick = () => {
   const data = {triaName:'testName', evmAddress:'sample'};
@@ -72,6 +97,7 @@ console.log("sign data----------------->",account);
  <Application dappName={"Empire"} logo={"https://www.empireofsight.com/assets/images/logo-icon.svg"} dappDomain={window.parent.origin} />
  <button className="text-white bg-blue-500 text-white px-4 py-2 rounded-md mr-2" onClick={()=>signMessage()}>Sign Message</button>
  <button className="text-white bg-green-500 text-white px-4 py-2 rounded-md" onClick={()=>sendTransaction()}>send Transaction</button>
+ <button className="text-white bg-black-500 text-white px-4 py-2 rounded-md" onClick={()=>write()}>call contract</button>
       </div>
   )
 }
