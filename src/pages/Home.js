@@ -30,23 +30,23 @@ const { data,sendTransaction } = useSendTransaction({
 const { data :contractwrite,  write }=useContractWrite({
     chainName: "POLYGON",
     tokenAddress: undefined,
-    contractDetails:  {
-      contractAddress: '0x5927Aa58fb36691A4be262c63955b47b67c6e641',
+    contractDetails: {
+      contractAddress: '0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91',
       abi: [
         {
           inputs: [
-            { internalType: 'uint256', name: 'id', type: 'uint256' },
-            { internalType: 'uint256', name: 'amount', type: 'uint256' },
+            { internalType: 'address', name: '_creator', type: 'address' },
+            { internalType: 'string', name: '_tokenURI', type: 'string' },
           ],
-          name: 'mint',
+          name: 'createCoupon',
           outputs: [],
-          stateMutability: 'payable',
+          stateMutability: 'nonpayable',
           type: 'function',
         },
       ],
-      functionName: 'mint',
+      functionName: 'createCoupon',
       //@ts-ignore
-      args: [1, 1],
+      args: ['0x1dE58d46D05a379e020b1cBED0Db98a2F55831B2', ''],
       value: 0,
     }});
 
