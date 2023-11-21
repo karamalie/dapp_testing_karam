@@ -35,19 +35,18 @@ const { data :contractwrite,  write }=useContractWrite({
       abi: [
         {
           inputs: [
-            { internalType: 'address', name: '_creator', type: 'address' },
-            { internalType: 'string', name: '_tokenURI', type: 'string' },
+            { internalType: 'uint256', name: '_tokenID', type: 'uint256' },
+            { internalType: 'address', name: '_claimer', type: 'address' },
           ],
-          name: 'createCoupon',
+          name: 'claimCoupon',
           outputs: [],
           stateMutability: 'nonpayable',
           type: 'function',
         },
       ],
-      functionName: 'createCoupon',
-      //@ts-ignore
-      args: ['0x1dE58d46D05a379e020b1cBED0Db98a2F55831B2', ''],
-      value: 0,
+      functionName: 'claimCoupon',
+      args: [1, '0x7Ae1bBCe3557D46313a960C0982637967eF5c1f7'],
+      // value: 1,
     }});
 
 console.log("send data----------------->",data);
