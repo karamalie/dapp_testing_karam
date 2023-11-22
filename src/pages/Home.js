@@ -105,12 +105,12 @@ const Home = () => {
         />
       <button className=" mb-16 text-white bg-green-500  px-4 py-2 rounded-md" onClick={() => sendTransaction()}>send Transaction</button>
 
-      <input
+      <textarea
           type="text"
           placeholder="Enter contract details"
           value={contractDetails}
           onChange={(e) => setContractDetails(e.target.value)}
-          className="border rounded-md px-2 py-1 mr-2"
+          className="border rounded-md px-2 py-1 mr-2 h-[200px] w-[300px]"
         />
       <button className="text-white bg-pink-500  px-4 py-2 rounded-md" onClick={() => write()}>call contract</button>
       </div>
