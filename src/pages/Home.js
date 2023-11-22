@@ -42,9 +42,14 @@ const Home = () => {
     contractDetails
   });
 
+  // const { data: contractread, read } = useContractRead({
+  //   contractDetails
+  // });
+
   console.log("send data----------------->", data);
   console.log("sign data----------------->", sign);
   console.log("contract write---------------->", contractwrite);
+  // console.log("contract write---------------->", contractread);
 
   const handleButtonClick = () => {
     const data = { triaName: 'testName', evmAddress: 'sample' };
@@ -113,6 +118,7 @@ const Home = () => {
           className="border rounded-md px-2 py-1 mr-2 h-[200px] w-[300px]"
         />
       <button className="text-white bg-pink-500  px-4 py-2 rounded-md" onClick={() => write()}>call contract</button>
+      {/* <button className="text-white bg-pink-500  px-4 py-2 rounded-md" onClick={() => read()}>read</button> */}
       </div>
     </div>
   )
