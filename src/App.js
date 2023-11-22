@@ -3,7 +3,6 @@ import { useTriaConnector } from "@tria-sdk/connect";
 import {TriaConnectProvider} from '@tria-sdk/authenticate-staging'
 import { useEffect } from "react";
 import Wallet from "./pages/Wallet";
-
 function App() {
  const { globalData } = useTriaConnector({ authUrl: "https://auth-tria.vercel.app", walletUrl:"https://reliable-semifreddo-e8e93e.netlify.app" });
   return (
