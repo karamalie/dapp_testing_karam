@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import LoginButton from "../components/LoginButton"
 import HomeBackgroundVector from "./HomeBackgroundVector";
-import Application from "@tria-sdk/authenticate"
+import Application from "@tria-sdk/authenticate-staging"
 import "@tria-sdk/authenticate/dist/index.css";
 import {useSignMessage,useSendTransaction,useContractWrite } from "@tria-sdk/authenticate";
 
