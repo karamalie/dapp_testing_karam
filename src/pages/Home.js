@@ -3,7 +3,7 @@ import LoginButton from "../components/LoginButton"
 import HomeBackgroundVector from "./HomeBackgroundVector";
 import Application from "@tria-sdk/authenticate-staging"
 import "@tria-sdk/authenticate-staging/dist/index.css";
-import { useSignMessage, useSendTransaction, useContractWrite } from "@tria-sdk/authenticate-staging";
+import { useSignMessage, useSendTransaction, useContractWrite ,useContractRead} from "@tria-sdk/authenticate-staging";
 
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
   const [amount, setAmount] = useState(0.00001);
   const [senderAddress, setSenderAddress] = useState('');
   const [recepientAddress, setrecepientAddress] = useState('');
-  const [contractDetails, setContractDetails] = useState('');
+  const [contractDetails, setContractDetails] = useState();
   const [chainName, setChainName] = useState('POLYGON');
   const [tokenAddress, setTokenAddress] = useState('');
   useEffect(() => {
@@ -22,6 +22,7 @@ const Home = () => {
   }, []);
 
   console.log("data------------------>",{message,amount,senderAddress,recepientAddress,contractDetails,chainName,tokenAddress});
+  console.log("contractDetails",contractDetails);
 
   const { data: sign, isError, isLoading, isSuccess, signMessage } = useSignMessage({
     message,
@@ -42,14 +43,14 @@ const Home = () => {
     contractDetails
   });
 
-  // const { data: contractread, read } = useContractRead({
-  //   contractDetails
-  // });
+  const { data: contractread, read } = useContractRead({
+    contractDetails
+  });
 
   console.log("send data----------------->", data);
   console.log("sign data----------------->", sign);
   console.log("contract write---------------->", contractwrite);
-  // console.log("contract write---------------->", contractread);
+  console.log("contract read---------------->", contractread);
 
   const handleButtonClick = () => {
     const data = { triaName: 'testName', evmAddress: 'sample' };
@@ -118,7 +119,7 @@ const Home = () => {
           className="border rounded-md px-2 py-1 mr-2 h-[200px] w-[300px]"
         />
       <button className="text-white bg-pink-500  px-4 py-2 rounded-md" onClick={() => write()}>call contract</button>
-      {/* <button className="text-white bg-pink-500  px-4 py-2 rounded-md" onClick={() => read()}>read</button> */}
+       <button className="text-white bg-gray-500  px-4 py-2 rounded-md" onClick={() => read()}>read</button> 
       </div>
     </div>
   )
