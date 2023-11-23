@@ -39,12 +39,46 @@ const Home = () => {
 
   const { data: contractwrite, write } = useContractWrite({
     chainName,
-    tokenAddress,
-    contractDetails
+    payToken: {tokenAddress, amount},
+    contractDetails:{
+      contractAddress: '0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91',
+      abi: [
+        {
+          inputs: [
+            { internalType: 'uint256', name: '_tokenID', type: 'uint256' },
+            { internalType: 'address', name: '_claimer', type: 'address' },
+          ],
+          name: 'claimCoupon',
+          outputs: [],
+          stateMutability: 'nonpayable',
+          type: 'function',
+        },
+      ],
+      functionName: 'claimCoupon',
+      args: [1, '0x5B0C3aD51E0C52A0F072Ba278f957E3Ac422513f'],
+      // value: 1,
+    }
   });
 
   const { data: contractread, read } = useContractRead({
-    contractDetails
+    contractDetails:{
+      contractAddress: '0x5927Aa58fb36691A4be262c63955b47b67c6e641',
+      abi: [
+        {
+          inputs: [
+            { internalType: 'uint256', name: 'id', type: 'uint256' },
+            { internalType: 'uint256', name: 'amount', type: 'uint256' },
+          ],
+          name: 'getItemsNativePrice',
+          outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+          stateMutability: 'view',
+          type: 'function',
+        },
+      ],
+      functionName: 'getItemsNativePrice',
+      args: [1, 1],
+      // value: 0,
+    }
   });
 
   console.log("send data----------------->", data);
