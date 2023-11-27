@@ -22,7 +22,7 @@ const { data:sign, isError, isLoading, isSuccess,signMessage  } = useSignMessage
 const { data,sendTransaction } = useSendTransaction({
   amount: 0.00001,
   senderAddress: "lalitthreely@tria",
-  recepientAddress: "dev@tria",
+  recepientAddress: "jatinhacker@tria",
   chainName: "POLYGON",
   tokenAddress:""
 });
