@@ -4,6 +4,7 @@ import HomeBackgroundVector from "./HomeBackgroundVector";
 import Application from "@tria-sdk/authenticate"
 import "@tria-sdk/authenticate/dist/index.css";
 import {useSignMessage,useSendTransaction,useContractWrite } from "@tria-sdk/authenticate";
+import {useSendNft} from '@tria-sdk/connect';
 
 
 const Home = () => {
@@ -50,9 +51,22 @@ const { data :contractwrite,  write }=useContractWrite({
       value: 0,
     }});
 
+    const {data:sendNftResp,sendNft}=useSendNft({
+      chainName: "BINANCE",
+      fromTriaName: "lalit958@tria",
+      recipientTriaName: "dev@tria",
+      nftDetails: {
+          type: "ERC1155",
+          tokenAddress: "0xFfC6F3186985e963821D3E30Cdb2ec4c0bE110e5",
+          tokenId: "4",
+          amount: 1,
+      }
+  })
+
 console.log("send data----------------->",data);
 console.log("sign data----------------->",sign);
 console.log("contract write---------------->",contractwrite);
+console.log("send NFT------->",sendNftResp);
 
  const handleButtonClick = () => {
   const data = {triaName:'testName', evmAddress:'sample'};
@@ -98,6 +112,7 @@ console.log("contract write---------------->",contractwrite);
  <button className="text-white bg-blue-500  px-4 py-2 rounded-md mr-2" onClick={()=>signMessage()}>Sign Message</button>
  <button className="text-white bg-green-500  px-4 py-2 rounded-md" onClick={()=>sendTransaction()}>send Transaction</button>
  <button className="text-white bg-pink-500  px-4 py-2 rounded-md" onClick={()=>write()}>call contract</button>
+ <button className="text-white bg-pink-500  px-4 py-2 rounded-md" onClick={()=>sendNft()}>send nft</button>
       </div>
   )
 }
