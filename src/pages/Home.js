@@ -52,13 +52,13 @@ const { data :contractwrite,  write }=useContractWrite({
     }});
 
     const {data:sendNftResp,sendNft}=useSendNft({
-      chainName: "BINANCE",
-      fromTriaName: "lalit958@tria",
-      recipientTriaName: "dev@tria",
+      chainName: "FUSE",
+      fromTriaName: "blockpradhumn@tria",
+      recipientTriaName: "admin@tria",
       nftDetails: {
           type: "ERC1155",
           tokenAddress: "0xFfC6F3186985e963821D3E30Cdb2ec4c0bE110e5",
-          tokenId: "4",
+          tokenId: "1",
           amount: 1,
       }
   })
