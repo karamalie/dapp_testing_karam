@@ -110,223 +110,94 @@ const Home = () => {
     localStorage.setItem("tria.wallet.store", JSON.stringify(data));
   };
 
-
-  const [darkMode,setDarkMode]=useState(true);
-
-
   return (
     <div className="">
-    <div className="w-[1920px] h-[1080px] relative bg-stone-950">
-  <div className="w-[1924px] h-[1000px] left-0 top-[79px] absolute">
-    {/* <img className="w-[2484px] h-[1397px] left-[-560px] top-[-317px] absolute" src="https://via.placeholder.com/2484x1397" /> */}
-    {/* <div className="w-16 h-16 left-[1782px] top-[873px] absolute">
-      <div className="w-16 h-16 left-0 top-0 absolute bg-gradient-to-r from-white to-indigo-200 rounded-[100px] shadow" />
-      <div className="w-[58.98px] h-[58.98px] left-[2.51px] top-[2.51px] absolute bg-gradient-to-r from-violet-400 to-indigo-500 rounded-[100px] shadow border border-violet-400">
-        <div className="w-7 h-7 left-[15.49px] top-[15.49px] absolute rounded-md" />
-      </div>
-    </div> */}
-    <div className="w-[1924px] h-[82px] left-0 top-0 absolute bg-zinc-500 bg-opacity-10">
-      <div className="p-2 left-[1682px] top-[9px] absolute rounded-[79px] justify-end items-center gap-3 inline-flex">
-        <div className="justify-end items-center flex">
-          <div className="pr-2 justify-end items-center gap-2 flex">
-            <div className="w-14 text-red-500 text-lg font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Logout</div>
-          </div>
-        </div>
-        <div className="w-12 h-12 relative">
-          <img className="w-12 h-12 left-0 top-0 absolute rounded-[32.73px]" src="https://via.placeholder.com/48x48" />
-        </div>
-      </div>
-      <div className="h-[48.50px] left-[63px] top-[17px] absolute rounded-xl justify-center items-center gap-2 inline-flex">
-        <div className="w-[33.95px] h-[38.80px] relative">
-          <img src="/icons/sky.svg"></img>
-        </div>
-        <div className="text-neutral-50 text-2xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">sky5</div>
-      </div>
-    </div>
-    <div className="left-[433px] top-[98px] absolute flex-col justify-start items-start gap-4 inline-flex">
-      <div className="h-64 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 flex">
-        <div className="self-stretch h-56 px-3 flex-col justify-center items-center gap-[22px] flex">
-          <div className="self-stretch h-[60px] px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl border-2 justify-start items-center gap-2 inline-flex">
-            <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
-              <div className="text-center text-neutral-50 text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Sign our T&Cs</div>
-            </div>
-          </div>
-          <div className="self-stretch h-[60px] px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl border-2 justify-start items-center gap-2 inline-flex">
-            <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
-              <div className="text-center text-neutral-50 text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Increase Transaction Limit</div>
-            </div>
-          </div>
-          <div className="self-stretch h-[60px] px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl border-2 justify-start items-center gap-2 inline-flex">
-            <div className="grow shrink basis-0 h-[26px] justify-start items-center gap-2 flex">
-              <div className="text-center text-neutral-50 text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Receive Goodluck!</div>
-              <div className="text-center text-neutral-50 text-[22px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide">✨🍀</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="w-[534px] h-[343px] px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 flex">
-        <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
-          <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience the ease of</div>
-          <div className="text-neutral-50 text-[56px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Web3 Wallet</div>
-        </div>
-      </div>
-      <div className="h-[241px] p-4 bg-zinc-500 bg-opacity-10 rounded-[22px] border-r-2 flex-col justify-start items-start gap-5 flex">
-        <div className="self-stretch h-[209px] py-3 flex-col justify-center items-start flex">
-          <div className="self-stretch h-[185px] flex-col justify-center items-start gap-2 flex">
-            <div className="px-2 justify-center items-center inline-flex">
-              <div className="text-center text-white text-opacity-40 text-base font-medium font-['Neue Haas Grotesk Display Pro'] uppercase leading-tight tracking-tight">Customizations</div>
-            </div>
-            <div className="self-stretch justify-start items-center gap-5 inline-flex">
-              <div className="grow shrink basis-0 h-[75px] px-5 py-4 rounded-xl justify-start items-center gap-4 flex">
-                <div className="grow shrink basis-0 flex-col justify-center items-start gap-1 inline-flex">
-                  <div className="self-stretch text-neutral-50 text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Theme</div>
-                  <div className="self-stretch text-neutral-50 text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-[16.80px] tracking-tight">Choose Light or Dark mode</div>
-                </div>
-              </div>
-              <div className="bg-neutral-800 rounded-[14px] border-2 justify-center items-center flex">
-                <div className="px-4 py-2 rounded-2xl justify-center items-center flex">
-                  <div className="w-6 h-6 relative">
-                    <div className="w-6 h-6 left-0 top-0 absolute">
-                      <img src="/icons/sun.svg"></img>
-                    </div>
-                  </div>
-                </div>
-                <div className="px-4 py-2 bg-gradient-to-br from-indigo-950 to-slate-900 rounded-[14px] justify-center items-center flex">
-                  <div className="w-6 h-6 relative">
-                    <div className="w-6 h-6 left-0 top-0 absolute">
-                    <img src="/icons/moon.svg"></img>
+      {/* <button className="absolute top-[50px] left-[50px] w-[80px] bg-pink-500" onClick={handleButtonClick}>click here</button> */}
 
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="self-stretch justify-start items-center gap-5 inline-flex">
-              <div className="grow shrink basis-0 h-[75px] px-5 py-4 rounded-xl justify-start items-center gap-4 flex">
-                <div className="grow shrink basis-0 flex-col justify-center items-start gap-1 inline-flex">
-                  <div className="self-stretch text-neutral-50 text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Wallet color card</div>
-                  <div className="self-stretch text-neutral-50 text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-[16.80px] tracking-tight">Choose your card color</div>
-                </div>
-              </div>
-              <div className="rounded-[29.40px] border justify-center items-center gap-[14.40px] flex">
-                <div className="p-[9.60px] rounded-[34.80px] justify-center items-center flex">
-                  <div className="w-[19.20px] h-[19.20px] bg-blue-800 rounded-xl" />
-                </div>
-                <div className="p-[9.60px] rounded-[34.80px] border border-neutral-800 justify-center items-center flex">
-                  <div className="w-[19.20px] h-[19.20px] bg-amber-500 rounded-xl" />
-                </div>
-                <div className="p-[9.60px] rounded-[34.80px] justify-center items-center flex">
-                  <div className="w-[19.20px] h-[19.20px] bg-pink-700 rounded-xl" />
-                </div>
-                <div className="p-[9.60px] rounded-[34.80px] border justify-center items-center flex">
-                  <div className="w-[19.20px] h-[19.20px] bg-green-400 rounded-xl" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="flex flex-col w-[20%]">
+        {/* Common for all buttons */}
+        <input
+          type="text"
+          placeholder="Enter chain name"
+          value={chainName}
+          onChange={(e) => setChainName(e.target.value)}
+          className="border rounded-md px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Enter token address"
+          value={tokenAddress}
+          onChange={(e) => setTokenAddress(e.target.value)}
+          className=" mb-16 border rounded-md px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Enter message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          className="border rounded-md px-2 py-1 mr-2"
+        />
+        <button
+          className=" mb-16 text-white bg-blue-500  px-4 py-2 rounded-md mr-2"
+          onClick={() => signMessage()}
+        >
+          Sign Message
+        </button>
+
+        <input
+          type="number"
+          placeholder="Enter amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          className="border rounded-md px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Enter sender address"
+          value={senderAddress}
+          onChange={(e) => setSenderAddress(e.target.value)}
+          className="border rounded-md px-2 py-1 mr-2"
+        />
+        <input
+          type="text"
+          placeholder="Enter recipient address"
+          value={recepientAddress}
+          onChange={(e) => setrecepientAddress(e.target.value)}
+          className="border rounded-md px-2 py-1 mr-2"
+        />
+        <button
+          className=" mb-16 text-white bg-green-500  px-4 py-2 rounded-md"
+          onClick={() => sendTransaction()}
+        >
+          send Transaction
+        </button>
+
+        <textarea
+          type="text"
+          placeholder="Enter contract details"
+          value={contractDetails}
+          onChange={(e) => {
+            let parsed;
+            try {
+              parsed = JSON.parse(e.target.value);
+            } catch (err) {}
+            setContractDetails(parsed);
+          }}
+          className="border rounded-md px-2 py-1 mr-2 h-[200px] w-[300px]"
+        />
+        <button
+          className="text-white bg-pink-500  px-4 py-2 rounded-md"
+          onClick={() => write()}
+        >
+          call contract
+        </button>
+        {/* <button
+          className="text-white bg-gray-500  px-4 py-2 rounded-md"
+          onClick={() => read()}
+        >
+          read
+        </button> */}
       </div>
-    </div>
-    <div className="left-[983px] top-[98px] absolute flex-col justify-start items-start gap-4 inline-flex">
-      <div className="w-[377px] h-[303px] px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px]" />
-      <div className="h-[343px] px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 flex">
-        <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
-          <div className="text-neutral-50 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Send Token</div>
-        </div>
-        <div className="self-stretch h-[246px] flex-col justify-center items-center gap-4 flex">
-          <div className="self-stretch h-12 justify-start items-center gap-5 inline-flex">
-            <div className="grow shrink basis-0 self-stretch px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 flex">
-              <div className="w-6 h-6 relative bg-violet-600 rounded-2xl border-2 backdrop-blur-[3px]">
-                <div className="w-[19.20px] h-[19.20px] left-[2.40px] top-[2.40px] absolute" />
-              </div>
-              <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
-                <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">MATIC</div>
-              </div>
-              <div className="w-[18px] h-[18px] relative">
-                <div className="w-[18px] h-[18px] left-0 top-0 absolute">
-                  <img src="/icons/arrow-down.svg"></img>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="self-stretch h-12 justify-start items-center gap-3 inline-flex">
-            <div className="grow shrink basis-0 h-[51px] px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center flex">
-              <div className="justify-start items-center flex">
-                <div className="w-[403px] text-neutral-50 text-opacity-30 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Token Value</div>
-              </div>
-            </div>
-          </div>
-          <div className="self-stretch h-12 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
-            <div className="justify-start items-center flex">
-              <div className="w-[403px] text-neutral-50 text-opacity-30 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Recipient Address</div>
-            </div>
-          </div>
-          <div className="w-[197px] h-[54px] p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
-            <div className="justify-center items-center flex">
-              <div className="text-center text-white text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Send</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* <div className="w-[377px] h-[194px] px-5 py-4 bg-zinc-500 bg-opacity-0 rounded-[22px] backdrop-blur-[100px]" /> */}
-    </div>
-    <div className="left-[40px] top-[98px] absolute flex-col justify-start items-start gap-4 inline-flex">
-      <div className="w-[377px] h-[576px] px-5 pt-4 pb-6 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-between items-center flex">
-        <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
-          <div className="text-neutral-50 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Mint NFT</div>
-        </div>
-        <div className="p-[10.08px] rounded-[16.97px] border-4 flex-col justify-center items-center flex">
-          <div className="w-[284.60px] h-[315.90px] relative">
-            <img className="w-[284.60px] h-[315.90px] left-0 top-0 absolute rounded-[22.48px]" src="https://via.placeholder.com/285x316" />
-            <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
-              <div className="w-[40.30px] h-[40.30px] relative bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] border-4 backdrop-blur-[5.04px]">
-                <div className="w-[28.51px] h-[28.51px] left-[5.89px] top-[5.75px] absolute" />
-              </div>
-            </div>
-          </div>
-          <div className="self-stretch px-[8.43px] py-[16.86px] rounded-[27.15px] justify-center items-center gap-[13.57px] inline-flex">
-            <div className="h-[30px] justify-center items-center gap-[13.57px] flex">
-              <div className="text-center text-neutral-50 text-opacity-90 text-[25.19px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[30.23px] tracking-wide">#10 EVOL Fanny</div>
-            </div>
-          </div>
-        </div>
-        <div className="w-[197px] h-[54px] p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
-          <div className="justify-center items-center flex">
-            <div className="text-center text-white text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Mint</div>
-          </div>
-        </div>
-      </div>
-      <div className="w-[377px] h-[280px] px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px]" />
-    </div>
-  </div>
-  <div className="w-[1924px] px-10 py-4 left-0 top-[-1px] absolute bg-neutral-900 border-b border-stone-950 justify-start items-center gap-4 inline-flex">
-    <div className="grow shrink basis-0 h-12 justify-between items-center flex">
-      <div className="w-[150.28px] justify-center items-center gap-2.5 flex">
-        <div className="w-[83.28px] h-7 relative">
-          <img src="/icons/logoName.svg"></img>
-          <div className="w-7 h-7 left-0 top-0 absolute">
-            {/* <div className="w-[20.85px] h-[21.88px] left-[4.81px] top-[3.06px] absolute bg-stone-950" /> */}
-          </div>
-        </div>
-        <div className="px-2 py-1 rounded-[69px] border border-violet-400 justify-center items-center gap-2.5 flex">
-          <div className="text-center text-violet-400 text-base font-normal font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Demo</div>
-        </div>
-      </div>
-      <div className="bg-neutral-800 rounded-[49px] border-2 border-neutral-800 justify-center items-center flex">
-        <div className="px-6 py-3 bg-neutral-700 rounded-[58px] justify-center items-center flex">
-          <div className="justify-center items-center flex">
-            <div className="text-center text-neutral-50 text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Web3 App</div>
-          </div>
-        </div>
-        <div className="px-6 py-3 rounded-[58px] justify-center items-center flex">
-          <div className="justify-center items-center flex">
-            <div className="text-center text-neutral-50 text-opacity-60 text-lg font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Testing</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
     </div>
   );
 };
