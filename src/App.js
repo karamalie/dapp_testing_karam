@@ -3,7 +3,7 @@ import { useTriaConnector, useAccount } from "@tria-sdk/connect";
 import { TriaConnectProvider } from "@tria-sdk/authenticate-staging";
 import Application from "@tria-sdk/authenticate-staging";
 
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import Wallet from "./pages/Wallet";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
   const { account } = useAccount();
 
   console.log(account);
-
+const [darkMode,setDarkMode]=useState(true);
   return (
     <div className="bg-black h-[100vh] w-[100vw]">
       <TriaConnectProvider />
@@ -25,6 +25,8 @@ function App() {
         logo={"https://www.empireofsight.com/assets/images/logo-icon.svg"}
         dappDomain={window.parent.origin}
         primaryColor="#70CA00"
+        darkMode={darkMode}
+        triaStaging={true}
       />
 
       {/* <Wallet /> */}
