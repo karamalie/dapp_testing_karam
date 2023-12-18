@@ -2,7 +2,6 @@ import Home from "./pages/Home";
 import { useTriaConnector, useAccount } from "@tria-sdk/connect";
 import { TriaConnectProvider } from "@tria-sdk/authenticate-staging";
 import Application from "@tria-sdk/authenticate-staging";
-
 import { useEffect } from "react";
 import Wallet from "./pages/Wallet";
 
