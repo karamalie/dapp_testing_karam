@@ -160,8 +160,8 @@ const Home = () => {
   }
 
   function getWindowSize() {
-    const {innerWidth, innerHeight} = window;
-    return {innerWidth, innerHeight};
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
   }
 
   const [windowSize, setWindowSize] = useState(getWindowSize());
@@ -232,207 +232,207 @@ const Home = () => {
         {/* Lower Functional Grid */}
 
         {windowSize.innerWidth > 1000 ?
-        <div className="w-full grid grid-cols-9 gap-5">
-          <div className="col-span-2 ml-10 mt-4">
-            <div className="w-full h-3/4 px-5 pt-4 pb-6 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
-              <div className="py-2 justify-center items-center gap-4 inline-flex">
-                <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Mint NFT</div>
-              </div>
-              <div className="rounded-[16.97px] flex-col justify-center items-center flex">
-                <div className="w-[100%] relative">
-                  <img className="h-auto max-w-full rounded-[22.48px]" src="https://s3-alpha-sig.figma.com/img/a4a4/1cbd/6ed770a47f0dad046e76f9e83b2af41b?Expires=1704067200&Signature=P7rOVqfRoebDT5si5092CUUWeDTIBOtxjrT4ZKkuEG-dcdBVBQO11~ZBtPwQM7LHowha-kJpFdNpEqdFZpNvDn0GGDbh2FCHYJEP5t80HhzIiMVGvOWO2u8RZsz3Yb7-1d4XGDM4cz10ZjYvibfvptkQ~94gwiMtkE2vIHdLZrwelPkdDw1T47hK9pq4OLFdiJGhQ~HinCn6pdckQydmvcjpQt~OsL~Ae5waywqbi9Hinu98XD9v7VdOhxZe1RHF3mYVNFc2bzHj2hPY6Gpp2-JoIAYCM8-8NlU0F3USmg6zIN52IuIj-5ahVpoonjgJpbX0HY3-b89w~J-Fz3AX1A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
-                  <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
-                    <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
-                      <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
-                      <img src="/icons/Polygon.svg" alt="polygon" />
-                    </div>
-                  </div>
+          <div className="w-full grid grid-cols-9 gap-5">
+            <div className="col-span-2 ml-10 mt-4">
+              <div className="w-full h-3/4 px-5 pt-4 pb-6 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
+                <div className="py-2 justify-center items-center gap-4 inline-flex">
+                  <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Mint NFT</div>
                 </div>
-                <div className="self-stretch  px-[8.43px] py-[16.86px] rounded-[27.15px] justify-center items-center inline-flex">
-                  <div className=" justify-center items-center flex">
-                    <div className="text-center text-neutral-50 text-opacity-90 text-xl  font-light font-['Neue Haas Grotesk Display Pro'] leading-[30.23px] tracking-wide">#10 EVOL Fanny</div>
-                  </div>
-                </div>
-              </div>
-              <div onClick={()=>callWriteContract()} className="w-3/4 cursor-pointer hover:bg-neutral-700 hover:transition duration-300 px-2 py-2 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
-                <div className="justify-center items-center flex">
-                  <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Mint</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-span-3 mt-4">
-            <div className="w-full h-64 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
-              <div className="self-stretch h-56 px-3 flex-col justify-center items-center gap-[22px] flex">
-                <div onClick={() => callSign()} className="self-stretch cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 h-[60px] px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
-                  <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
-                    <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Sign our T&Cs</div>
-                  </div>
-                </div>
-                <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
-                  <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
-                    <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Increase Transaction Limit</div>
-                  </div>
-                </div>
-                <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
-                  <div className="grow shrink basis-0 h-[26px] justify-start items-center gap-2 flex">
-                    <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Receive Goodluck!</div>
-                    <div className="text-center text-neutral-50 text-[22px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide">✨🍀</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="w-full mt-3 h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
-              <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
-                <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience the ease of</div>
-                <div className="text-neutral-50 text-[56px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Web3 Wallet</div>
-              </div>
-            </div>
-
-          </div>
-          <div className="mt-4 col-span-2">
-            <div className="w-full h-64 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px]" />
-            <div className="w-full mt-3 h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
-              <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
-                <div className="text-neutral-50 text-lg mt-3 font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Send Token</div>
-              </div>
-              <div className="self-stretch flex-col mb-5 justify-center items-center gap-4 flex">
-                <div className="self-stretch h-12 justify-start items-center gap-5 inline-flex">
-                  <div className="grow shrink basis-0 self-stretch px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 flex">
-                  <div className="w-6 h-6 p-[2.40px] bg-black rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
-                    <img src="https://static.tria.so/chain-logo-w/Fuse.svg" alt="fuse_icon" />
-                  </div>
-                    <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
-                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">FUSE</div>
-                    </div>
-                    <div className="w-[18px] h-[18px] justify-center items-center flex">
-                      <div className="w-[18px] h-[18px] relative">
+                <div className="rounded-[16.97px] flex-col justify-center items-center flex">
+                  <div className="w-[100%] relative">
+                    <img className="h-auto max-w-full rounded-[22.48px]" src="https://s3-alpha-sig.figma.com/img/a4a4/1cbd/6ed770a47f0dad046e76f9e83b2af41b?Expires=1704067200&Signature=P7rOVqfRoebDT5si5092CUUWeDTIBOtxjrT4ZKkuEG-dcdBVBQO11~ZBtPwQM7LHowha-kJpFdNpEqdFZpNvDn0GGDbh2FCHYJEP5t80HhzIiMVGvOWO2u8RZsz3Yb7-1d4XGDM4cz10ZjYvibfvptkQ~94gwiMtkE2vIHdLZrwelPkdDw1T47hK9pq4OLFdiJGhQ~HinCn6pdckQydmvcjpQt~OsL~Ae5waywqbi9Hinu98XD9v7VdOhxZe1RHF3mYVNFc2bzHj2hPY6Gpp2-JoIAYCM8-8NlU0F3USmg6zIN52IuIj-5ahVpoonjgJpbX0HY3-b89w~J-Fz3AX1A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+                    <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
+                      <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
+                        <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
+                        <img src="/icons/Polygon.svg" alt="polygon" />
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="self-stretch h-12 justify-start items-center gap-3 inline-flex">
-                  <div className="grow shrink basis-0 h-[51px] px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center flex">
-                    <div className="justify-start items-center flex">
-                      <input type="number" className="w-full text-white focus:outline-none text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-transparent w-full" placeholder="Token Value" />
+                  <div className="self-stretch  px-[8.43px] py-[16.86px] rounded-[27.15px] justify-center items-center inline-flex">
+                    <div className=" justify-center items-center flex">
+                      <div className="text-center text-neutral-50 text-opacity-90 text-xl  font-light font-['Neue Haas Grotesk Display Pro'] leading-[30.23px] tracking-wide">#10 EVOL Fanny</div>
                     </div>
                   </div>
                 </div>
-                <div className="self-stretch h-12 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
-                  <div className="justify-start items-center flex">
-                    <input className="w-full text-white focus:outline-none bg-transparent text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight" placeholder="Recipient Address" />
-                  </div>
-                </div>
-                <div className="w-1/2 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                <div onClick={() => callWriteContract()} className="w-3/4 cursor-pointer hover:bg-neutral-700 hover:transition duration-300 px-2 py-2 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
                   <div className="justify-center items-center flex">
-                    <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Send</div>
+                    <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Mint</div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        : 
-        <div className="w-full grid grid-cols-6 gap-5">
-        <div className="col-span-2 ml-10 mt-4">
-          <div className="w-full h-full px-5 pt-4 pb-6 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
-            <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
-              <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Mint NFT</div>
-            </div>
-            <div className="p-[10.08px] rounded-[16.97px] flex-col justify-center items-center flex">
-              <div className="w-full h-[250.90px] relative">
-                <img className="left-0 top-0 absolute rounded-[22.48px]" src="https://s3-alpha-sig.figma.com/img/a4a4/1cbd/6ed770a47f0dad046e76f9e83b2af41b?Expires=1704067200&Signature=P7rOVqfRoebDT5si5092CUUWeDTIBOtxjrT4ZKkuEG-dcdBVBQO11~ZBtPwQM7LHowha-kJpFdNpEqdFZpNvDn0GGDbh2FCHYJEP5t80HhzIiMVGvOWO2u8RZsz3Yb7-1d4XGDM4cz10ZjYvibfvptkQ~94gwiMtkE2vIHdLZrwelPkdDw1T47hK9pq4OLFdiJGhQ~HinCn6pdckQydmvcjpQt~OsL~Ae5waywqbi9Hinu98XD9v7VdOhxZe1RHF3mYVNFc2bzHj2hPY6Gpp2-JoIAYCM8-8NlU0F3USmg6zIN52IuIj-5ahVpoonjgJpbX0HY3-b89w~J-Fz3AX1A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
-                <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
-                  <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
-                    <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
-                    <img src="/icons/Polygon.svg" alt="polygon" />
-                  </div>
-                </div>
-              </div>
-              <div className="self-stretch px-[8.43px] py-[16.86px] rounded-[27.15px] justify-center items-center inline-flex">
-                <div className="h-[30px] justify-center items-center flex">
-                  <div className="text-center text-neutral-50 text-opacity-90 text-2xl font-light font-['Neue Haas Grotesk Display Pro'] leading-[30.23px] tracking-wide">#10 EVOL Fanny</div>
-                </div>
-              </div>
-            </div>
-            <div onClick={()=>callWriteContract()} className="w-3/4 h-[54px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
-              <div className="justify-center items-center flex">
-                <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Mint</div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div className="col-span-3 mt-4">
-          <div className="w-full h-64 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
-            <div className="self-stretch h-56 px-3 flex-col justify-center items-center gap-[22px] flex">
-              <div onClick={() => callSign()} className="self-stretch cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 h-[60px] px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
-                <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
-                  <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Sign our T&Cs</div>
-                </div>
-              </div>
-              <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
-                <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
-                  <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Increase Transaction Limit</div>
-                </div>
-              </div>
-              <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
-                <div className="grow shrink basis-0 h-[26px] justify-start items-center gap-2 flex">
-                  <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Receive Goodluck!</div>
-                  <div className="text-center text-neutral-50 text-[22px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide">✨🍀</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="w-full mt-3 h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
-            <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
-              <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience the ease of</div>
-              <div className="text-neutral-50 text-[56px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Web3 Wallet</div>
-            </div>
-          </div>
-        </div>
-        <div className="mt-4 col-span-2 ml-10">  
-          <div className="w-full mt-3 h-full px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
-            <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
-              <div className="text-neutral-50 text-lg mt-3 font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Send Token</div>
-            </div>
-            <div className="self-stretch flex-col mb-5 justify-center items-center gap-4 flex">
-              <div className="self-stretch h-12 justify-start items-center gap-5 inline-flex">
-                <div className="grow shrink basis-0 self-stretch px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 flex">
-                  <div className="w-6 h-6 p-[2.40px] bg-black rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
-                    <img src="https://static.tria.so/chain-logo-w/Fuse.svg" alt="fuse_icon" />
+            <div className="col-span-3 mt-4">
+              <div className="w-full h-64 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
+                <div className="self-stretch h-56 px-3 flex-col justify-center items-center gap-[22px] flex">
+                  <div onClick={() => callSign()} className="self-stretch cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 h-[60px] px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
+                    <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
+                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Sign our T&Cs</div>
+                    </div>
                   </div>
-                  <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
-                    <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">FUSE</div>
+                  <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
+                    <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
+                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Increase Transaction Limit</div>
+                    </div>
                   </div>
-                  <div className="w-[18px] h-[18px] justify-center items-center flex">
-                    <div className="w-[18px] h-[18px] relative">
+                  <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
+                    <div className="grow shrink basis-0 h-[26px] justify-start items-center gap-2 flex">
+                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Receive Goodluck!</div>
+                      <div className="text-center text-neutral-50 text-[22px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide">✨🍀</div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="self-stretch h-12 justify-start items-center gap-3 inline-flex">
-                <div className="grow shrink basis-0 h-[51px] px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center flex">
-                  <div className="justify-start items-center flex">
-                    <input type="number" className="w-full text-white focus:outline-none text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-transparent w-full" placeholder="Token Value" />
+              <div className="w-full mt-3 h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
+                <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
+                  <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience the ease of</div>
+                  <div className="text-neutral-50 text-[56px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Web3 Wallet</div>
+                </div>
+              </div>
+
+            </div>
+            <div className="mt-4 col-span-2">
+              <div className="w-full h-64 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px]" />
+              <div className="w-full mt-3 h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
+                <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
+                  <div className="text-neutral-50 text-lg mt-3 font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Send Token</div>
+                </div>
+                <div className="self-stretch flex-col mb-5 justify-center items-center gap-4 flex">
+                  <div className="self-stretch h-12 justify-start items-center gap-5 inline-flex">
+                    <div className="grow shrink basis-0 self-stretch px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 flex">
+                      <div className="w-6 h-6 p-[2.40px] bg-black rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
+                        <img src="https://static.tria.so/chain-logo-w/Fuse.svg" alt="fuse_icon" />
+                      </div>
+                      <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
+                        <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">FUSE</div>
+                      </div>
+                      <div className="w-[18px] h-[18px] justify-center items-center flex">
+                        <div className="w-[18px] h-[18px] relative">
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className="self-stretch h-12 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
-                <div className="justify-start items-center flex">
-                  <input className="w-full text-white focus:outline-none bg-transparent text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight" placeholder="Recipient Address" />
-                </div>
-              </div>
-              <div className="w-1/2 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
-                <div className="justify-center items-center flex">
-                  <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Send</div>
+                  <div className="self-stretch h-12 justify-start items-center gap-3 inline-flex">
+                    <div className="grow shrink basis-0 h-[51px] px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center flex">
+                      <div className="justify-start items-center flex">
+                        <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full text-white focus:outline-none text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-transparent w-full" placeholder="Token Value" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="self-stretch h-12 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
+                    <div className="justify-start items-center flex">
+                      <input value={recepientAddress} onChange={(e) => setrecepientAddress(e.target.value)} className="w-full text-white focus:outline-none bg-transparent text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight" placeholder="Recipient Address" />
+                    </div>
+                  </div>
+                  <div onClick={() => sendTransaction()} className="w-1/2 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                    <div className="justify-center items-center flex">
+                      <div  className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Send</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+          :
+          <div className="w-full grid grid-cols-6 gap-5">
+            <div className="col-span-2 ml-10 mt-4">
+              <div className="w-full h-full px-5 pt-4 pb-6 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
+                <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
+                  <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Mint NFT</div>
+                </div>
+                <div className="p-[10.08px] rounded-[16.97px] flex-col justify-center items-center flex">
+                  <div className="w-full h-[250.90px] relative">
+                    <img className="left-0 top-0 absolute rounded-[22.48px]" src="https://s3-alpha-sig.figma.com/img/a4a4/1cbd/6ed770a47f0dad046e76f9e83b2af41b?Expires=1704067200&Signature=P7rOVqfRoebDT5si5092CUUWeDTIBOtxjrT4ZKkuEG-dcdBVBQO11~ZBtPwQM7LHowha-kJpFdNpEqdFZpNvDn0GGDbh2FCHYJEP5t80HhzIiMVGvOWO2u8RZsz3Yb7-1d4XGDM4cz10ZjYvibfvptkQ~94gwiMtkE2vIHdLZrwelPkdDw1T47hK9pq4OLFdiJGhQ~HinCn6pdckQydmvcjpQt~OsL~Ae5waywqbi9Hinu98XD9v7VdOhxZe1RHF3mYVNFc2bzHj2hPY6Gpp2-JoIAYCM8-8NlU0F3USmg6zIN52IuIj-5ahVpoonjgJpbX0HY3-b89w~J-Fz3AX1A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+                    <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
+                      <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
+                        <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
+                        <img src="/icons/Polygon.svg" alt="polygon" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="self-stretch px-[8.43px] py-[16.86px] rounded-[27.15px] justify-center items-center inline-flex">
+                    <div className="h-[30px] justify-center items-center flex">
+                      <div className="text-center text-neutral-50 text-opacity-90 text-2xl font-light font-['Neue Haas Grotesk Display Pro'] leading-[30.23px] tracking-wide">#10 EVOL Fanny</div>
+                    </div>
+                  </div>
+                </div>
+                <div onClick={() => callWriteContract()} className="w-3/4 h-[54px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                  <div className="justify-center items-center flex">
+                    <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Mint</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-span-3 mt-4">
+              <div className="w-full h-64 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
+                <div className="self-stretch h-56 px-3 flex-col justify-center items-center gap-[22px] flex">
+                  <div onClick={() => callSign()} className="self-stretch cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 h-[60px] px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
+                    <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
+                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Sign our T&Cs</div>
+                    </div>
+                  </div>
+                  <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
+                    <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
+                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Increase Transaction Limit</div>
+                    </div>
+                  </div>
+                  <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
+                    <div className="grow shrink basis-0 h-[26px] justify-start items-center gap-2 flex">
+                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Receive Goodluck!</div>
+                      <div className="text-center text-neutral-50 text-[22px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide">✨🍀</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full mt-3 h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
+                <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
+                  <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience the ease of</div>
+                  <div className="text-neutral-50 text-[56px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Web3 Wallet</div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-4 col-span-2 ml-10">
+              <div className="w-full mt-3 h-full px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
+                <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
+                  <div className="text-neutral-50 text-lg mt-3 font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Send Token</div>
+                </div>
+                <div className="self-stretch flex-col mb-5 justify-center items-center gap-4 flex">
+                  <div className="self-stretch h-12 justify-start items-center gap-5 inline-flex">
+                    <div className="grow shrink basis-0 self-stretch px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 flex">
+                      <div className="w-6 h-6 p-[2.40px] bg-black rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
+                        <img src="https://static.tria.so/chain-logo-w/Fuse.svg" alt="fuse_icon" />
+                      </div>
+                      <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
+                        <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">FUSE</div>
+                      </div>
+                      <div className="w-[18px] h-[18px] justify-center items-center flex">
+                        <div className="w-[18px] h-[18px] relative">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="self-stretch h-12 justify-start items-center gap-3 inline-flex">
+                    <div className="grow shrink basis-0 h-[51px] px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center flex">
+                      <div className="justify-start items-center flex">
+                        <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full text-white focus:outline-none text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-transparent w-full" placeholder="Token Value" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="self-stretch h-12 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
+                    <div className="justify-start items-center flex">
+                      <input value={recepientAddress} onChange={(e) => setrecepientAddress(e.target.value)} className="w-full text-white focus:outline-none bg-transparent text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight" placeholder="Recipient Address" />
+                    </div>
+                  </div>
+                  <div onClick={() => sendTransaction()} className="w-1/2 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                    <div className="justify-center items-center flex">
+                      <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Send</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         }
       </div>
     </>
