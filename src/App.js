@@ -14,6 +14,7 @@ function App() {
 
   console.log(account);
 
+  
   return (
     <div className="bg-black h-[100vh] w-[100vw]">
       <TriaConnectProvider />
