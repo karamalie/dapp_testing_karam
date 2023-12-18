@@ -20,10 +20,12 @@ function App() {
       {account ? <Home /> : null}
 
       <Application
-        dappName={"Empire"}
-        logo={"https://www.empireofsight.com/assets/images/logo-icon.svg"}
+        dappName={"Tria Demo"}
+        logo={"https://svgshare.com/i/10zF.svg"}
         dappDomain={window.parent.origin}
-        primaryColor="#70CA00"
+        primaryColor="#9A86FF"
+        // defaultChain="FUSE"
+        // supportedChains={["FUSE", "POLYGON"]}
       />
 
       {/* <Wallet /> */}
