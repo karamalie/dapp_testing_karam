@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "@tria-sdk/authenticate-staging/dist/index.css";
+import "@tria-sdk/authenticate/dist/index.css";
 import {
   useSignMessage,
   useSendTransaction,
@@ -81,7 +81,7 @@ const Home = () => {
 
   const { data: contractread } = useContractRead({
     chainName,
-    baseUrl: "https://staging.tria.so",
+    baseUrl: "https://prod.tria.so",
     contractDetails: {
       contractAddress: "0x5927Aa58fb36691A4be262c63955b47b67c6e641",
       abi: [
@@ -154,7 +154,7 @@ const Home = () => {
 
     const data = await sendTransaction({
       chainName, contractDetails
-    }, undefined, "https://auth-tria.vercel.app", "wss://prod.tria.so")
+    }, undefined, "https://auth.tria.so", "wss://prod.tria.so")
     console.log('function returned data', data)
 
   }

@@ -1,14 +1,14 @@
 import Home from "./pages/Home";
 import { useTriaConnector, useAccount } from "@tria-sdk/connect";
-import { TriaConnectProvider } from "@tria-sdk/authenticate-staging";
-import Application from "@tria-sdk/authenticate-staging";
+import { TriaConnectProvider } from "@tria-sdk/authenticate";
+import Application from "@tria-sdk/authenticate";
 import { useEffect } from "react";
 import Wallet from "./pages/Wallet";
 
 function App() {
   const { globalData } = useTriaConnector({
-    authUrl: "https://auth-tria.vercel.app",
-    walletUrl: "https://reliable-semifreddo-e8e93e.netlify.app",
+    authUrl: "https://auth.tria.so",
+    walletUrl: "https:wallet.tria.so",
   });
   const { account } = useAccount();
 
@@ -24,8 +24,8 @@ function App() {
         logo={"https://svgshare.com/i/10zF.svg"}
         dappDomain={window.parent.origin}
         primaryColor="#9A86FF"
-        // defaultChain="FUSE"
-        // supportedChains={["FUSE", "POLYGON"]}
+        defaultChain="FUSE"
+        supportedChains={["FUSE", "POLYGON"]}
       />
 
       {/* <Wallet /> */}
