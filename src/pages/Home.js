@@ -15,7 +15,24 @@ const Home = () => {
   const [amount, setAmount] = useState(0.00001);
   const [senderAddress, setSenderAddress] = useState("");
   const [recepientAddress, setrecepientAddress] = useState("");
-  const [contractDetails, setContractDetails] = useState();
+  const [contractDetails, setContractDetails] = useState({
+    contractAddress: '0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91',
+    abi: [
+      {
+        inputs: [
+          { internalType: 'uint256', name: '_tokenID', type: 'uint256' },
+          { internalType: 'address', name: '_claimer', type: 'address' },
+        ],
+        name: 'claimCoupon',
+        outputs: [],
+        stateMutability: 'nonpayable',
+        type: 'function',
+      },
+    ],
+    functionName: 'claimCoupon',
+    args: [1, '0x7Ae1bBCe3557D46313a960C0982637967eF5c1f7'],
+    // value: 1,
+  });
   const [chainName, setChainName] = useState("FUSE");
   const [tokenAddress, setTokenAddress] = useState("");
 
@@ -59,24 +76,24 @@ const Home = () => {
   const { data: contractwrite, write } = useContractWrite({
     chainName,
     payToken: { tokenAddress, amount },
-    contractDetails: {
-      contractAddress: "0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91",
+    contractDetails:  {
+      contractAddress: '0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91',
       abi: [
         {
           inputs: [
-            { internalType: "uint256", name: "_tokenID", type: "uint256" },
-            { internalType: "address", name: "_claimer", type: "address" },
+            { internalType: 'uint256', name: '_tokenID', type: 'uint256' },
+            { internalType: 'address', name: '_claimer', type: 'address' },
           ],
-          name: "mint",
+          name: 'claimCoupon',
           outputs: [],
-          stateMutability: "nonpayable",
-          type: "function",
+          stateMutability: 'nonpayable',
+          type: 'function',
         },
       ],
-      functionName: "mint",
-      args: [1, "0x5B0C3aD51E0C52A0F072Ba278f957E3Ac422513f"],
+      functionName: 'claimCoupon',
+      args: [1, '0x7Ae1bBCe3557D46313a960C0982637967eF5c1f7'],
       // value: 1,
-    },
+    }
   });
 
   const { data: contractread } = useContractRead({
@@ -129,9 +146,9 @@ const Home = () => {
       method: "GET"
     })
     const res = await resp.json()
-    console.log("resp", res.response[item][0])
-    setBg(res?.response[item][0]?.background)
-    setAvatar(res?.response[item][0]?.avatar)
+    console.log("resp", res.response[item]?.[0])
+    setBg(res?.response[item]?.[0]?.background)
+    setAvatar(res?.response[item]?.[0]?.avatar)
   }
 
   const sign_message = "Sign in with Tria"
@@ -144,7 +161,24 @@ const Home = () => {
   const callWriteContract = async () => {
 
     const data = await writeContract({
-      chainName, contractDetails
+      chainName:"POLYGON", contractDetails:{
+      contractAddress: '0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91',
+        abi: [
+          {
+            inputs: [
+              { internalType: 'uint256', name: '_tokenID', type: 'uint256' },
+              { internalType: 'address', name: '_claimer', type: 'address' },
+            ],
+            name: 'claimCoupon',
+            outputs: [],
+            stateMutability: 'nonpayable',
+            type: 'function',
+          },
+        ],
+        functionName: 'claimCoupon',
+        args: [1, '0x7Ae1bBCe3557D46313a960C0982637967eF5c1f7'],
+        // value: 1,
+      }
     }, undefined, "https://auth.tria.so", "wss://prod.tria.so")
     console.log('function returned data', data)
 
