@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "@tria-sdk/authenticate/dist/index.css";
 import {
-  encrypt,
-  decrypt,
+  // encrypt,
+  // decrypt,
   useSignMessage,
   useSendTransaction,
   useContractWrite,
@@ -200,15 +200,15 @@ const Home = () => {
 
   }
 
-  const decryptMessageFun = async () => {
-    const data = decrypt({ chainName, encryptedData: decryptMessage });
-    console.log("encrypted data-->", data);
-  }
+  // const decryptMessageFun = async () => {
+  //   const data = decrypt({ chainName, encryptedData: decryptMessage });
+  //   console.log("encrypted data-->", data);
+  // }
 
-  const encryptMessageFun = async () => {
-    const data = encrypt({ chainName, data: encryptMessage });
-    console.log("encrypted data-->", data);
-  }
+  // const encryptMessageFun = async () => {
+  //   const data = encrypt({ chainName, data: encryptMessage });
+  //   console.log("encrypted data-->", data);
+  // }
 
   const fundTriaWallet = async () => {
     setLoader(true)
