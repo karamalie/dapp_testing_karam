@@ -38,8 +38,8 @@ function App() {
           logo={"https://svgshare.com/i/10zF.svg"}
           dappDomain={window.parent.origin}
           primaryColor="#9A86FF"
-          defaultChain="FUSE"
-          supportedChains={["FUSE", "POLYGON"]}
+          defaultChain="MUMBAI"
+          supportedChains={["MUMBAI", "POLYGON"]}
         />
       </div>
     </>

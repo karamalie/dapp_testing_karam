@@ -40,7 +40,7 @@ const Home = () => {
     args: [1, '0x7Ae1bBCe3557D46313a960C0982637967eF5c1f7'],
     // value: 1,
   });
-  const [chainName, setChainName] = useState("FUSE");
+  const [chainName, setChainName] = useState("MUMBAI");
   const [tokenAddress, setTokenAddress] = useState("");
 
   const { disconnect } = useDisconnect()
@@ -168,7 +168,7 @@ const Home = () => {
   const callWriteContract = async () => {
 
     const data = await writeContract({
-      chainName: "POLYGON", contractDetails: {
+      chainName: "MUMBAI", contractDetails: {
         contractAddress: '0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91',
         abi: [
           {
@@ -255,6 +255,8 @@ const Home = () => {
       window.removeEventListener('resize', handleWindowResize);
     };
   }, []);
+
+  console.log("amount", amount)
 
 
   return (
@@ -399,11 +401,11 @@ const Home = () => {
                 <div className="self-stretch flex-col mb-5 justify-center items-center gap-4 flex">
                   <div className="self-stretch h-12 justify-start items-center gap-5 inline-flex">
                     <div className="grow shrink basis-0 self-stretch px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 flex">
-                      <div className="w-6 h-6 p-[2.40px] bg-black rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
-                        <img src="https://static.tria.so/chain-logo-w/Fuse.svg" alt="fuse_icon" />
+                      <div className="w-6 h-6 p-[2.40px] bg-violet-600 rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
+                        <img src="/icons/Polygon.svg" alt="fuse_icon" />
                       </div>
                       <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
-                        <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">FUSE</div>
+                        <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">MUMBAI</div>
                       </div>
                       <div className="w-[18px] h-[18px] justify-center items-center flex">
                         <div className="w-[18px] h-[18px] relative">
@@ -414,7 +416,7 @@ const Home = () => {
                   <div className="self-stretch h-12 justify-start items-center gap-3 inline-flex">
                     <div className="grow shrink basis-0 h-[51px] px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center flex">
                       <div className="justify-start items-center flex">
-                        <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full text-white focus:outline-none text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-transparent w-full" placeholder="Token Value" />
+                        <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} className="w-full text-white focus:outline-none text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-transparent w-full" placeholder="Token Value" />
                       </div>
                     </div>
                   </div>
@@ -520,11 +522,12 @@ const Home = () => {
                 <div className="self-stretch flex-col mb-5 justify-center items-center gap-4 flex">
                   <div className="self-stretch h-12 justify-start items-center gap-5 inline-flex">
                     <div className="grow shrink basis-0 self-stretch px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 flex">
-                      <div className="w-6 h-6 p-[2.40px] bg-black rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
-                        <img src="https://static.tria.so/chain-logo-w/Fuse.svg" alt="fuse_icon" />
+                      <div className="w-6 h-6 p-[2.40px] bg-violet-600 rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
+                        <img src="/icons/Polygon.svg" alt="fuse_icon" />
                       </div>
                       <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
-                        <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">FUSE</div>
+                        <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">MUMBAI
+                        </div>
                       </div>
                       <div className="w-[18px] h-[18px] justify-center items-center flex">
                         <div className="w-[18px] h-[18px] relative">
