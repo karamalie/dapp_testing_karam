@@ -10,6 +10,7 @@ import {
   useDisconnect,
   writeContract
 } from "@tria-sdk/connect";
+import axios from "axios"
 
 const Home = () => {
   const [showWallet, setShowWallet] = useState(false);
@@ -17,8 +18,10 @@ const Home = () => {
   const [amount, setAmount] = useState(0.00001);
   const [senderAddress, setSenderAddress] = useState("");
   const [recepientAddress, setrecepientAddress] = useState("");
-  const [encryptMessage,setEncryptMessage]=useState("");
-  const [decryptMessage,setDecryptMessage]=useState("");
+  const [encryptMessage, setEncryptMessage] = useState("");
+  const [decryptMessage, setDecryptMessage] = useState("");
+  const [loader, setLoader] = useState(false)
+  const [success, setSuccess] = useState(false)
   const [contractDetails, setContractDetails] = useState({
     contractAddress: '0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91',
     abi: [
@@ -80,7 +83,7 @@ const Home = () => {
   const { data: contractwrite, write } = useContractWrite({
     chainName,
     payToken: { tokenAddress, amount },
-    contractDetails:  {
+    contractDetails: {
       contractAddress: '0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91',
       abi: [
         {
@@ -165,8 +168,8 @@ const Home = () => {
   const callWriteContract = async () => {
 
     const data = await writeContract({
-      chainName:"POLYGON", contractDetails:{
-      contractAddress: '0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91',
+      chainName: "POLYGON", contractDetails: {
+        contractAddress: '0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91',
         abi: [
           {
             inputs: [
@@ -197,15 +200,43 @@ const Home = () => {
 
   }
 
-  const decryptMessageFun=async()=>{
-    const data=decrypt({chainName,encryptedData:decryptMessage});
-    console.log("encrypted data-->",data);
+  const decryptMessageFun = async () => {
+    const data = decrypt({ chainName, encryptedData: decryptMessage });
+    console.log("encrypted data-->", data);
   }
 
-  const encryptMessageFun=async()=>{
-    const data=encrypt({chainName,data:encryptMessage});
-    console.log("encrypted data-->",data);
+  const encryptMessageFun = async () => {
+    const data = encrypt({ chainName, data: encryptMessage });
+    console.log("encrypted data-->", data);
   }
+
+  const fundTriaWallet = async () => {
+    setLoader(true)
+    try {
+      const call = await axios.post('https://prod.tria.so/api/v2/wallet/fundWallet', {
+        walletAddress: JSON?.parse(localStorage.getItem("tria.wallet.store"))?.evm?.address,
+        chainName: "MUMBAI",
+        origin: "https://demo-tria.vercel.app"
+      })
+      console.log("fund wallet resp -->", call.data.success)
+      if (call?.data?.success === true) {
+        setLoader(false)
+        setSuccess(true)
+      } else {
+        setLoader(false)
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    if (success) {
+      setTimeout(() => {
+        setSuccess(false)
+      }, 5000)
+    }
+  }, [success])
 
   function getWindowSize() {
     const { innerWidth, innerHeight } = window;
@@ -335,6 +366,27 @@ const Home = () => {
                 <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
                   <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience the ease of</div>
                   <div className="text-neutral-50 text-[56px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Web3 Wallet</div>
+                  <div onClick={() => fundTriaWallet()} className="w-1/2 mt-6 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                    <div className="justify-center items-center flex">
+                      {success === false ?
+                        <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">
+                          {loader === false ?
+                            <span>Add Funds</span> :
+                            <div class='flex space-x-2 justify-center items-center '>
+                              <div class='h-2 w-2 bg-white rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+                              <div class='h-2 w-2 bg-white rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+                              <div class='h-2 w-2 bg-white rounded-full animate-bounce'></div>
+                            </div>
+                          }
+                        </div>
+                        :
+                        <div className="text-center text-[#48B563] flex gap-2 justify-center items-center text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">
+                          <img className="h-5 w-5" src="/icons/tick-circle.svg" alt="success" />
+                          Success
+                        </div>
+                      }
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -374,7 +426,7 @@ const Home = () => {
                   </div>
                   <div onClick={() => sendTransaction()} className="w-1/2 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
                     <div className="justify-center items-center flex">
-                      <div  className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Send</div>
+                      <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Send</div>
                     </div>
                   </div>
                 </div>
@@ -437,6 +489,27 @@ const Home = () => {
                 <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
                   <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience the ease of</div>
                   <div className="text-neutral-50 text-[56px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Web3 Wallet</div>
+                  <div onClick={() => fundTriaWallet()} className="w-1/2 mt-6 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                    <div className="justify-center items-center flex">
+                      {success === false ?
+                        <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">
+                          {loader === false ?
+                            <span>Add Funds</span> :
+                            <div class='flex space-x-2 justify-center items-center '>
+                              <div class='h-2 w-2 bg-white rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+                              <div class='h-2 w-2 bg-white rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+                              <div class='h-2 w-2 bg-white rounded-full animate-bounce'></div>
+                            </div>
+                          }
+                        </div>
+                        :
+                        <div className="text-center text-[#48B563] flex gap-2 justify-center items-center text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">
+                          <img className="h-5 w-5" src="/icons/tick-circle.svg" alt="success" />
+                          Success
+                        </div>
+                      }
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -482,7 +555,7 @@ const Home = () => {
             </div>
           </div>
         }
-        <div className="w-full grid grid-cols-4 ">
+        {/* <div className="w-full grid grid-cols-4 ">
             <div className=" col-span-1 ">
               <div className="w-full h-64 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px]" />
               <div className="w-full mt-3 h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
@@ -551,7 +624,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            </div>
+            </div> */}
       </div>
     </>
   );
