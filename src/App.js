@@ -11,7 +11,6 @@ function App() {
     walletUrl: "https:wallet.tria.so",
   });
   const { account } = useAccount();
-
   console.log(account);
 
   return (

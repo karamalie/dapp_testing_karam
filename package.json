@@ -18,7 +18,6 @@
     "webpack": "^5.89.0"
   },
   "scripts": {
-    "preinstall": "npm whoami",
     "start": "craco start",
     "build": "craco build",
     "test": "react-app-rewired test",
