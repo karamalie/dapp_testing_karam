@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "@tria-sdk/authenticate/dist/index.css";
 import {
+  encrypt,
+  decrypt,
   useSignMessage,
   useSendTransaction,
   useContractWrite,
@@ -15,6 +17,8 @@ const Home = () => {
   const [amount, setAmount] = useState(0.00001);
   const [senderAddress, setSenderAddress] = useState("");
   const [recepientAddress, setrecepientAddress] = useState("");
+  const [encryptMessage,setEncryptMessage]=useState("");
+  const [decryptMessage,setDecryptMessage]=useState("");
   const [contractDetails, setContractDetails] = useState({
     contractAddress: '0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91',
     abi: [
@@ -191,6 +195,16 @@ const Home = () => {
     }, undefined, "https://auth.tria.so", "wss://prod.tria.so")
     console.log('function returned data', data)
 
+  }
+
+  const decryptMessageFun=async()=>{
+    const data=decrypt({chainName,encryptedData:decryptMessage});
+    console.log("encrypted data-->",data);
+  }
+
+  const encryptMessageFun=async()=>{
+    const data=encrypt({chainName,data:encryptMessage});
+    console.log("encrypted data-->",data);
   }
 
   function getWindowSize() {
@@ -468,6 +482,76 @@ const Home = () => {
             </div>
           </div>
         }
+        <div className="w-full grid grid-cols-4 ">
+            <div className=" col-span-1 ">
+              <div className="w-full h-64 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px]" />
+              <div className="w-full mt-3 h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
+                <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
+                  <div className="text-neutral-50 text-lg mt-3 font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Encrypt</div>
+                </div>
+                <div className="self-stretch flex-col mb-5 justify-center items-center gap-4 flex">
+                  <div className="self-stretch h-12 justify-start items-center gap-5 inline-flex">
+                    <div className="grow shrink basis-0 self-stretch px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 flex">
+                      <div className="w-6 h-6 p-[2.40px] bg-black rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
+                        <img src="https://static.tria.so/chain-logo-w/Fuse.svg" alt="fuse_icon" />
+                      </div>
+                      <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
+                        <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">FUSE</div>
+                      </div>
+                      <div className="w-[18px] h-[18px] justify-center items-center flex">
+                        <div className="w-[18px] h-[18px] relative">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="self-stretch h-12 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
+                    <div className="justify-start items-center flex">
+                      <input value={encryptMessage} onChange={(e) => setEncryptMessage(e.target.value)} className="w-full text-white focus:outline-none bg-transparent text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight" placeholder="Enter message to encrypt" />
+                    </div>
+                  </div>
+                  <div onClick={() => encryptMessageFun()} className="w-1/2 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                    <div className="justify-center items-center flex">
+                      <div  className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">encrypt</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>      
+            <div className=" col-span-1">
+              <div className="w-full h-64 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px]" />
+              <div className="w-full mt-3 h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
+                <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
+                  <div className="text-neutral-50 text-lg mt-3 font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Decrypt</div>
+                </div>
+                <div className="self-stretch flex-col mb-5 justify-center items-center gap-4 flex">
+                  <div className="self-stretch h-12 justify-start items-center gap-5 inline-flex">
+                    <div className="grow shrink basis-0 self-stretch px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 flex">
+                      <div className="w-6 h-6 p-[2.40px] bg-black rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
+                        <img src="https://static.tria.so/chain-logo-w/Fuse.svg" alt="fuse_icon" />
+                      </div>
+                      <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
+                        <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">FUSE</div>
+                      </div>
+                      <div className="w-[18px] h-[18px] justify-center items-center flex">
+                        <div className="w-[18px] h-[18px] relative">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="self-stretch h-12 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
+                    <div className="justify-start items-center flex">
+                      <input value={decryptMessage} onChange={(e) => setDecryptMessage(e.target.value)} className="w-full text-white focus:outline-none bg-transparent text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight" placeholder="Enter encrypted message" />
+                    </div>
+                  </div>
+                  <div onClick={() => decryptMessageFun()} className="w-1/2 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                    <div className="justify-center items-center flex">
+                      <div  className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">decrypt</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
       </div>
     </>
   );
