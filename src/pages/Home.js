@@ -197,7 +197,6 @@ const Home = () => {
       chainName, contractDetails
     }, undefined, "https://auth.tria.so", "wss://prod.tria.so")
     console.log('function returned data', data)
-
   }
 
   // const decryptMessageFun = async () => {
