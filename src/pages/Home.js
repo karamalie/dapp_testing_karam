@@ -347,7 +347,7 @@ const Home = () => {
                 <div className="self-stretch h-56 px-3 flex-col justify-center items-center gap-[22px] flex">
                   <div onClick={() => callSign()} className="self-stretch cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 h-[60px] px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
                     <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
-                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Sign our T&Cs</div>
+                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Sign our T&Cs (Sign Message)</div>
                     </div>
                   </div>
                   <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
@@ -425,9 +425,13 @@ const Home = () => {
                       <input value={recepientAddress} onChange={(e) => setrecepientAddress(e.target.value)} className="w-full text-white focus:outline-none bg-transparent text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight" placeholder="Recipient Address" />
                     </div>
                   </div>
-                  <div onClick={() => sendTransaction()} className="w-1/2 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                  <div onClick={() => {
+                    if (recepientAddress.length > 0) {
+                      sendTransaction()
+                    }
+                  }} className={`w-1/2 h-[34px] cursor-${recepientAddress.length > 0 ? "pointer" : "not-allowed"} hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex`}>
                     <div className="justify-center items-center flex">
-                      <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Send</div>
+                      <div className={`text-center text-${recepientAddress.length > 0 ? "white" : "gray-400"} text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight`}>Send</div>
                     </div>
                   </div>
                 </div>
@@ -470,7 +474,7 @@ const Home = () => {
                 <div className="self-stretch h-56 px-3 flex-col justify-center items-center gap-[22px] flex">
                   <div onClick={() => callSign()} className="self-stretch cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 h-[60px] px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
                     <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
-                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Sign our T&Cs</div>
+                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Sign our T&Cs (Sign Message)</div>
                     </div>
                   </div>
                   <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
@@ -547,9 +551,13 @@ const Home = () => {
                       <input value={recepientAddress} onChange={(e) => setrecepientAddress(e.target.value)} className="w-full text-white focus:outline-none bg-transparent text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight" placeholder="Recipient Address" />
                     </div>
                   </div>
-                  <div onClick={() => sendTransaction()} className="w-1/2 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                  <div onClick={() => {
+                    if (recepientAddress.length > 0) {
+                      sendTransaction()
+                    }
+                  }} className={`w-1/2 h-[34px] cursor-${recepientAddress.length > 0 ? "pointer" : "not-allowed"} hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex`}>
                     <div className="justify-center items-center flex">
-                      <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Send</div>
+                    <div className={`text-center text-${recepientAddress.length > 0 ? "white" : "gray-400"} text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight`}>Send</div>
                     </div>
                   </div>
                 </div>
