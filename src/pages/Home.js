@@ -166,29 +166,19 @@ const Home = () => {
   }
 
   const callWriteContract = async () => {
-
+   const  userAddress= JSON?.parse(localStorage.getItem("tria.wallet.store"))?.evm?.address;
+   console.log("useAddress",userAddress);
     const data = await writeContract({
       chainName: "MUMBAI", contractDetails: {
-        contractAddress: '0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91',
+        contractAddress: '0x9f5033463b31D213462Ce03A81610364aa80Ba14',
         abi: [
-          {
-            inputs: [
-              { internalType: 'uint256', name: '_tokenID', type: 'uint256' },
-              { internalType: 'address', name: '_claimer', type: 'address' },
-            ],
-            name: 'claimCoupon',
-            outputs: [],
-            stateMutability: 'nonpayable',
-            type: 'function',
-          },
+          {"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"},{"internalType":"address","name":"_claimer","type":"address"}],"name":"airdropCoupon","outputs":[],"stateMutability":"nonpayable","type":"function"}
         ],
-        functionName: 'claimCoupon',
-        args: [1, '0x7Ae1bBCe3557D46313a960C0982637967eF5c1f7'],
-        // value: 1,
+        functionName: 'airdropCoupon',
+        args: [1, 1, userAddress],
       }
     }, undefined, "https://auth.tria.so", "wss://prod.tria.so")
     console.log('function returned data', data)
-
   }
 
   const callSendTransaction = async () => {
