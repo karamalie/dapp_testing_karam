@@ -7,13 +7,14 @@ import {
   useSendTransaction,
   useContractWrite,
   useContractRead,
-  useDisconnect,
   writeContract
 } from "@tria-sdk/connect";
 import axios from "axios"
+import { useDisconnect } from "wagmi";
 
 const Home = () => {
   const [showWallet, setShowWallet] = useState(false);
+
   const [message, setMessage] = useState("Sign in with Tria");
   const [amount, setAmount] = useState(0.00001);
   const [senderAddress, setSenderAddress] = useState("");
@@ -166,13 +167,13 @@ const Home = () => {
   }
 
   const callWriteContract = async () => {
-   const  userAddress= JSON?.parse(localStorage.getItem("tria.wallet.store"))?.evm?.address;
-   console.log("useAddress",userAddress);
+    const userAddress = JSON?.parse(localStorage.getItem("tria.wallet.store"))?.evm?.address;
+    console.log("useAddress", userAddress);
     const data = await writeContract({
       chainName: "MUMBAI", contractDetails: {
         contractAddress: '0x9f5033463b31D213462Ce03A81610364aa80Ba14',
         abi: [
-          {"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"},{"internalType":"address","name":"_claimer","type":"address"}],"name":"airdropCoupon","outputs":[],"stateMutability":"nonpayable","type":"function"}
+          { "inputs": [{ "internalType": "uint256", "name": "_tokenId", "type": "uint256" }, { "internalType": "uint256", "name": "_amount", "type": "uint256" }, { "internalType": "address", "name": "_claimer", "type": "address" }], "name": "airdropCoupon", "outputs": [], "stateMutability": "nonpayable", "type": "function" }
         ],
         functionName: 'airdropCoupon',
         args: [1, 1, userAddress],
@@ -290,7 +291,11 @@ const Home = () => {
           <div className="p-2 rounded-[79px] justify-end items-center gap-3 inline-flex">
             <div className="justify-end items-center flex">
               <div className="pr-2 justify-end items-center gap-2 flex">
-                <div onClick={() => { localStorage.removeItem("tria.wallet.store"); window.location.reload() }} className="w-14 hover:text-red-700 cursor-pointer hover:transition duration-200 text-red-500 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Logout</div>
+                {localStorage.getItem('tria.wallet.store') !== null ?
+                  <div onClick={() => { localStorage.removeItem("tria.wallet.store"); window.location.reload(); }} className="w-14 hover:text-red-700 cursor-pointer hover:transition duration-200 text-red-500 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Logout</div>
+                  :
+                  <div onClick={() => { disconnect(); window.location.reload() }} className="w-14 hover:text-red-700 cursor-pointer hover:transition duration-200 text-red-500 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Logout</div>
+                }
               </div>
             </div>
             <div style={{ background: bg }} className={`w-12 h-12 justify-center items-center flex rounded-full`}>
@@ -547,7 +552,7 @@ const Home = () => {
                     }
                   }} className={`w-1/2 h-[34px] cursor-${recepientAddress.length > 0 ? "pointer" : "not-allowed"} hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex`}>
                     <div className="justify-center items-center flex">
-                    <div className={`text-center text-${recepientAddress.length > 0 ? "white" : "gray-400"} text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight`}>Send</div>
+                      <div className={`text-center text-${recepientAddress.length > 0 ? "white" : "gray-400"} text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight`}>Send</div>
                     </div>
                   </div>
                 </div>

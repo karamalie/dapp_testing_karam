@@ -1,23 +1,32 @@
 import Home from "./pages/Home";
-import { useTriaConnector, useAccount } from "@tria-sdk/connect";
+import { useTriaConnector, useDisconnect } from "@tria-sdk/connect";
 import { TriaConnectProvider } from "@tria-sdk/authenticate";
 import Application from "@tria-sdk/authenticate";
 import { useEffect } from "react";
 import Wallet from "./pages/Wallet";
+import TriaLogin from "./components/TriaLogin";
+import { useAccount } from "wagmi";
+
 
 function App() {
   const { globalData } = useTriaConnector({
     authUrl: "https://auth.tria.so",
     walletUrl: "https:wallet.tria.so",
   });
-  const { account } = useAccount();
-  console.log(account);
+
+  const { account } = useAccount()
+
+  // console.log(account);
+
+  useEffect(() => {
+    console.log("wagmi account", account)
+  }, [account])
+
 
   return (
     <>
-
       <div className="bg-black h-[100vh] w-[100vw]">
-        {!account ? <div className="w-full h-20 px-10 py-4 bg-neutral-900 border-b border-stone-950 justify-start items-center gap-4 inline-flex">
+        {localStorage.getItem('tria.wallet.store') === null && localStorage.getItem("wagmi.connected") === null ? <div className="w-full h-20 px-10 py-4 bg-neutral-900 border-b border-stone-950 justify-start items-center gap-4 inline-flex">
           <div className="grow shrink basis-0 h-12 justify-between items-center flex">
             <div className=" justify-center items-center gap-2.5 flex">
               <div className=" h-7 relative">
@@ -32,15 +41,8 @@ function App() {
           </div>
         </div> : null}
         <TriaConnectProvider />
-        {account ? <Home /> : null}
-        <Application
-          dappName={"Tria Demo"}
-          logo={"https://svgshare.com/i/10zF.svg"}
-          dappDomain={window.parent.origin}
-          primaryColor="#9A86FF"
-          defaultChain="MUMBAI"
-          supportedChains={["MUMBAI", "POLYGON"]}
-        />
+        {localStorage.getItem('tria.wallet.store') || localStorage.getItem("wagmi.connected") ? <Home /> : null}
+        <TriaLogin />
       </div>
     </>
   );
