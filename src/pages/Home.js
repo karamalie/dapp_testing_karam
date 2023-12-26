@@ -7,10 +7,12 @@ import {
   useSendTransaction,
   useContractWrite,
   useContractRead,
-  writeContract
+  writeContract,
+  disconnect,
+  getAccount
 } from "@tria-sdk/connect";
 import axios from "axios"
-import { useDisconnect } from "wagmi";
+//import { useDisconnect } from "wagmi";
 
 const Home = () => {
   const [showWallet, setShowWallet] = useState(false);
@@ -44,7 +46,9 @@ const Home = () => {
   const [chainName, setChainName] = useState("MUMBAI");
   const [tokenAddress, setTokenAddress] = useState("");
 
-  const { disconnect } = useDisconnect()
+ 
+
+  //const { disconnect } = useDisconnect()
 
   useEffect(() => {
     const item = localStorage.getItem("tria.wallet.store");
@@ -167,7 +171,7 @@ const Home = () => {
   }
 
   const callWriteContract = async () => {
-    const userAddress = JSON?.parse(localStorage.getItem("tria.wallet.store"))?.evm?.address;
+    const userAddress = await getAccount();
     console.log("useAddress", userAddress);
     const data = await writeContract({
       chainName: "MUMBAI", contractDetails: {
@@ -176,7 +180,7 @@ const Home = () => {
           { "inputs": [{ "internalType": "uint256", "name": "_tokenId", "type": "uint256" }, { "internalType": "uint256", "name": "_amount", "type": "uint256" }, { "internalType": "address", "name": "_claimer", "type": "address" }], "name": "airdropCoupon", "outputs": [], "stateMutability": "nonpayable", "type": "function" }
         ],
         functionName: 'airdropCoupon',
-        args: [1, 1, userAddress],
+        args: [1, 1, userAddress.evm.address],
       }
     }, undefined, "https://auth.tria.so", "wss://prod.tria.so")
     console.log('function returned data', data)
