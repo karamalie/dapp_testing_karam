@@ -12,6 +12,7 @@ import {
   getAccount
 } from "@tria-sdk/connect";
 import axios from "axios"
+import ReactGA from 'react-ga';
 //import { useDisconnect } from "wagmi";
 
 const Home = () => {
@@ -171,6 +172,11 @@ const Home = () => {
   }
 
   const callWriteContract = async () => {
+    ReactGA.event({
+      category: 'Mint',
+      action: 'Clicked on Mint',
+      label: 'Dashboard Page',
+    });
     const userAddress = await getAccount();
     console.log("useAddress", userAddress);
     const data = await writeContract({
