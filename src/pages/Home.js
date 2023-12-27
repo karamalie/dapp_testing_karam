@@ -206,9 +206,10 @@ const Home = () => {
 
   const fundTriaWallet = async () => {
     setLoader(true)
+    const userAddress = await getAccount();
     try {
       const call = await axios.post('https://prod.tria.so/api/v2/wallet/fundWallet', {
-        walletAddress: JSON?.parse(localStorage.getItem("tria.wallet.store"))?.evm?.address,
+        walletAddress: userAddress?.evm?.address,
         chainName: "MUMBAI",
         origin: "https://demo-tria.vercel.app"
       })
