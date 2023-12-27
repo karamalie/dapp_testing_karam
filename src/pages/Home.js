@@ -16,7 +16,6 @@ import ReactGA from 'react-ga';
 //import { useDisconnect } from "wagmi";
 
 const Home = () => {
-  ReactGA.initialize('G-8B9M5DSMB4');
   const [showWallet, setShowWallet] = useState(false);
   const [message, setMessage] = useState("Sign in with Tria");
   const [amount, setAmount] = useState(0.00001);
@@ -54,6 +53,7 @@ const Home = () => {
   useEffect(() => {
     const item = localStorage.getItem("tria.wallet.store");
     console.log(item);
+    ReactGA.pageview("/dashboard");
   }, []);
 
   console.log("data------------------>", {
