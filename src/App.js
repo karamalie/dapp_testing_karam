@@ -8,7 +8,9 @@ import TriaLogin from "./components/TriaLogin";
 import { useAccount } from "wagmi";
 import ReactGA from 'react-ga';
 // Initialize React Ga with your tracking ID
-ReactGA.initialize('G-8B9M5DSMB4');
+ReactGA.initialize('G-8B9M5DSMB4',{
+  debug: true
+});
 
 
 function App() {
