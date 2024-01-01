@@ -326,7 +326,7 @@ const Home = () => {
                 </div>
                 <div className="rounded-[16.97px] flex-col justify-center items-center flex">
                   <div className="w-[100%] relative">
-                    <img className="h-auto max-w-full rounded-[22.48px]" src="https://s3-alpha-sig.figma.com/img/a4a4/1cbd/6ed770a47f0dad046e76f9e83b2af41b?Expires=1704067200&Signature=P7rOVqfRoebDT5si5092CUUWeDTIBOtxjrT4ZKkuEG-dcdBVBQO11~ZBtPwQM7LHowha-kJpFdNpEqdFZpNvDn0GGDbh2FCHYJEP5t80HhzIiMVGvOWO2u8RZsz3Yb7-1d4XGDM4cz10ZjYvibfvptkQ~94gwiMtkE2vIHdLZrwelPkdDw1T47hK9pq4OLFdiJGhQ~HinCn6pdckQydmvcjpQt~OsL~Ae5waywqbi9Hinu98XD9v7VdOhxZe1RHF3mYVNFc2bzHj2hPY6Gpp2-JoIAYCM8-8NlU0F3USmg6zIN52IuIj-5ahVpoonjgJpbX0HY3-b89w~J-Fz3AX1A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+                    <img className="h-auto max-w-full rounded-[22.48px]" src="/icons/mint_nft.svg" alt="nft_image" />
                     <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
                       <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
                         <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
@@ -453,7 +453,7 @@ const Home = () => {
                 </div>
                 <div className="p-[10.08px] rounded-[16.97px] flex-col justify-center items-center flex">
                   <div className="w-full h-[250.90px] relative">
-                    <img className="left-0 top-0 absolute rounded-[22.48px]" src="https://s3-alpha-sig.figma.com/img/a4a4/1cbd/6ed770a47f0dad046e76f9e83b2af41b?Expires=1704067200&Signature=P7rOVqfRoebDT5si5092CUUWeDTIBOtxjrT4ZKkuEG-dcdBVBQO11~ZBtPwQM7LHowha-kJpFdNpEqdFZpNvDn0GGDbh2FCHYJEP5t80HhzIiMVGvOWO2u8RZsz3Yb7-1d4XGDM4cz10ZjYvibfvptkQ~94gwiMtkE2vIHdLZrwelPkdDw1T47hK9pq4OLFdiJGhQ~HinCn6pdckQydmvcjpQt~OsL~Ae5waywqbi9Hinu98XD9v7VdOhxZe1RHF3mYVNFc2bzHj2hPY6Gpp2-JoIAYCM8-8NlU0F3USmg6zIN52IuIj-5ahVpoonjgJpbX0HY3-b89w~J-Fz3AX1A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+                    <img className="left-0 top-0 absolute rounded-[22.48px]" src="/icons/mint_nft.svg" alt="nft_image" />
                     <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
                       <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
                         <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />

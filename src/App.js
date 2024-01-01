@@ -16,7 +16,7 @@ ReactGA.initialize('G-8B9M5DSMB4',{
 function App() {
   const { globalData } = useTriaConnector({
     authUrl: "https://auth.tria.so",
-    walletUrl: "https:wallet.tria.so",
+    walletUrl: "https://wallet.tria.so",
   });
 
   const { account } = useAccount()
