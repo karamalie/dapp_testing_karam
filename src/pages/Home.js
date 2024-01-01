@@ -292,14 +292,14 @@ const Home = () => {
           </div>
         </div>
         {/* Navbar */}
-        <div className={windowSize.innerWidth > 400 ? "w-full h-[82px] pl-[63px] pr-20 py-[9px] bg-zinc-500 bg-opacity-10 justify-start items-center justify-between inline-flex" : "w-full h-[82px] pl-4 pr-4 py-[9px] bg-zinc-500 bg-opacity-10 justify-start items-center justify-between inline-flex"}>
+        <div className={windowSize.innerWidth > 400 ? "w-full h-[82px] pl-[63px] pr-20 py-[9px] bg-zinc-500 bg-opacity-10 justify-start items-center justify-between inline-flex" : "w-full h-[82px] pl-8 pr-4 py-[9px] bg-zinc-500 bg-opacity-10 justify-start items-center justify-between inline-flex"}>
           <div className=" rounded-xl justify-center items-center gap-2 inline-flex">
             <div className="w-10 h-10 relative">
               <img src="/icons/sky.svg" alt="sky_icon" />
             </div>
             <div className="text-neutral-50 text-lg font-normal font-['Neue Haas Grotesk Display Pro'] ">{logged_user}</div>
           </div>
-          <div className="p-2 rounded-[79px] justify-end items-center gap-3 inline-flex">
+          <div className={windowSize.innerWidth > 400 ? "p-2 rounded-[79px] justify-end items-center gap-3 inline-flex" :"p-2 rounded-[79px] justify-end items-center gap-0 inline-flex"}>
             <div className="justify-end items-center flex">
               <div className="pr-2 justify-end items-center gap-2 flex">
                 {localStorage.getItem('tria.wallet.store') !== null ?
