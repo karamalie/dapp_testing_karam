@@ -260,6 +260,12 @@ const Home = () => {
 
   console.log("amount", amount)
 
+  const Logout = async () => {
+    console.log("Logut called")
+    await disconnect()
+    window.location.reload()
+  }
+
 
   return (
     <>
@@ -299,13 +305,13 @@ const Home = () => {
             </div>
             <div className="text-neutral-50 text-lg font-normal font-['Neue Haas Grotesk Display Pro'] ">{logged_user}</div>
           </div>
-          <div className={windowSize.innerWidth > 400 ? "p-2 rounded-[79px] justify-end items-center gap-3 inline-flex" :"p-2 rounded-[79px] justify-end items-center gap-0 inline-flex"}>
+          <div className={windowSize.innerWidth > 400 ? "p-2 rounded-[79px] justify-end items-center gap-3 inline-flex" : "p-2 rounded-[79px] justify-end items-center gap-0 inline-flex"}>
             <div className="justify-end items-center flex">
               <div className="pr-2 justify-end items-center gap-2 flex">
                 {localStorage.getItem('tria.wallet.store') !== null ?
                   <div onClick={() => { localStorage.removeItem("tria.wallet.store"); window.location.reload(); }} className="w-14 hover:text-red-700 cursor-pointer hover:transition duration-200 text-red-500 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Logout</div>
                   :
-                  <div onClick={() => { disconnect(); window.location.reload() }} className="w-14 hover:text-red-700 cursor-pointer hover:transition duration-200 text-red-500 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Logout</div>
+                  <div onClick={() => Logout()} className="w-14 hover:text-red-700 cursor-pointer hover:transition duration-200 text-red-500 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Logout</div>
                 }
               </div>
             </div>
