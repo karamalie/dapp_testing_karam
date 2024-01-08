@@ -23,6 +23,7 @@ const Home = () => {
   const [recepientAddress, setrecepientAddress] = useState("");
   const [encryptMessage, setEncryptMessage] = useState("");
   const [decryptMessage, setDecryptMessage] = useState("");
+  const [userWalletAddress, setUserWalletAddress] = useState("")
   const [loader, setLoader] = useState(false)
   const [success, setSuccess] = useState(false)
   const [contractDetails, setContractDetails] = useState({
@@ -54,7 +55,13 @@ const Home = () => {
     const item = localStorage.getItem("tria.wallet.store");
     console.log(item);
     ReactGA.pageview("/dashboard");
+    getUserWallet()
   }, []);
+
+  const getUserWallet = async () => {
+    const user = await getAccount();
+    setUserWalletAddress(user.evm.address)
+  }
 
   console.log("data------------------>", {
     message,
@@ -231,13 +238,13 @@ const Home = () => {
     }
   }
 
-  useEffect(() => {
-    if (success) {
-      setTimeout(() => {
-        setSuccess(false)
-      }, 5000)
-    }
-  }, [success])
+  // useEffect(() => {
+  //   if (success) {
+  //     setTimeout(() => {
+  //       setSuccess(false)
+  //     }, 5000)
+  //   }
+  // }, [success])
 
   function getWindowSize() {
     const { innerWidth, innerHeight } = window;
@@ -355,50 +362,53 @@ const Home = () => {
             </div>
 
             <div className="col-span-3 mt-4">
-              <div className="w-full h-64 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
-                <div className="self-stretch h-56 px-3 flex-col justify-center items-center gap-[22px] flex">
-                  <div onClick={() => callSign()} className="self-stretch cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 h-[60px] px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
-                    <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
-                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Sign our T&Cs (Sign Message)</div>
-                    </div>
-                  </div>
-                  <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
-                    <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
-                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Increase Transaction Limit</div>
-                    </div>
-                  </div>
-                  <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
-                    <div className="grow shrink basis-0 h-[26px] justify-start items-center gap-2 flex">
-                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Receive Goodluck!</div>
-                      <div className="text-center text-neutral-50 text-[22px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide">✨🍀</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full mt-3 h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
-                <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
+              <div className="w-full h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
+                {success === false ? <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
                   <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience the ease of</div>
                   <div className="text-neutral-50 text-[56px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Web3 Wallet</div>
                   <div onClick={() => fundTriaWallet()} className="w-1/2 mt-6 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
                     <div className="justify-center items-center flex">
-                      {success === false ?
-                        <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">
-                          {loader === false ?
-                            <span>Add Funds</span> :
-                            <div class='flex space-x-2 justify-center items-center '>
-                              <div class='h-2 w-2 bg-white rounded-full animate-bounce [animation-delay:-0.3s]'></div>
-                              <div class='h-2 w-2 bg-white rounded-full animate-bounce [animation-delay:-0.15s]'></div>
-                              <div class='h-2 w-2 bg-white rounded-full animate-bounce'></div>
-                            </div>
-                          }
-                        </div>
-                        :
-                        <div className="text-center text-[#48B563] flex gap-2 justify-center items-center text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">
-                          <img className="h-5 w-5" src="/icons/tick-circle.svg" alt="success" />
-                          Success
-                        </div>
-                      }
+
+                      <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">
+                        {loader === false ?
+                          <span>Add Funds</span> :
+                          <div class='flex space-x-2 justify-center items-center '>
+                            <div class='h-2 w-2 bg-white rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+                            <div class='h-2 w-2 bg-white rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+                            <div class='h-2 w-2 bg-white rounded-full animate-bounce'></div>
+                          </div>
+                        }
+                      </div>
+
                     </div>
+                  </div>
+                </div> :
+                  <div>
+                    <div className="self-stretch h-[73.67px] p-[8.83px] flex-col justify-center items-center gap-2 flex">
+                      <div className="self-stretch text-center"><span className="text-neutral-50 text-[22px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide">0.001 MATIC</span><span className="text-neutral-50 text-[22px] font-normal font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide"> has been sent to your wallet </span></div>
+                      <div className="self-stretch text-center text-neutral-50 text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">{logged_user}</div>
+                    </div>
+                    <div className="w-full flex justify-center mt-10">
+                      <div onClick={() => window.open(`https://mumbai.polygonscan.com/address/${userWalletAddress}`, "_blank")} className="w-[55%] h-[54px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                        <div className="justify-center items-center flex">
+                          <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">View Details</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>}
+              </div>
+              <div className="w-full mt-3 h-64 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
+                <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
+                  <div className="text-neutral-50 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Terms & Conditions</div>
+                </div>
+                <div className="self-stretch grow shrink basis-0 px-5 py-3 rounded-[78px] justify-start items-center inline-flex">
+                  <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
+                    <div className="grow shrink basis-0 text-white text-opacity-40 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">By approving the sign request, you agree with our <a target="_blank" href="https://www.notion.so/triahq/Tria-Beta-Terms-of-Use-1d7dfaf5a58f4038beecd1a67f963425?pvs=4">Terms & Conditions</a>. See firsthand how our T&C redefine the user experience.</div>
+                  </div>
+                </div>
+                <div onClick={() => callSign()} className="w-[35%] h-[54px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                  <div className="justify-center items-center flex">
+                    <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Sign</div>
                   </div>
                 </div>
               </div>
@@ -578,32 +588,40 @@ const Home = () => {
             </div> :
 
             <div className="mx-4 mt-3">
-              <div className="w-full mt-3 h-1/2 px-5 py-4 mb-3 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
-                <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
+              <div className="w-full h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
+                {success === false ? <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
                   <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience the ease of</div>
-                  <div className="text-neutral-50 text-5xl font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Web3 Wallet</div>
+                  <div className="text-neutral-50 text-[56px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Web3 Wallet</div>
                   <div onClick={() => fundTriaWallet()} className="w-1/2 mt-6 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
                     <div className="justify-center items-center flex">
-                      {success === false ?
-                        <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">
-                          {loader === false ?
-                            <span>Add Funds</span> :
-                            <div class='flex space-x-2 justify-center items-center '>
-                              <div class='h-2 w-2 bg-white rounded-full animate-bounce [animation-delay:-0.3s]'></div>
-                              <div class='h-2 w-2 bg-white rounded-full animate-bounce [animation-delay:-0.15s]'></div>
-                              <div class='h-2 w-2 bg-white rounded-full animate-bounce'></div>
-                            </div>
-                          }
-                        </div>
-                        :
-                        <div className="text-center text-[#48B563] flex gap-2 justify-center items-center text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">
-                          <img className="h-5 w-5" src="/icons/tick-circle.svg" alt="success" />
-                          Success
-                        </div>
-                      }
+
+                      <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">
+                        {loader === false ?
+                          <span>Add Funds</span> :
+                          <div class='flex space-x-2 justify-center items-center '>
+                            <div class='h-2 w-2 bg-white rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+                            <div class='h-2 w-2 bg-white rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+                            <div class='h-2 w-2 bg-white rounded-full animate-bounce'></div>
+                          </div>
+                        }
+                      </div>
+
                     </div>
                   </div>
-                </div>
+                </div> :
+                  <div>
+                    <div className="self-stretch h-[73.67px] p-[8.83px] flex-col justify-center items-center gap-2 flex">
+                      <div className="self-stretch text-center mt-10"><span className="text-neutral-50 text-[22px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide">0.001 MATIC</span><span className="text-neutral-50 text-[22px] font-normal font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide"> has been sent to your wallet </span></div>
+                      <div className="self-stretch text-center text-neutral-50 text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">{logged_user}</div>
+                    </div>
+                    <div className="w-full flex justify-center mt-16">
+                      <div onClick={() => window.open(`https://mumbai.polygonscan.com/address/${userWalletAddress}`, "_blank")} className="w-[55%] h-[44px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                        <div className="justify-center items-center flex">
+                          <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">View Details</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>}
               </div>
 
               <div className="w-full mt-3 h-1/2 mb-3 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
@@ -675,23 +693,18 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full h-64 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
-                <div className="self-stretch h-56 px-3 flex-col justify-center items-center gap-[22px] flex">
-                  <div onClick={() => callSign()} className="self-stretch cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 h-[60px] px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
-                    <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
-                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Sign our T&Cs (Sign Message)</div>
-                    </div>
+              <div className="w-full mt-0 h-72 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
+                <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex mt-5">
+                  <div className="text-neutral-50 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Terms & Conditions</div>
+                </div>
+                <div className="self-stretch grow shrink basis-0 px-5 py-3 rounded-[78px] justify-start items-center inline-flex">
+                  <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
+                    <div className="grow shrink basis-0 text-white text-opacity-40 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">By approving the sign request, you agree with our <a target="_blank" href="https://www.notion.so/triahq/Tria-Beta-Terms-of-Use-1d7dfaf5a58f4038beecd1a67f963425?pvs=4">Terms & Conditions</a>. See firsthand how our T&C redefine the user experience.</div>
                   </div>
-                  <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
-                    <div className="grow shrink basis-0 h-[22px] justify-start items-center flex">
-                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Increase Transaction Limit</div>
-                    </div>
-                  </div>
-                  <div className="self-stretch h-[60px] cursor-pointer hover:bg-zinc-600 hover:bg-opacity-40 hover:transition duration-200 px-4 py-3 bg-zinc-500 bg-opacity-5 rounded-xl justify-start items-center gap-2 inline-flex">
-                    <div className="grow shrink basis-0 h-[26px] justify-start items-center gap-2 flex">
-                      <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Receive Goodluck!</div>
-                      <div className="text-center text-neutral-50 text-[22px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide">✨🍀</div>
-                    </div>
+                </div>
+                <div onClick={() => callSign()} className="w-[35%] h-[54px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                  <div className="justify-center items-center flex">
+                    <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Sign</div>
                   </div>
                 </div>
               </div>
