@@ -332,7 +332,7 @@ const Home = () => {
                 </div>
                 <div className="rounded-[16.97px] flex-col justify-center items-center flex">
                   <div className="w-[100%] relative">
-                    <img className="h-auto max-w-full rounded-[22.48px]" src="/icons/mint_nft.svg" alt="nft_image" />
+                    <img className="h-auto max-w-full rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmQmQjGwUJLbj5GZXv8RgHCKSxX5noFZP9M2dLuwnKZyGF/Beer.jpg" alt="nft_image" />
                     <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
                       <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
                         <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
@@ -459,7 +459,7 @@ const Home = () => {
                   </div>
                   <div className="p-[10.08px] rounded-[16.97px] flex-col justify-center items-center flex">
                     <div className="w-full h-[250.90px] relative">
-                      <img className="left-0 top-0 absolute rounded-[22.48px]" src="/icons/mint_nft.svg" alt="nft_image" />
+                      <img className="left-0 top-0 absolute rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmQmQjGwUJLbj5GZXv8RgHCKSxX5noFZP9M2dLuwnKZyGF/Beer.jpg" alt="nft_image" />
                       <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
                         <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
                           <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
@@ -655,7 +655,7 @@ const Home = () => {
                 </div>
                 <div className="p-[10.08px] rounded-[16.97px] flex-col justify-center items-center flex">
                   <div className="w-full h-[250.90px] relative">
-                    <img className="left-0 top-0 absolute rounded-[22.48px]" src="/icons/mint_nft.svg" alt="nft_image" />
+                    <img className="left-0 top-0 absolute rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmQmQjGwUJLbj5GZXv8RgHCKSxX5noFZP9M2dLuwnKZyGF/Beer.jpg" alt="nft_image" />
                     <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
                       <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
                         <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
