@@ -333,42 +333,13 @@ const Home = () => {
         {/* Lower Functional Grid */}
 
         {windowSize.innerWidth > 1000 ?
-          <div className="w-full grid grid-cols-9 gap-5">
-            <div className="col-span-2 ml-10 mt-4">
-              <div className="w-full h-3/4 px-5 pt-4 pb-6 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
-                <div className="py-2 justify-center items-center gap-4 inline-flex">
-                  <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Mint NFT</div>
-                </div>
-                <div className="rounded-[16.97px] flex-col justify-center items-center flex">
-                  <div className="w-[100%] relative">
-                    <img className="h-auto max-w-full rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmQmQjGwUJLbj5GZXv8RgHCKSxX5noFZP9M2dLuwnKZyGF/Beer.jpg" alt="nft_image" />
-                    <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
-                      <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
-                        <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
-                        <img src="/icons/Polygon.svg" alt="polygon" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="self-stretch  px-[8.43px] py-[16.86px] rounded-[27.15px] justify-center items-center inline-flex">
-                    <div className=" justify-center items-center flex">
-                      <div className="text-center text-neutral-50 text-opacity-90 text-xl  font-light font-['Neue Haas Grotesk Display Pro'] leading-[30.23px] tracking-wide">#10 EVOL Fanny</div>
-                    </div>
-                  </div>
-                </div>
-                <div onClick={() => callWriteContract()} className="w-3/4 cursor-pointer hover:bg-neutral-700 hover:transition duration-300 px-2 py-2 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
-                  <div className="justify-center items-center flex">
-                    <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Mint</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-span-3 mt-4">
-              <div className="w-full h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
+          <div className="w-full grid grid-cols-10 gap-5">
+            <div className="col-span-4 mt-4 ml-10">
+              <div className="w-full  px-5 py-0 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
                 {success === false ? <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
-                  <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience the ease of</div>
-                  <div className="text-neutral-50 text-[56px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Web3 Wallet</div>
-                  <div onClick={() => fundTriaWallet()} className="w-1/2 mt-6 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                  <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight mt-5">Experience Tria's Personalised</div>
+                  <div className="text-neutral-50 text-5xl font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Embedded Wallet</div>
+                  <div onClick={() => fundTriaWallet()} className="w-1/3 mt-3 mb-10 h-[44px] cursor-pointer bg-gradient-to-r from-violet-400 to-indigo-500 rounded-[78px] backdrop-blur-[20px] justify-center items-center inline-flex">
                     <div className="justify-center items-center flex">
 
                       <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">
@@ -387,11 +358,11 @@ const Home = () => {
                 </div> :
                   <div>
                     <div className="self-stretch h-[73.67px] p-[8.83px] flex-col justify-center items-center gap-2 flex">
-                      <div className="self-stretch text-center"><span className="text-neutral-50 text-[22px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide">0.001 MATIC</span><span className="text-neutral-50 text-[22px] font-normal font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide"> has been sent to your wallet </span></div>
+                      <div className="self-stretch text-center mt-10"><span className="text-neutral-50 text-[22px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide">0.001 MATIC</span><span className="text-neutral-50 text-[22px] font-normal font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide"> has been sent to your wallet </span></div>
                       <div className="self-stretch text-center text-neutral-50 text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">{logged_user}</div>
                     </div>
                     <div className="w-full flex justify-center mt-10">
-                      <div onClick={() => window.open(`https://mumbai.polygonscan.com/address/${userWalletAddress}`, "_blank")} className="w-[55%] h-[54px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                      <div onClick={() => window.open(`https://mumbai.polygonscan.com/address/${userWalletAddress}`, "_blank")} className="w-1/3 mb-10 h-[44px] cursor-pointer bg-gradient-to-r from-violet-400 to-indigo-500 rounded-[78px] backdrop-blur-[20px] justify-center items-center inline-flex">
                         <div className="justify-center items-center flex">
                           <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">View Details</div>
                         </div>
@@ -430,16 +401,17 @@ const Home = () => {
                   </div>
                 </div>
               </div> : null}
-              <div className="w-full mt-3 h-64 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
+              <div className="w-full mt-3 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-1 inline-flex">
                 <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
                   <div className="text-neutral-50 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Terms & Conditions</div>
                 </div>
                 <div className="self-stretch grow shrink basis-0 px-5 py-3 rounded-[78px] justify-start items-center inline-flex">
                   <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
-                    <div className="grow shrink basis-0 text-white text-opacity-40 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">By approving the sign request, you agree with our <a target="_blank" href="https://www.notion.so/triahq/Tria-Beta-Terms-of-Use-1d7dfaf5a58f4038beecd1a67f963425?pvs=4">Terms & Conditions</a>. See firsthand how our T&C redefine the user experience.</div>
+                    {/* <div className="grow shrink basis-0 text-white text-opacity-40 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">By approving the sign request, you agree with our <a target="_blank" href="https://www.notion.so/triahq/Tria-Beta-Terms-of-Use-1d7dfaf5a58f4038beecd1a67f963425?pvs=4">Terms & Conditions</a>. See firsthand how our T&C redefine the user experience.</div> */}
+                    <div className="grow shrink basis-0 text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">This is a sample message for you to check how the sign message will be displayed in the embedded wallet.</div>
                   </div>
                 </div>
-                <div onClick={() => callSign()} className="w-[35%] h-[54px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                <div onClick={() => callSign()} className="w-1/3 mt-6 h-[44px] cursor-pointer bg-gradient-to-r from-violet-400 to-indigo-500 rounded-[78px] backdrop-blur-[20px] justify-center items-center inline-flex">
                   <div className="justify-center items-center flex">
                     <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Sign</div>
                   </div>
@@ -447,12 +419,42 @@ const Home = () => {
               </div>
 
             </div>
-            <div className="mt-4 col-span-2">
-              <div className="w-full h-64 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px]" />
-              <div className="w-full mt-3 h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
-                <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
-                  <div className="text-neutral-50 text-lg mt-3 font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Send Token</div>
+            <div className="col-span-2  mt-4">
+              <div className="w-full px-5 pt-4 pb-6 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
+                <div className="py-2 justify-center items-center gap-4 inline-flex">
+                  <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Mint NFT</div>
                 </div>
+                <div className="w-full text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">This is an example on Polygon Testnet. Tria supports 100+ blockchains. Speak with the team to discuss more.</div>
+                <div className="w-full mt-4 mb-5"><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Supported NFTs:<br/></span><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">ERC 721<br/>ERC 1155<br/>ERC 6551</span></div>
+                <div className="rounded-[16.97px] flex-col justify-center items-center flex">
+                  <div className="w-[100%] relative">
+                    <img className="h-auto max-w-full rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmQmQjGwUJLbj5GZXv8RgHCKSxX5noFZP9M2dLuwnKZyGF/Beer.jpg" alt="nft_image" />
+                    <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
+                      <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
+                        <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
+                        <img src="/icons/Polygon.svg" alt="polygon" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="self-stretch  px-[8.43px] py-[16.86px] rounded-[27.15px] justify-center items-center inline-flex">
+                    <div className=" justify-center items-center flex">
+                      <div className="text-center text-neutral-50 text-opacity-90 text-xl  font-light font-['Neue Haas Grotesk Display Pro'] leading-[30.23px] tracking-wide">#10 EVOL Fanny</div>
+                    </div>
+                  </div>
+                </div>
+                <div onClick={() => callWriteContract()} className="w-2/3 mt-6 h-[44px] cursor-pointer bg-gradient-to-r from-violet-400 to-indigo-500 rounded-[78px] backdrop-blur-[20px] justify-center items-center inline-flex">
+                  <div className="justify-center items-center flex">
+                    <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Mint</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-1 col-span-2">
+              <div className="w-full mt-3 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
+                <div className="self-stretch py-0 justify-center items-center gap-4 inline-flex">
+                  <div className="text-neutral-50 mt-1 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Send Token</div>
+                </div>
+                <div className="w-full -mt-2 text-white text-opacity-40 text-sm mb-3 font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Transfer token to any wallet. To test this, you can transfer your Polygon Testnet token to a different existing address.</div>
                 <div className="self-stretch flex-col mb-5 justify-center items-center gap-4 flex">
                   <div className="self-stretch h-12 justify-start items-center gap-5 inline-flex">
                     <div className="grow shrink basis-0 self-stretch px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 flex">
@@ -484,7 +486,7 @@ const Home = () => {
                     if (recepientAddress.length > 0) {
                       sendTransaction()
                     }
-                  }} className={`w-1/2 h-[34px] cursor-${recepientAddress.length > 0 ? "pointer" : "not-allowed"} hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex`}>
+                  }} className={`cursor-${recepientAddress.length > 0 ? "pointer" : "not-allowed"} w-2/3 mt-6 h-[44px] bg-gradient-to-r from-${recepientAddress.length > 0 ? "violet-400" : "gray-100"} to-indigo-500 rounded-[78px] backdrop-blur-[20px] text-white justify-center items-center inline-flex`}>
                     <div className="justify-center items-center flex">
                       <div className={`text-center text-${recepientAddress.length > 0 ? "white" : "gray-400"} text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight`}>Send</div>
                     </div>
@@ -621,11 +623,11 @@ const Home = () => {
             </div> :
 
             <div className="mx-4 mt-3">
-              <div className="w-full h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
+              <div className="w-full  px-5 py-0 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
                 {success === false ? <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
-                  <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience the ease of</div>
-                  <div className="text-neutral-50 text-[56px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide flex justify-center w-full items-center text-center">Web3 Wallet</div>
-                  <div onClick={() => fundTriaWallet()} className="w-1/2 mt-6 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                  <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight mt-5">Experience Tria's Personalised</div>
+                  <div className="text-neutral-50 text-5xl font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide text-center">Embedded Wallet</div>
+                  <div onClick={() => fundTriaWallet()} className="w-1/2 mt-3 mb-10 h-[44px] cursor-pointer bg-gradient-to-r from-violet-400 to-indigo-500 rounded-[78px] backdrop-blur-[20px] justify-center items-center inline-flex">
                     <div className="justify-center items-center flex">
 
                       <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">
@@ -647,8 +649,8 @@ const Home = () => {
                       <div className="self-stretch text-center mt-10"><span className="text-neutral-50 text-[22px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide">0.001 MATIC</span><span className="text-neutral-50 text-[22px] font-normal font-['Neue Haas Grotesk Display Pro'] leading-relaxed tracking-wide"> has been sent to your wallet </span></div>
                       <div className="self-stretch text-center text-neutral-50 text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">{logged_user}</div>
                     </div>
-                    <div className="w-full flex justify-center mt-16">
-                      <div onClick={() => window.open(`https://mumbai.polygonscan.com/address/${userWalletAddress}`, "_blank")} className="w-[55%] h-[44px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                    <div className="w-full flex justify-center mt-10">
+                      <div onClick={() => window.open(`https://mumbai.polygonscan.com/address/${userWalletAddress}`, "_blank")} className="w-1/2 mt-3 mb-10 h-[44px] cursor-pointer bg-gradient-to-r from-violet-400 to-indigo-500 rounded-[78px] backdrop-blur-[20px] justify-center items-center inline-flex">
                         <div className="justify-center items-center flex">
                           <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">View Details</div>
                         </div>
@@ -689,10 +691,11 @@ const Home = () => {
                 </div>
               </div> : null}
 
-              <div className="w-full mt-3 h-1/2 mb-3 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
-                <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
-                  <div className="text-neutral-50 text-lg mt-3 font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Send Token</div>
+              <div className="w-full mt-3 mb-3 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
+                <div className="self-stretch py-0 justify-center items-center gap-4 inline-flex">
+                  <div className="text-neutral-50 mt-1 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Send Token</div>
                 </div>
+                <div className="w-full -mt-2 text-white text-opacity-40 text-sm mb-3 font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Transfer token to any wallet. To test this, you can transfer your Polygon Testnet token to a different existing address.</div>
                 <div className="self-stretch flex-col mb-5 justify-center items-center gap-4 flex">
                   <div className="self-stretch h-12 justify-start items-center gap-5 inline-flex">
                     <div className="grow shrink basis-0 self-stretch px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 flex">
@@ -724,7 +727,7 @@ const Home = () => {
                     if (recepientAddress.length > 0) {
                       sendTransaction()
                     }
-                  }} className={`w-1/2 h-[34px] cursor-${recepientAddress.length > 0 ? "pointer" : "not-allowed"} hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex`}>
+                  }} className={`cursor-${recepientAddress.length > 0 ? "pointer" : "not-allowed"} w-2/3 mt-6 h-[44px] bg-gradient-to-r from-violet-400 to-indigo-500 rounded-[78px] backdrop-blur-[20px] text-white justify-center items-center inline-flex`}>
                     <div className="justify-center items-center flex">
                       <div className={`text-center text-${recepientAddress.length > 0 ? "white" : "gray-400"} text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight`}>Send</div>
                     </div>
@@ -732,13 +735,15 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="w-full h-full px-5 mb-3 pt-4 pb-6 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
-                <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
+              <div className="w-full mb-3 px-5 pt-4 pb-6 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
+                <div className="py-2 justify-center items-center gap-4 inline-flex">
                   <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Mint NFT</div>
                 </div>
-                <div className="p-[10.08px] rounded-[16.97px] flex-col justify-center items-center flex">
-                  <div className="w-full h-[250.90px] relative">
-                    <img className="left-0 top-0 absolute rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmQmQjGwUJLbj5GZXv8RgHCKSxX5noFZP9M2dLuwnKZyGF/Beer.jpg" alt="nft_image" />
+                <div className="w-full text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">This is an example on Polygon Testnet. Tria supports 100+ blockchains. Speak with the team to discuss more.</div>
+                <div className="w-full mt-4 mb-5"><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Supported NFTs:<br/></span><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">ERC 721<br/>ERC 1155<br/>ERC 6551</span></div>
+                <div className="rounded-[16.97px] flex-col justify-center items-center flex">
+                  <div className="w-[100%] relative">
+                    <img className="h-auto max-w-full rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmQmQjGwUJLbj5GZXv8RgHCKSxX5noFZP9M2dLuwnKZyGF/Beer.jpg" alt="nft_image" />
                     <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
                       <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
                         <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
@@ -746,28 +751,29 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="self-stretch px-[8.43px] py-[16.86px] rounded-[27.15px] justify-center items-center inline-flex">
-                    <div className="h-[30px] justify-center items-center flex">
-                      <div className="text-center text-neutral-50 text-opacity-90 text-2xl font-light font-['Neue Haas Grotesk Display Pro'] leading-[30.23px] tracking-wide">#10 EVOL Fanny</div>
+                  <div className="self-stretch  px-[8.43px] py-[16.86px] rounded-[27.15px] justify-center items-center inline-flex">
+                    <div className=" justify-center items-center flex">
+                      <div className="text-center text-neutral-50 text-opacity-90 text-xl  font-light font-['Neue Haas Grotesk Display Pro'] leading-[30.23px] tracking-wide">#10 EVOL Fanny</div>
                     </div>
                   </div>
                 </div>
-                <div onClick={() => callWriteContract()} className="w-3/4 h-[54px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                <div onClick={() => callWriteContract()} className="w-2/3 mt-6 h-[44px] cursor-pointer bg-gradient-to-r from-violet-400 to-indigo-500 rounded-[78px] backdrop-blur-[20px] justify-center items-center inline-flex">
                   <div className="justify-center items-center flex">
                     <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Mint</div>
                   </div>
                 </div>
               </div>
-              <div className="w-full mt-0 h-72 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
-                <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex mt-5">
+              <div className="w-full mt-3 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-1 inline-flex">
+                <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
                   <div className="text-neutral-50 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Terms & Conditions</div>
                 </div>
                 <div className="self-stretch grow shrink basis-0 px-5 py-3 rounded-[78px] justify-start items-center inline-flex">
                   <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
-                    <div className="grow shrink basis-0 text-white text-opacity-40 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">By approving the sign request, you agree with our <a target="_blank" href="https://www.notion.so/triahq/Tria-Beta-Terms-of-Use-1d7dfaf5a58f4038beecd1a67f963425?pvs=4">Terms & Conditions</a>. See firsthand how our T&C redefine the user experience.</div>
+                    {/* <div className="grow shrink basis-0 text-white text-opacity-40 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">By approving the sign request, you agree with our <a target="_blank" href="https://www.notion.so/triahq/Tria-Beta-Terms-of-Use-1d7dfaf5a58f4038beecd1a67f963425?pvs=4">Terms & Conditions</a>. See firsthand how our T&C redefine the user experience.</div> */}
+                    <div className="grow shrink basis-0 text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">This is a sample message for you to check how the sign message will be displayed in the embedded wallet.</div>
                   </div>
                 </div>
-                <div onClick={() => callSign()} className="w-[35%] h-[54px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
+                <div onClick={() => callSign()} className="w-1/3 mt-6 h-[44px] cursor-pointer bg-gradient-to-r from-violet-400 to-indigo-500 rounded-[78px] backdrop-blur-[20px] justify-center items-center inline-flex">
                   <div className="justify-center items-center flex">
                     <div className="text-center text-white text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Sign</div>
                   </div>
