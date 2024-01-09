@@ -1,6 +1,18 @@
 import Application from "@tria-sdk/authenticate";
+import { useEffect, useState } from "react";
 
-const TriaLogin = () => {
+const TriaLogin = ({ walletColor, reloadFlag }) => {
+
+    const [loadAgain, setloadAgain] = useState(false)
+
+    useEffect(() => {
+        setloadAgain(true)
+        setTimeout(() => {
+            setloadAgain(false)
+        }, 10)
+    }, [reloadFlag]);
+
+
     return (
         <div
             style={{
@@ -13,17 +25,17 @@ const TriaLogin = () => {
                 width: 0,
             }}
         >
-            <Application
+            {!loadAgain ? <Application
                 dappName={"Tria Demo"}
                 logo={"https://svgshare.com/i/10zF.svg"}
                 dappDomain={window.parent.origin}
-                primaryColor="#9A86FF"
+                primaryColor={walletColor}
                 defaultChain="MUMBAI"
                 supportedChains={["MUMBAI", "POLYGON"]}
                 uiType="yes"
                 buttonPosition={{ x: 200, y: 200 }}
                 darkMode={true}
-            />
+            /> : null}
         </div>
     );
 };

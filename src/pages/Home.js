@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "@tria-sdk/authenticate/dist/index.css";
 import {
   // encrypt,
@@ -13,6 +13,7 @@ import {
 } from "@tria-sdk/connect";
 import axios from "axios"
 import ReactGA from 'react-ga';
+import Context from "../Context";
 //import { useDisconnect } from "wagmi";
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
   const [userWalletAddress, setUserWalletAddress] = useState("")
   const [loader, setLoader] = useState(false)
   const [success, setSuccess] = useState(false)
+  const { setWalletColor, walletColor, setReloadFlag, reloadFlag } = useContext(Context)
   const [contractDetails, setContractDetails] = useState({
     contractAddress: '0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91',
     abi: [
@@ -397,6 +399,37 @@ const Home = () => {
                     </div>
                   </div>}
               </div>
+              {localStorage.getItem("wagmi.connected") === null ? <div className="w-full mt-3  p-4 bg-zinc-500 bg-opacity-10 rounded-[22px] flex-col justify-start items-start gap-5 inline-flex">
+                <div className="self-stretch  py-3 flex-col justify-center items-start flex">
+                  <div className="self-stretch flex-col justify-center items-start gap-2 flex">
+                    <div className="px-2 justify-center items-center inline-flex">
+                      <div className="text-center text-white text-opacity-40 text-base font-medium font-['Neue Haas Grotesk Display Pro'] uppercase leading-tight tracking-tight">Customizations</div>
+                    </div>
+                    <div className="self-stretch justify-start items-center gap-5 inline-flex">
+                      <div className="grow shrink basis-0 h-[75px] px-5 py-4 rounded-xl justify-start items-center gap-4 flex">
+                        <div className="grow shrink basis-0 flex-col justify-center items-start gap-1 inline-flex">
+                          <div className="self-stretch text-neutral-50 text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Wallet color card</div>
+                          <div className="self-stretch text-neutral-50 text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-[16.80px] tracking-tight">Choose your card color</div>
+                        </div>
+                      </div>
+                      <div className="rounded-[29.40px] justify-center items-center gap-[14.40px] flex">
+                        <div onClick={() => { setWalletColor("#0F52BA"); setReloadFlag(!reloadFlag); }} className={walletColor === "#0F52BA" ? "p-[9.60px] cursor-pointer border rounded-[34.80px] justify-center items-center flex" : "p-[9.60px] cursor-pointer rounded-[34.80px] justify-center items-center flex"}>
+                          <div className="w-[19.20px] h-[19.20px] bg-blue-800 rounded-xl" />
+                        </div>
+                        <div onClick={() => { setWalletColor("#FFA800"); setReloadFlag(!reloadFlag); }} className={walletColor === "#FFA800" ? "p-[9.60px] border cursor-pointer rounded-[34.80px] justify-center items-center flex" : "p-[9.60px] cursor-pointer rounded-[34.80px] justify-center items-center flex"}>
+                          <div className="w-[19.20px] h-[19.20px] bg-amber-500 rounded-xl" />
+                        </div>
+                        <div onClick={() => { setWalletColor("#B43757"); setReloadFlag(!reloadFlag); }} className={walletColor === "#B43757" ? "p-[9.60px] border cursor-pointer rounded-[34.80px] justify-center items-center flex" : "p-[9.60px] cursor-pointer rounded-[34.80px] justify-center items-center flex"}>
+                          <div className="w-[19.20px] h-[19.20px] bg-pink-700 rounded-xl" />
+                        </div>
+                        <div onClick={() => { setWalletColor("#51C878"); setReloadFlag(!reloadFlag); }} className={walletColor === "#51C878" ? "p-[9.60px] border cursor-pointer rounded-[34.80px] justify-center items-center flex" : "p-[9.60px] cursor-pointer rounded-[34.80px] justify-center items-center flex"}>
+                          <div className="w-[19.20px] h-[19.20px] bg-green-400 rounded-xl" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> : null}
               <div className="w-full mt-3 h-64 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
                 <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
                   <div className="text-neutral-50 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Terms & Conditions</div>
@@ -591,7 +624,7 @@ const Home = () => {
               <div className="w-full h-1/2 px-5 py-4 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
                 {success === false ? <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
                   <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience the ease of</div>
-                  <div className="text-neutral-50 text-[56px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Web3 Wallet</div>
+                  <div className="text-neutral-50 text-[56px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide flex justify-center w-full items-center text-center">Web3 Wallet</div>
                   <div onClick={() => fundTriaWallet()} className="w-1/2 mt-6 h-[34px] cursor-pointer hover:bg-neutral-700 hover:transition duration-300 p-5 bg-neutral-800 rounded-[78px] justify-center items-center inline-flex">
                     <div className="justify-center items-center flex">
 
@@ -623,6 +656,38 @@ const Home = () => {
                     </div>
                   </div>}
               </div>
+
+              {localStorage.getItem("wagmi.connected") === null ? <div className="w-full mt-3  p-4 bg-zinc-500 bg-opacity-10 rounded-[22px] flex-col justify-start items-start gap-5 inline-flex">
+                <div className="self-stretch  py-3 flex-col justify-center items-start flex">
+                  <div className="self-stretch flex-col justify-center items-start gap-2 flex">
+                    <div className="px-2 justify-center items-center inline-flex">
+                      <div className="text-center text-white text-opacity-40 text-base font-medium font-['Neue Haas Grotesk Display Pro'] uppercase leading-tight tracking-tight">Customizations</div>
+                    </div>
+                    <div className="self-stretch justify-start items-center ">
+                      <div className="grow shrink basis-0 h-[75px] px-5 py-4 rounded-xl justify-start items-center gap-4 flex">
+                        <div className="grow shrink basis-0 flex-col justify-center items-start gap-1 inline-flex">
+                          <div className="self-stretch text-neutral-50 text-lg font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Wallet color card</div>
+                          <div className="self-stretch text-neutral-50 text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-[16.80px] tracking-tight">Choose your card color</div>
+                        </div>
+                      </div>
+                      <div className="rounded-[29.40px] justify-center items-center gap-[14.40px] flex">
+                        <div onClick={() => { setWalletColor("#0F52BA"); setReloadFlag(!reloadFlag); }} className={walletColor === "#0F52BA" ? "p-[9.60px] cursor-pointer border rounded-[34.80px] justify-center items-center flex" : "p-[9.60px] cursor-pointer rounded-[34.80px] justify-center items-center flex"}>
+                          <div className="w-[19.20px] h-[19.20px] bg-blue-800 rounded-xl" />
+                        </div>
+                        <div onClick={() => { setWalletColor("#FFA800"); setReloadFlag(!reloadFlag); }} className={walletColor === "#FFA800" ? "p-[9.60px] border cursor-pointer rounded-[34.80px] justify-center items-center flex" : "p-[9.60px] cursor-pointer rounded-[34.80px] justify-center items-center flex"}>
+                          <div className="w-[19.20px] h-[19.20px] bg-amber-500 rounded-xl" />
+                        </div>
+                        <div onClick={() => { setWalletColor("#B43757"); setReloadFlag(!reloadFlag); }} className={walletColor === "#B43757" ? "p-[9.60px] border cursor-pointer rounded-[34.80px] justify-center items-center flex" : "p-[9.60px] cursor-pointer rounded-[34.80px] justify-center items-center flex"}>
+                          <div className="w-[19.20px] h-[19.20px] bg-pink-700 rounded-xl" />
+                        </div>
+                        <div onClick={() => { setWalletColor("#51C878"); setReloadFlag(!reloadFlag); }} className={walletColor === "#51C878" ? "p-[9.60px] border cursor-pointer rounded-[34.80px] justify-center items-center flex" : "p-[9.60px] cursor-pointer rounded-[34.80px] justify-center items-center flex"}>
+                          <div className="w-[19.20px] h-[19.20px] bg-green-400 rounded-xl" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> : null}
 
               <div className="w-full mt-3 h-1/2 mb-3 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-start gap-5 inline-flex">
                 <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
