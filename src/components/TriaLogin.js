@@ -19,7 +19,6 @@ const TriaLogin = ({ walletColor, reloadFlag }) => {
                 position: 'fixed',
                 top: 0,
                 left: 0,
-                // left: 0,
                 zIndex: 89, // can update this to 9999 as well
                 height: 0,
                 width: 0,
