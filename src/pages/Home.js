@@ -301,7 +301,7 @@ const Home = () => {
         <img style={{ zIndex: 0 }} className="w-full h-full absolute" src="/icons/528.png" />
 
         {/* Navbar */}
-        <div style={{ zIndex: 9999 }} className={windowSize.innerWidth > 400 ? "relative w-full h-[82px] pl-[63px] pr-20 py-[9px] bg-zinc-500 bg-opacity-10 justify-start items-center justify-between inline-flex" : "w-full relative h-[82px] pl-8 pr-4 py-[9px] bg-zinc-500 bg-opacity-10 justify-start items-center justify-between inline-flex"}>
+        <div className={windowSize.innerWidth > 400 ? "relative w-full h-[82px] pl-[63px] pr-20 py-[9px] bg-zinc-500 bg-opacity-10 justify-start items-center justify-between inline-flex" : "w-full relative h-[82px] pl-8 pr-4 py-[9px] bg-zinc-500 bg-opacity-10 justify-start items-center justify-between inline-flex"}>
           <div className=" rounded-xl justify-center items-center gap-2 inline-flex">
             <div className="w-10 h-10 relative">
               <img src="/icons/sky.svg" alt="sky_icon" />
@@ -328,7 +328,7 @@ const Home = () => {
 
         {windowSize.innerWidth > 1200 ?
           <div className={windowSize.innerWidth > 2000 ? "w-[70vw] grid grid-cols-11 gap-5 " : "w-[100vw] grid grid-cols-11 gap-5 "}>
-            <div style={{ zIndex: 9999 }} className="col-span-4 mt-4 ml-10 h-full ">
+            <div className="col-span-4 mt-4 ml-10 h-full ">
               <div className="w-full h-[35%] px-5 py-0 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
                 {success === false ? <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
                   <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight mt-7">Experience Tria's Personalised</div>
