@@ -6,17 +6,17 @@
 body{
     background-color: black;
 }
-.set_img{
+/* .set_img{
     background-image: url("/public/icons/528.png");
     height: 100%;
     width: 100%;
-}
+} */
 
-@media only screen and (min-width: 1740px) {
+/* @media only screen and (min-width: 1740px) {
     .set_img{
        background-image: none;
     }
-  }
+  } */
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

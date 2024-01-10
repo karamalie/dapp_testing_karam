@@ -278,7 +278,8 @@ const Home = () => {
 
   return (
     <>
-      <div className="w-full h-screen set_img">
+      <div className="w-full h-screen ">
+        {/* <img className="w-full h-full absolute" src="/icons/528.png" /> */}
         {/* Topbar */}
         <div className="w-full h-20 px-10 py-4 bg-neutral-900 border-b border-stone-950 justify-start items-center gap-4 inline-flex">
           <div className="grow shrink basis-0 h-12 justify-between items-center flex">
@@ -306,8 +307,10 @@ const Home = () => {
             </div>}
           </div>
         </div>
+        <img style={{ zIndex: 0 }}  className="w-full h-full absolute" src="/icons/528.png" />
+       
         {/* Navbar */}
-        <div className={windowSize.innerWidth > 400 ? "w-full h-[82px] pl-[63px] pr-20 py-[9px] bg-zinc-500 bg-opacity-10 justify-start items-center justify-between inline-flex" : "w-full h-[82px] pl-8 pr-4 py-[9px] bg-zinc-500 bg-opacity-10 justify-start items-center justify-between inline-flex"}>
+        <div style={{ zIndex: 9999 }}  className={windowSize.innerWidth > 400 ? "relative w-full h-[82px] pl-[63px] pr-20 py-[9px] bg-zinc-500 bg-opacity-10 justify-start items-center justify-between inline-flex" : "w-full relative h-[82px] pl-8 pr-4 py-[9px] bg-zinc-500 bg-opacity-10 justify-start items-center justify-between inline-flex"}>
           <div className=" rounded-xl justify-center items-center gap-2 inline-flex">
             <div className="w-10 h-10 relative">
               <img src="/icons/sky.svg" alt="sky_icon" />
@@ -331,15 +334,16 @@ const Home = () => {
         </div>
 
         {/* Lower Functional Grid */}
+        
 
-        {windowSize.innerWidth > 1000 ?
+        {windowSize.innerWidth > 1080 ?
           <div className="w-full grid grid-cols-10 gap-5">
-            <div className="col-span-4 mt-4 ml-10">
-              <div className="w-full  px-5 py-0 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
+            <div style={{zIndex:9999}} className="col-span-4 mt-4 ml-10 h-full">
+              <div className="w-full h-[35%] px-5 py-0 bg-zinc-500 bg-opacity-5 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-5 inline-flex">
                 {success === false ? <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
                   <div className="text-neutral-50 text-xl font-normal font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight mt-5">Experience Tria's Personalised</div>
                   <div className="text-neutral-50 text-5xl font-medium font-['Neue Haas Grotesk Display Pro'] leading-[67.20px] tracking-wide">Embedded Wallet</div>
-                  <div onClick={() => fundTriaWallet()} className="w-1/3 mt-3 mb-10 h-[44px] cursor-pointer bg-gradient-to-r from-violet-400 to-indigo-500 rounded-[78px] backdrop-blur-[20px] justify-center items-center inline-flex">
+                  <div onClick={() => fundTriaWallet()} className="w-1/2 mt-3 mb-10 h-[44px] cursor-pointer bg-gradient-to-r from-violet-400 to-indigo-500 rounded-[78px] backdrop-blur-[20px] justify-center items-center inline-flex">
                     <div className="justify-center items-center flex">
 
                       <div className="text-center text-white text-lg  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">
@@ -370,7 +374,7 @@ const Home = () => {
                     </div>
                   </div>}
               </div>
-              {localStorage.getItem("wagmi.connected") === null ? <div className="w-full mt-3  p-4 bg-zinc-500 bg-opacity-10 rounded-[22px] flex-col justify-start items-start gap-5 inline-flex">
+              {localStorage.getItem("wagmi.connected") === null ? <div className="w-full mt-3 relative h-[26%] p-4 bg-zinc-500 bg-opacity-10 rounded-[22px] flex-col justify-start items-start gap-5 inline-flex">
                 <div className="self-stretch  py-3 flex-col justify-center items-start flex">
                   <div className="self-stretch flex-col justify-center items-start gap-2 flex">
                     <div className="px-2 justify-center items-center inline-flex">
@@ -401,7 +405,7 @@ const Home = () => {
                   </div>
                 </div>
               </div> : null}
-              <div className="w-full mt-3 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-1 inline-flex">
+              <div className="w-full h-[32%] mt-3 px-5 py-4 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-center items-center gap-1 inline-flex">
                 <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
                   <div className="text-neutral-50 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Terms & Conditions</div>
                 </div>
@@ -419,16 +423,16 @@ const Home = () => {
               </div>
 
             </div>
-            <div className="col-span-2  mt-4">
-              <div className="w-full px-5 pt-4 pb-6 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
+            <div className="col-span-2 h-full mt-4">
+              <div className="w-full h-[97%] px-5 pt-4 pb-6 bg-zinc-500 bg-opacity-10 rounded-[22px] backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
                 <div className="py-2 justify-center items-center gap-4 inline-flex">
                   <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Mint NFT</div>
                 </div>
                 <div className="w-full text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">This is an example on Polygon Testnet. Tria supports 100+ blockchains. Speak with the team to discuss more.</div>
-                <div className="w-full mt-4 mb-5"><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Supported NFTs:<br/></span><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">ERC 721<br/>ERC 1155<br/>ERC 6551</span></div>
+                <div className="w-full mt-4 mb-5"><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Supported NFTs:<br /></span><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">ERC 721<br />ERC 1155<br />ERC 6551</span></div>
                 <div className="rounded-[16.97px] flex-col justify-center items-center flex">
                   <div className="w-[100%] relative">
-                    <img className="h-auto max-w-full rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmQmQjGwUJLbj5GZXv8RgHCKSxX5noFZP9M2dLuwnKZyGF/Beer.jpg" alt="nft_image" />
+                    <img className="h-auto max-w-[200px] rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmQmQjGwUJLbj5GZXv8RgHCKSxX5noFZP9M2dLuwnKZyGF/Beer.jpg" alt="nft_image" />
                     <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
                       <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
                         <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
@@ -659,7 +663,7 @@ const Home = () => {
                   </div>}
               </div>
 
-              {localStorage.getItem("wagmi.connected") === null ? <div className="w-full mt-3  p-4 bg-zinc-500 bg-opacity-10 rounded-[22px] flex-col justify-start items-start gap-5 inline-flex">
+              {localStorage.getItem("wagmi.connected") === null ? <div className="w-full mt-3 relative p-4 bg-zinc-500 bg-opacity-10 rounded-[22px] flex-col justify-start items-start gap-5 inline-flex">
                 <div className="self-stretch  py-3 flex-col justify-center items-start flex">
                   <div className="self-stretch flex-col justify-center items-start gap-2 flex">
                     <div className="px-2 justify-center items-center inline-flex">
@@ -740,10 +744,10 @@ const Home = () => {
                   <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Mint NFT</div>
                 </div>
                 <div className="w-full text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">This is an example on Polygon Testnet. Tria supports 100+ blockchains. Speak with the team to discuss more.</div>
-                <div className="w-full mt-4 mb-5"><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Supported NFTs:<br/></span><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">ERC 721<br/>ERC 1155<br/>ERC 6551</span></div>
+                <div className="w-full mt-4 mb-5"><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Supported NFTs:<br /></span><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">ERC 721<br />ERC 1155<br />ERC 6551</span></div>
                 <div className="rounded-[16.97px] flex-col justify-center items-center flex">
                   <div className="w-[100%] relative">
-                    <img className="h-auto max-w-full rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmQmQjGwUJLbj5GZXv8RgHCKSxX5noFZP9M2dLuwnKZyGF/Beer.jpg" alt="nft_image" />
+                    <img className="h-auto max-w-[200px] rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmQmQjGwUJLbj5GZXv8RgHCKSxX5noFZP9M2dLuwnKZyGF/Beer.jpg" alt="nft_image" />
                     <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
                       <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
                         <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
