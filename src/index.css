@@ -8,6 +8,12 @@ body{
     overflow: hidden;
 }
 
+@media only screen and (max-width: 1200px) {
+  body {
+   overflow-y: scroll;
+  }
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
