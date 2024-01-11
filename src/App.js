@@ -57,11 +57,14 @@ function App() {
     setReloadFlag
   }
 
+  const orCondition = !localStorage.getItem('tria.wallet.store') || localStorage.getItem("wagmi.connected")
+  console.log("orCond", orCondition)
+
 
   return (
     <>
       <Context.Provider value={obj}>
-        {windowSize.innerWidth < 450 && (!localStorage.getItem('tria.wallet.store') || localStorage.getItem("wagmi.connected")) ? <div style={{ zIndex: 88 }} className="h-screen w-full absolute bg-stone-800 bg-opacity-60"></div> : null}
+        {windowSize.innerWidth < 450 && (!localStorage.getItem('tria.wallet.store') && !localStorage.getItem("wagmi.connected")) ? <div style={{ zIndex: 88 }} className="h-screen w-full absolute bg-stone-800 bg-opacity-60"></div> : null}
         <div className="bg-black h-[100vh] w-[100vw]">
           {localStorage.getItem('tria.wallet.store') === null && localStorage.getItem("wagmi.connected") === null ? <div className="w-full h-20 px-10 py-4 bg-neutral-900 border-b border-stone-950 justify-start items-center gap-4 inline-flex">
             <div className="grow shrink basis-0 h-12 justify-between items-center flex">
