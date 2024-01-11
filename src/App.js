@@ -57,10 +57,6 @@ function App() {
     setReloadFlag
   }
 
-  const orCondition = !localStorage.getItem('tria.wallet.store') || localStorage.getItem("wagmi.connected")
-  console.log("orCond", orCondition)
-
-
   return (
     <>
       <Context.Provider value={obj}>

@@ -19,14 +19,14 @@ const TriaLogin = ({ walletColor, reloadFlag }) => {
                 position: 'fixed',
                 top: 0,
                 left: 0,
-                zIndex: 89, // can update this to 9999 as well
+                zIndex: 999, // can update this to 9999 as well
                 height: 0,
                 width: 0,
             }}
         >
             {!loadAgain ? <Application
                 dappName={"Tria Demo"}
-                logo={"https://svgshare.com/i/10zF.svg"}
+                logo={"https://svgshare.com/i/11sN.svg"}
                 dappDomain={window.parent.origin}
                 primaryColor={walletColor}
                 defaultChain="MUMBAI"

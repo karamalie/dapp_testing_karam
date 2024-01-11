@@ -304,7 +304,7 @@ const Home = () => {
                 <div className="text-center text-violet-400 text-base font-normal font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Demo</div>
               </div>
             </div>
-            {windowSize.innerWidth > 400 && <div className="bg-neutral-800 rounded-[49px] border-2 border-neutral-800 justify-center items-center flex">
+            {/* {windowSize.innerWidth > 400 && <div className="bg-neutral-800 rounded-[49px] border-2 border-neutral-800 justify-center items-center flex">
               <div className="px-6 py-3 bg-neutral-700 rounded-[58px] justify-center items-center flex">
                 <div className="justify-center items-center flex">
                   <div className="text-center text-neutral-50 text-sm font-semibold font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Web3 App</div>
@@ -315,7 +315,7 @@ const Home = () => {
                   <div className="text-center text-neutral-50 text-sm text-opacity-60 font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Testing</div>
                 </div>
               </div>
-            </div>}
+            </div>} */}
           </div>
         </div>
         <img style={{ zIndex: 0 }} className="w-full h-full absolute" src="/icons/528.png" />
