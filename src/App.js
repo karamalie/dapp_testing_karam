@@ -25,6 +25,25 @@ function App() {
 
   const { account } = useAccount()
 
+  function getWindowSize() {
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
+  }
+
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
   // console.log(account);
 
   useEffect(() => {
@@ -42,6 +61,7 @@ function App() {
   return (
     <>
       <Context.Provider value={obj}>
+        {windowSize.innerWidth < 450 ? <div style={{ zIndex: 88 }} className="h-full w-full absolute bg-stone-800 bg-opacity-60"></div> : null}
         <div className="bg-black h-[100vh] w-[100vw]">
           {localStorage.getItem('tria.wallet.store') === null && localStorage.getItem("wagmi.connected") === null ? <div className="w-full h-20 px-10 py-4 bg-neutral-900 border-b border-stone-950 justify-start items-center gap-4 inline-flex">
             <div className="grow shrink basis-0 h-12 justify-between items-center flex">
@@ -58,6 +78,7 @@ function App() {
             </div>
           </div> : null}
           <TriaConnectProvider />
+
           {localStorage.getItem('tria.wallet.store') || localStorage.getItem("wagmi.connected") ? <Home /> : null}
           <TriaLogin walletColor={walletColor} reloadFlag={reloadFlag} />
         </div>
