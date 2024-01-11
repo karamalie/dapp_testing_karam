@@ -9,7 +9,8 @@ import {
   useContractRead,
   writeContract,
   disconnect,
-  getAccount
+  getAccount,
+  readContract
 } from "@tria-sdk/connect";
 import axios from "axios"
 import ReactGA from 'react-ga';
@@ -48,6 +49,8 @@ const Home = () => {
   const [chainName, setChainName] = useState("MUMBAI");
   const [tokenAddress, setTokenAddress] = useState("");
 
+  const [nftData, setNftData] = useState({})
+
 
 
   //const { disconnect } = useDisconnect()
@@ -57,11 +60,28 @@ const Home = () => {
     console.log(item);
     ReactGA.pageview("/dashboard");
     getUserWallet()
+    callReadContract()
   }, []);
 
   const getUserWallet = async () => {
     const user = await getAccount();
     setUserWalletAddress(user.evm.address)
+  }
+
+  const callReadContract = async () => {
+    const tokenId = "1"
+    const readContractRes = await readContract({
+      chainName: "MUMBAI", contractDetails: {
+        contractAddress: "0x9f5033463b31D213462Ce03A81610364aa80Ba14",
+        abi: [{ "inputs": [{ "internalType": "uint256", "name": "tokenId", "type": "uint256" }], "name": "uri", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }],
+        functionName: "uri",
+        args: [tokenId],
+      }
+    })
+    console.log("resContract", readContractRes)
+    const readJson = await axios.get(readContractRes)
+    console.log("jsonresponse --> ", readJson?.data)
+    setNftData(readJson?.data)
   }
 
   console.log("data------------------>", {
@@ -421,17 +441,17 @@ const Home = () => {
                 <div className="w-full mt-4 mb-5"><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Supported NFTs:<br /></span><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">ERC 721<br />ERC 1155<br />ERC 6551</span></div>
                 <div className="rounded-[16.97px] flex-col justify-center items-center flex">
                   <div className="w-[100%] relative">
-                    <img className="h-auto max-w-[200px] rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmQmQjGwUJLbj5GZXv8RgHCKSxX5noFZP9M2dLuwnKZyGF/Beer.jpg" alt="nft_image" />
-                    <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
-                      <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
-                        <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
+                    <img className="h-auto max-w-[200px] rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmTntuKccRaU7vedr6AU7pPdEJoCQ9KhwwKt5ZaLZ4a5N3" alt="nft_image" />
+                    <div className="w-[65.49px] h-[65.49px] p-[10.59px] left-[0px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
+                      <div className="w-[30.30px] h-[30.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
+                        <div className="w-[20.51px] h-[20.51px] relative flex-col justify-start items-start flex" />
                         <img src="/icons/Polygon.svg" alt="polygon" />
                       </div>
                     </div>
                   </div>
                   <div className="self-stretch  px-[8.43px] py-[16.86px] rounded-[27.15px] justify-center items-center inline-flex">
                     <div className=" justify-center items-center flex">
-                      <div className="text-center text-neutral-50 text-opacity-90 text-xl  font-light font-['Neue Haas Grotesk Display Pro'] leading-[30.23px] tracking-wide">#10 EVOL Fanny</div>
+                      <div className="text-center text-neutral-50 text-opacity-90 text-xl  font-light font-['Neue Haas Grotesk Display Pro'] leading-[30.23px] tracking-wide">Concept #1</div>
                     </div>
                   </div>
                 </div>
@@ -610,17 +630,17 @@ const Home = () => {
               <div className="w-full mt-4 mb-5"><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Supported NFTs:<br /></span><span className="text-white text-opacity-40 text-sm font-base font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">ERC 721<br />ERC 1155<br />ERC 6551</span></div>
               <div className="rounded-[16.97px] flex-col justify-center items-center flex">
                 <div className="w-[100%] relative">
-                  <img className="h-auto max-w-[200px] rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmQmQjGwUJLbj5GZXv8RgHCKSxX5noFZP9M2dLuwnKZyGF/Beer.jpg" alt="nft_image" />
-                  <div className="w-[65.49px] h-[65.49px] p-[12.59px] left-[0.13px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
-                    <div className="w-[40.30px] h-[40.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
-                      <div className="w-[28.51px] h-[28.51px] relative flex-col justify-start items-start flex" />
+                  <img className="h-auto max-w-[200px] rounded-[22.48px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmTntuKccRaU7vedr6AU7pPdEJoCQ9KhwwKt5ZaLZ4a5N3" alt="nft_image" />
+                  <div className="w-[65.49px] h-[65.49px] p-[10.59px] left-[0px] top-[-0px] absolute justify-center items-center gap-[13.57px] inline-flex">
+                    <div className="w-[30.30px] h-[30.30px] pl-[5.89px] pr-[5.90px] pt-[5.75px] pb-1.5 bg-gradient-to-br from-stone-950 to-stone-950 rounded-[34.66px] backdrop-blur-[5.04px] justify-center items-center inline-flex">
+                      <div className="w-[20.51px] h-[20.51px] relative flex-col justify-start items-start flex" />
                       <img src="/icons/Polygon.svg" alt="polygon" />
                     </div>
                   </div>
                 </div>
                 <div className="self-stretch  px-[8.43px] py-[16.86px] rounded-[27.15px] justify-center items-center inline-flex">
                   <div className=" justify-center items-center flex">
-                    <div className="text-center text-neutral-50 text-opacity-90 text-xl  font-light font-['Neue Haas Grotesk Display Pro'] leading-[30.23px] tracking-wide">#10 EVOL Fanny</div>
+                    <div className="text-center text-neutral-50 text-opacity-90 text-xl  font-light font-['Neue Haas Grotesk Display Pro'] leading-[30.23px] tracking-wide">Concept #1</div>
                   </div>
                 </div>
               </div>
