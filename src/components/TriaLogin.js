@@ -34,6 +34,7 @@ const TriaLogin = ({ walletColor, reloadFlag }) => {
                 uiType="yes"
                 buttonPosition={{ x: 200, y: 200 }}
                 darkMode={true}
+                triaStaging={true}
             /> : null}
         </div>
     );
