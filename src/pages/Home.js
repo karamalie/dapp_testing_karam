@@ -11,7 +11,7 @@ import {
   disconnect,
   getAccount,
   readContract
-} from "@tria-sdk/connect";
+} from "@tria-sdk/connect-staging";
 import axios from "axios"
 import ReactGA from 'react-ga';
 import Context from "../Context";

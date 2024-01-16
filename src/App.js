@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import { useTriaConnector, useDisconnect } from "@tria-sdk/connect";
+import { useTriaConnector, useDisconnect } from "@tria-sdk/connect-staging";
 import { TriaConnectProvider } from "@tria-sdk/authenticate";
 import Application from "@tria-sdk/authenticate";
 import { useEffect, useState } from "react";
