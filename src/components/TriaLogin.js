@@ -32,9 +32,10 @@ const TriaLogin = ({ walletColor, reloadFlag }) => {
                 defaultChain="MUMBAI"
                 supportedChains={["MUMBAI", "POLYGON"]}
                 uiType="yes"
-                buttonPosition={{ x: 200, y: 200 }}
                 darkMode={true}
                 triaStaging={true}
+                buttonPosition={{ x: "5vw", y: "5vh" }}
+                walletButtonDraggable={false}
             /> : null}
         </div>
     );
