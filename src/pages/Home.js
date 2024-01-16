@@ -104,7 +104,7 @@ const Home = () => {
   } = useSignMessage({
     message,
     chainName,
-  });
+  }, undefined, "https://auth-tria.vercel.app");
 
   const { data, sendTransaction } = useSendTransaction({
     amount,
