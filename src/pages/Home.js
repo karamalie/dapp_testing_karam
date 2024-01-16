@@ -139,7 +139,7 @@ const Home = () => {
 
   const { data: contractread } = useContractRead({
     chainName,
-    baseUrl: "https://prod.tria.so",
+    baseUrl: "https://staging.tria.so",
     contractDetails: {
       contractAddress: "0x5927Aa58fb36691A4be262c63955b47b67c6e641",
       abi: [
@@ -183,7 +183,7 @@ const Home = () => {
   }, [])
 
   const getTriaImage = async (item) => {
-    const resp = await fetch(`https://prod.tria.so/api/v2/user/getAvatarByTriaName?triaNames=${item}`, {
+    const resp = await fetch(`https://staging.tria.so/api/v2/user/getAvatarByTriaName?triaNames=${item}`, {
       method: "GET"
     })
     const res = await resp.json()
@@ -195,7 +195,7 @@ const Home = () => {
   const sign_message = "Sign in with Tria"
 
   const callSign = async () => {
-    const data = await signMessage({ sign_message, chainName }, undefined, "https://auth.tria.so")
+    const data = await signMessage({ sign_message, chainName }, undefined, "https://staging.tria.so")
     console.log('function returned data', data)
   }
 
@@ -216,7 +216,7 @@ const Home = () => {
         functionName: 'airdropCoupon',
         args: [1, 1, userAddress.evm.address],
       }
-    }, undefined, "https://auth.tria.so", "wss://prod.tria.so")
+    }, undefined, "https://auth-tria.vercel.app", "wss://staging.tria.so")
     console.log('function returned data', data)
   }
 
@@ -224,7 +224,7 @@ const Home = () => {
 
     const data = await sendTransaction({
       chainName, contractDetails
-    }, undefined, "https://auth.tria.so", "wss://prod.tria.so")
+    }, undefined, "https://auth-tria.vercel.app", "wss://staging.tria.so")
     console.log('function returned data', data)
   }
 
@@ -242,7 +242,7 @@ const Home = () => {
     setLoader(true)
     const userAddress = await getAccount();
     try {
-      const call = await axios.post('https://prod.tria.so/api/v2/wallet/fundWallet', {
+      const call = await axios.post('https://staging.tria.so/api/v2/wallet/fundWallet', {
         walletAddress: userAddress?.evm?.address,
         chainName: "MUMBAI",
         origin: "https://demo-tria.vercel.app"
