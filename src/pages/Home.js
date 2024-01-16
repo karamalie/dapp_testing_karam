@@ -112,7 +112,7 @@ const Home = () => {
     recepientAddress,
     chainName,
     tokenAddress,
-  });
+  },undefined, "https://auth-tria.vercel.app");
 
   const { data: contractwrite, write } = useContractWrite({
     chainName,
@@ -195,7 +195,7 @@ const Home = () => {
   const sign_message = "Sign in with Tria"
 
   const callSign = async () => {
-    const data = await signMessage({ sign_message, chainName }, undefined, "https://staging.tria.so")
+    const data = await signMessage({ sign_message, chainName }, undefined, "https://auth-tria.vercel.app")
     console.log('function returned data', data)
   }
 
