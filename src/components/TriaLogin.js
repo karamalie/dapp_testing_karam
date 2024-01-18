@@ -30,7 +30,7 @@ const TriaLogin = ({ walletColor, reloadFlag }) => {
                 dappDomain={window.parent.origin}
                 primaryColor={walletColor}
                 defaultChain="MUMBAI"
-                supportedChains={["MUMBAI", "POLYGON", "METIS", "METIS-TESTNET", "MANTLE", "MANTA-TESTNET", "MANTA", "MANTLE-TESTNET", "FUSE"]}
+                supportedChains={["MUMBAI", "POLYGON", "METIS", "METIS-TESTNET", "MANTLE", "MANTA-TESTNET", "MANTA", "MANTLE-TESTNET", "FUSE", "ETH", "BINANCE", "OPTIMISM", "ARBITRUM", "AVALANCHE", "FANTOM"]}
                 uiType="yes"
                 darkMode={true}
                 triaStaging={true}
