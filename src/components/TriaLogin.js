@@ -36,6 +36,7 @@ const TriaLogin = ({ walletColor, reloadFlag }) => {
                 triaStaging={true}
                 buttonPosition={{ x: "5vw", y: "5vh" }}
                 walletButtonDraggable={false}
+                clientId="fca5dd50-97af-4296-8fef-781199467c3c"
             /> : null}
         </div>
     );
