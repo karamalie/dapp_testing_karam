@@ -590,7 +590,6 @@ const Home = () => {
                         }} className="bg-[#FF249D] h-5 w-5 rounded-full cursor-pointer">
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>
