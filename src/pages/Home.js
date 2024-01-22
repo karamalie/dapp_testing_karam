@@ -205,7 +205,7 @@ const Home = () => {
 
   const getTriaImage = async (item) => {
     const resp = await fetch(
-      `https://staging.tria.so/api/v2/user/getAvatarByTriaName?triaNames=${item}`,
+    `https://staging.tria.so/api/v2/user/getAvatarByTriaName?triaNames=${item}`,
       {
         method: "GET",
       }
@@ -717,8 +717,8 @@ const Home = () => {
                     </div>
                     <div className="w-full flex justify-center h-full items-center absolute top-20 left-0 text-white ">
                       <div className="flex flex-col">
-                        <div className="text-white text-base  font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] -ml-9 ">{logged_user}</div>
-                        <div className="text-white text-base font-light font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] -ml-9">Tap to rotate</div>
+                        <div className="text-white text-base  font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] -ml-12 ">{logged_user}</div>
+                        <div className="text-white text-base font-light font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] -ml-12">Tap to rotate</div>
                       </div>
                     </div>
                   </div>
