@@ -729,10 +729,10 @@ const Home = () => {
                         {avatar && <img alt="avatar" className="w-20 h-20 rounded-[32.73px]" src={avatar} />}
                       </div>
                     </div>
-                    <div className="w-full flex justify-center h-full items-center absolute top-20 left-0 text-white ">
+                    <div className="w-full flex h-full items-center absolute top-20 3xl:top-28 4xl:top-36 right-0 text-white ">
                       <div className="flex flex-col">
-                        <div className="text-white text-base  font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] -ml-12 ">{logged_user}</div>
-                        <div className="text-white text-base font-light font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] -ml-12">Tap to rotate</div>
+                        <div className="text-white text-base  font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ml-6 3xl:ml-5 4xl:ml-10 ">{logged_user}</div>
+                        <div className="text-white text-base font-light font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ml-6 3xl:ml-5 4xl:ml-10 ">Tap to rotate</div>
                       </div>
                     </div>
                   </div>
