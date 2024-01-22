@@ -20,8 +20,9 @@ function App() {
     walletUrl: "https://staging-tria-wallet.vercel.app",
   });
 
-  const [walletColor, setWalletColor] = useState("#9A86FF")
+  const [walletColor, setWalletColor] = useState("#FF4E17")
   const [reloadFlag, setReloadFlag] = useState(false);
+  const [launchTria, setLaunchTria] = useState(false)
 
   const { account } = useAccount()
 
@@ -54,7 +55,9 @@ function App() {
     walletColor,
     setWalletColor,
     reloadFlag,
-    setReloadFlag
+    setReloadFlag,
+    launchTria,
+    setLaunchTria
   }
 
   return (
@@ -79,7 +82,7 @@ function App() {
           <TriaConnectProvider />
 
           {localStorage.getItem('tria.wallet.store') || localStorage.getItem("wagmi.connected") ? <Home /> : null}
-          <TriaLogin walletColor={walletColor} reloadFlag={reloadFlag} />
+          <TriaLogin walletColor={walletColor} reloadFlag={reloadFlag} launchTria={launchTria} />
         </div>
       </Context.Provider>
     </>

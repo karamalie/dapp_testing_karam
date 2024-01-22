@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 
-body{
-    background-color: black;
-    overflow: hidden;
+body {
+  background-color: black;
+  overflow-y: hidden;
 }
 
 @media only screen and (max-width: 1200px) {
   body {
-   overflow-y: scroll;
+    overflow-y: scroll;
   }
 }
 
@@ -23,4 +23,68 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false
+}
+
+@keyframes rotate-animation {
+  to {
+    --angle: 360deg
+  }
+}
+
+.bg-animation-orange:after {
+  content: "";
+  --angle: 0deg;
+  border-radius: 78px;
+  @apply absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+}
+
+.bg-animation-purple:after {
+  content: "";
+  --angle: 0deg;
+  border-radius: 78px;
+  @apply absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+}
+
+.bg-animation-green:after {
+  content: "";
+  --angle: 0deg;
+  border-radius: 78px;
+  @apply absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+}
+
+.bg-animation-pink:after {
+  content: "";
+  --angle: 0deg;
+  border-radius: 78px;
+  @apply absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+}
+
+@supports (background: paint(houdini)) {
+  .bg-animation-orange:after {
+    animation: rotate-animation 6s linear infinite;
+    background: linear-gradient(var(--angle), #FF4E17, #000000, #000000, #000000);
+  }
+
+  .bg-animation-purple:after {
+    animation: rotate-animation 6s linear infinite;
+    background: linear-gradient(var(--angle), #7D40FF, #000000, #000000, #000000);
+  }
+
+  .bg-animation-green:after {
+    animation: rotate-animation 6s linear infinite;
+    background: linear-gradient(var(--angle), #D7FF01, #000000, #000000, #000000);
+  }
+
+  .bg-animation-pink:after {
+    animation: rotate-animation 6s linear infinite;
+    background: linear-gradient(var(--angle), #FF249D, #000000, #000000, #000000);
+  }
 }

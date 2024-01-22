@@ -1,7 +1,7 @@
 import Application from "@tria-sdk/authenticate";
 import { useEffect, useState } from "react";
 
-const TriaLogin = ({ walletColor, reloadFlag }) => {
+const TriaLogin = ({ walletColor, reloadFlag, launchTria }) => {
 
     const [loadAgain, setloadAgain] = useState(false)
 
@@ -11,6 +11,25 @@ const TriaLogin = ({ walletColor, reloadFlag }) => {
             setloadAgain(false)
         }, 10)
     }, [reloadFlag]);
+
+    function getWindowSize() {
+        const { innerWidth, innerHeight } = window;
+        return { innerWidth, innerHeight };
+    }
+
+    const [windowSize, setWindowSize] = useState(getWindowSize());
+
+    useEffect(() => {
+        function handleWindowResize() {
+            setWindowSize(getWindowSize());
+        }
+
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
+    }, []);
 
 
     return (
@@ -33,10 +52,10 @@ const TriaLogin = ({ walletColor, reloadFlag }) => {
                 supportedChains={["MUMBAI", "POLYGON", "METIS", "METIS-TESTNET", "MANTLE", "MANTA-TESTNET", "MANTA", "MANTLE-TESTNET", "FUSE", "ETH", "BINANCE", "OPTIMISM", "ARBITRUM", "AVALANCHE", "FANTOM"]}
                 uiType="yes"
                 darkMode={true}
-                triaStaging={true}
-                buttonPosition={{ x: "5vw", y: "5vh" }}
+                buttonPosition={{ x: "0vw", y: "0vh" }}
                 walletButtonDraggable={false}
-                clientId="fca5dd50-97af-4296-8fef-781199467c3c"
+                customWalletVisible={launchTria}
+                customWalletButton={windowSize.innerWidth > 500 ? false : true}
             /> : null}
         </div>
     );
