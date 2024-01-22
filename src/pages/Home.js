@@ -665,7 +665,7 @@ const Home = () => {
                       <div className="w-full h-[45px] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 inline-flex">
                         <div className="w-6 h-6 p-[2.40px] bg-violet-600 rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
                           <div className="w-[19.20px] h-[19.20px] relative flex-col justify-start items-start flex" />
-                          <img src="/icons/polygon.svg" alt="polygon" />
+                          <img src="/icons/Polygon.svg" alt="polygon" />
                         </div>
                         <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
                           <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">MATIC</div>
@@ -742,7 +742,7 @@ const Home = () => {
                           <img className="max-w-[180px] rounded-[20.07px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmTntuKccRaU7vedr6AU7pPdEJoCQ9KhwwKt5ZaLZ4a5N3" />
                           <div className="w-[58.47px] h-[58.47px] p-[11.24px] left-[0.11px] top-0 absolute justify-center items-center gap-[12.12px] inline-flex">
                             <div className="w-8 h-8 pl-[5.26px] pr-[5.27px] pt-[5.13px] pb-[5.39px] bg-gradient-to-br from-stone-950 to-stone-950 rounded-[30.94px] border-2 backdrop-blur-[4.50px] justify-center items-center flex">
-                              <img src="/icons/polygon.svg" alt="polygon" />
+                              <img src="/icons/Polygon.svg" alt="polygon" />
                             </div>
                           </div>
                         </div>
@@ -1102,7 +1102,7 @@ const Home = () => {
                       <div className="w-full h-[45px] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 inline-flex">
                         <div className="w-6 h-6 p-[2.40px] bg-violet-600 rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
                           <div className="w-[19.20px] h-[19.20px] relative flex-col justify-start items-start flex" />
-                          <img src="/icons/polygon.svg" alt="polygon" />
+                          <img src="/icons/Polygon.svg" alt="polygon" />
                         </div>
                         <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
                           <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">MATIC</div>
