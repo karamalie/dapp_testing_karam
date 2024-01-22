@@ -27,7 +27,7 @@ const Home = () => {
   const [userWalletAddress, setUserWalletAddress] = useState("")
   const [loader, setLoader] = useState(false)
   const [success, setSuccess] = useState(false)
-  const { setWalletColor, walletColor, setReloadFlag, reloadFlag, setLaunchTria, launchTria } = useContext(Context)
+  const { setWalletColor, walletColor, setReloadFlag, reloadFlag, setLaunchTria, launchTria, clicked } = useContext(Context)
   const [contractDetails, setContractDetails] = useState({
     contractAddress: "0xd1fD14e3Cf4f96E63A1561681dc8765DF8f7Cf91",
     abi: [
@@ -46,7 +46,7 @@ const Home = () => {
     args: [1, "0x7Ae1bBCe3557D46313a960C0982637967eF5c1f7"],
     // value: 1,
   });
-  
+
   const [chainName, setChainName] = useState("MUMBAI");
   const [tokenAddress, setTokenAddress] = useState("");
 
@@ -205,7 +205,7 @@ const Home = () => {
 
   const getTriaImage = async (item) => {
     const resp = await fetch(
-    `https://staging.tria.so/api/v2/user/getAvatarByTriaName?triaNames=${item}`,
+      `https://staging.tria.so/api/v2/user/getAvatarByTriaName?triaNames=${item}`,
       {
         method: "GET",
       }
@@ -338,7 +338,6 @@ const Home = () => {
   const Logout = async () => {
     console.log("Logut called");
     await disconnect();
-    window.location.reload();
   };
 
   return (
@@ -359,7 +358,7 @@ const Home = () => {
               </div>
             </div>
             {windowSize.innerWidth > 500 ?
-              <div className="flex gap-4 items-center">
+              <div className="flex gap-4 items-center ">
                 <div className="text-neutral-50 text-md font-normal font-['Neue Haas Grotesk Display Pro'] ">{logged_user}</div>
                 <div style={{ background: bg }} className={`w-10 h-10 justify-center items-center flex rounded-full`}>
                   {avatar && <img alt="avatar" className="w-10 h-10 rounded-[32.73px]" src={avatar} />}
@@ -374,17 +373,16 @@ const Home = () => {
           </div>
         </div>
 
-
-
         {/* Lower Functional Grid */}
         {window.innerWidth > 900 ?
-          <div className=" ">
-            <div className="w-[140vw] 3xl:w-[80vw] 4xl:w-[58vw] md:grid md:grid-cols-12 gap-5 mt-20 ">
-              <div className="md:col-span-4 mt-10 ml-10  ">
-                <div style={{ background: "linear-gradient(to top left,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 30%)", }} className="w-full h-[45vh] 3xl:h-[42vh] 4xl:h-[470px] relative rounded-xl">
-                  <div className="w-full h-full px-5 py-4 left-0 top-0 absolute bg-transparent rounded-xl border border-neutral-800 backdrop-blur-[100px] flex-col justify-center items-center gap-[34px] inline-flex">
 
-                    {walletColor === "#FF4E17" ? <img className="absolute top-0 rounded-xl left-0 w-[60%]" src="/icons/ellipse.svg" alt="ellipse" /> : null}
+          <div className={clicked === true ? "blur-background" : ""}>
+            <div className="w-[140vw] 3xl:w-[80vw] 4xl:w-[90vw] md:grid md:grid-cols-12 gap-5 mt-20  ">
+              <div className="md:col-span-4 mt-10 ml-10">
+                <div className="w-full h-[45vh] 3xl:h-[50vh] 4xl:h-[50vh] relative rounded-xl">
+                  <div className="w-full h-full px-5 py-4 group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] left-0 top-0 absolute bg-transparent rounded-xl border border-neutral-800 backdrop-blur-[100px] flex-col justify-center items-center gap-[34px] inline-flex">
+
+                    {walletColor === "#FF4E17" ? <img className="absolute top-0 rounded-xl left-0 w-[60%] " src="/icons/ellipse.svg" alt="ellipse" /> : null}
                     {walletColor === "#7D40FF" ? <img className="absolute top-0 rounded-xl left-0 w-[60%]" src="/icons/ellipse_purple.svg" alt="ellipse" /> : null}
                     {walletColor === "#D7FF01" ? <img className="absolute top-0 rounded-xl left-0 w-[60%]" src="/icons/ellipse_green.svg" alt="ellipse" /> : null}
                     {walletColor === "#FF249D" ? <img className="absolute top-0 rounded-xl left-0 w-[60%]" src="/icons/ellipse_pink.svg" alt="ellipse" /> : null}
@@ -396,11 +394,11 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-full justify-between items-start gap-5 flex mt-5">
+                <div className="w-full justify-between items-start gap-5 flex mt-5 ">
 
-                  <div className="w-full h-full relative rounded-xl">
-                    <div className="w-full md:h-[280px] p-7 left-0 top-0 absolute rounded-xl border border-stone-800 border-solid backdrop-blur-[100px] flex-col justify-start items-start gap-[52px] inline-flex">
-                      {walletColor === "#FF4E17" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full" src="/icons/second_card.svg" alt="ellipse" /> : null}
+                  <div className="w-full h-full relative group rounded-xl hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95]">
+                    <div className="w-full h-[35vh]  p-7 left-0 top-0 absolute rounded-xl border border-stone-800 border-solid backdrop-blur-[100px] flex-col justify-start items-start gap-[52px] inline-flex">
+                      {walletColor === "#FF4E17" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full group-hover:transition duration-1000" src="/icons/second_card.svg" alt="ellipse" /> : null}
                       {walletColor === "#7D40FF" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full" src="/icons/second_card_purple.svg" alt="ellipse" /> : null}
                       {walletColor === "#D7FF01" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full" src="/icons/second_card_green.svg" alt="ellipse" /> : null}
                       {walletColor === "#FF249D" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full" src="/icons/second_card_pink.svg" alt="ellipse" /> : null}
@@ -417,7 +415,7 @@ const Home = () => {
                   </div>
                   <div
                     className={
-                      " border rounded-xl md:h-[280px] border-stone-800 border-solid p-8 flex flex-col items-center justify-between self-stretch shrink-0 w-1/2 relative overflow-hidden "
+                      " border h-[35vh] group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] rounded-xl  border-stone-800 border-solid p-8 flex flex-col items-center justify-between self-stretch shrink-0 w-1/2 relative overflow-hidden "
 
                     }
                     style={{
@@ -489,7 +487,7 @@ const Home = () => {
               </div>
               <div className="col-span-3 mt-10">
                 <div className={
-                  "rounded-xl border-solid border-stone-800 border-[0.7px] px-9 py-2 flex flex-col gap-5 items-start justify-start shrink-0 relative w-full "
+                  "rounded-xl group hover:transition duration-[500ms] h-[23vh] hover:duration-[500ms] hover:scale-[0.95] border-solid border-stone-800 border-[0.7px] px-9 py-2 flex flex-col gap-5 items-start justify-start shrink-0 relative w-full "
                 }
                   style={{
                     background:
@@ -593,17 +591,37 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div className="mt-5 w-full ">
-                  <div className="grid grid-cols-6 gap-4 w-full  ">
-                    <div className="flex flex-col gap-0 col-span-4 ">
-                      <div className="">
-                        {walletColor === "#FF4E17" ? <img className="" src="/icons/one_name.svg" alt="one_name" /> : null}
-                        {walletColor === "#7D40FF" ? <img className="" src="/icons/one_name_purple.svg" alt="one_name" /> : null}
-                        {walletColor === "#D7FF01" ? <img className="" src="/icons/one_name_green.svg" alt="one_name" /> : null}
-                        {walletColor === "#FF249D" ? <img className="" src="/icons/one_name_pink.svg" alt="one_name" /> : null}
+                <div className="mt-5 w-full h-[30vh]">
+                  <div className="grid grid-cols-6 gap-4 w-full h-full  ">
+                    <div className="flex flex-col gap-5 col-span-4 ">
+                      <div className="w-full h-1/2 relative rounded-xl group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95]">
+                        <div className="w-full h-full flex justify-center items-center py-4 left-0 top-0 absolute rounded-xl border border-stone-800 border-solid  flex-col justify-start items-start gap-[52px] inline-flex">
+                          {walletColor === "#FF4E17" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full" src="/icons/ring_orange.svg" alt="ellipse" /> : null}
+                          {walletColor === "#7D40FF" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full" src="/icons/second_card_purple.svg" alt="ellipse" /> : null}
+                          {walletColor === "#D7FF01" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full" src="/icons/second_card_green.svg" alt="ellipse" /> : null}
+                          {walletColor === "#FF249D" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full" src="/icons/second_card_pink.svg" alt="ellipse" /> : null}
+                          <div className="text-xl md:text-3xl grow shrink basis-0">
+                            <span className="text-white text-opacity-90 relative font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">One name,<br></br></span>
+                            <span className="text-white relative font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">all things </span>
+                            {walletColor === "#FF4E17" ? <span className="text-[#FF4E17]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3</span> : null}
+                            {walletColor === "#7D40FF" ? <span className="text-[#7D40FF]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
+                            {walletColor === "#D7FF01" ? <span className="text-[#D7FF01]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
+                            {walletColor === "#FF249D" ? <span className="text-[#FF249D]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
+
+                          </div>
+                        </div>
                       </div>
-                      <div className="mt-3">
-                        <img className="" src="/icons/testnet.svg" alt="testnet" />
+                      <div style={{
+                        background:
+                          "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
+                      }} className="w-full h-1/2 group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] p-4 bg-opacity-70 rounded-xl border border-stone-800 flex-col justify-between items-center inline-flex">
+                        <div className="w-full h-full flex justify-center items-center">
+                          <div className="flex gap-2 items-start">
+                            <img src="/icons/danger.svg" />
+                            <div className=" text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] ">This demo is on Polygon Mumbai testnet, some features might be restricted.</div>
+                          </div>
+                        </div>
+
                       </div>
                     </div>
                     <div className="w-full col-span-2">
@@ -619,7 +637,7 @@ const Home = () => {
                     background:
                       "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
                   }}
-                  className="w-full mt-5 p-2 3xl:h-[20vh]  bg-opacity-70 rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
+                  className="w-full mt-5 p-2 3xl:h-[30vh] h-[25vh] group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] bg-opacity-70 rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
                   <div className="self-stretch h-[115px] flex-col justify-start items-center gap-9 flex">
                     <div className="self-stretch h-[115px] flex-col justify-start items-center gap-0 flex">
                       <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
@@ -649,7 +667,7 @@ const Home = () => {
                 <div style={{
                   background:
                     "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
-                }} className="w-full md:h-[410px] 3xl:h-[400px] 4xl:h-[470px] p-4 bg-opacity-70 rounded-xl border border-stone-800  backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
+                }} className="w-full group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] h-[50vh] 3xl:h-[53vh] p-4 bg-opacity-70 rounded-xl border border-stone-800  backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
                   <div className="self-stretch h-[385px] flex-col justify-start items-center gap-9 flex">
                     <div className="self-stretch h-[137px] flex-col justify-start items-center gap-6 flex">
                       <div className="self-stretch py-0 justify-center items-center gap-4 inline-flex">
@@ -699,16 +717,13 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 mt-5 3xl:mt-2 4xl:-mt-12">
-                  <div className="h-[30vh] relative w-1/2 border-stone-800 rounded-xl  ">
+                <div className="flex items-center gap-4 mt-5 4xl:mt-8">
+                  <div className="h-[30vh] relative w-1/2 border-stone-800 rounded-xl group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95]">
                     {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
                     {walletColor === "#7D40FF" ? <img src="/icons/card_purple.svg" className="h-[100%] w-full absolute" /> : null}
                     {walletColor === "#D7FF01" ? <img src="/icons/card_green.svg" className="h-[100%] w-full absolute" /> : null}
                     {walletColor === "#FF249D" ? <img src="/icons/card_pink.svg" className="h-[100%] w-full absolute" /> : null}
-                    {/* <div className="w-full flex justify-center h-full items-center absolute -top-24 ml-20 left-0 text-white ">
-                      <img src="/icons/tria.svg" alt="logo" />
-
-                    </div> */}
+                   
                     <div className="w-full flex justify-center h-full items-center ">
                       <div className={`w-20 h-20 relative  bg-neutral-50 bg-opacity-20 justify-center items-center flex rounded-full`}>
                         {avatar && <img alt="avatar" className="w-20 h-20 rounded-[32.73px]" src={avatar} />}
@@ -730,11 +745,11 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="mt-10 w-[33vw] 3xl:w-[20vw] col-span-2 ">
+              <div className="mt-10 w-[33vw] 4xl:w-[24vw] 3xl:w-[23vw]  col-span-2  ">
                 <div style={{
                   background:
                     "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
-                }} className="w-full  p-5  rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-start items-center gap-5 inline-flex">
+                }} className="w-full h-[52vh] p-5 group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-start items-center gap-5 inline-flex">
                   <div className="self-stretch  h-full flex-col gap-5 items-center flex">
                     <div className="self-stretch gap-4 flex">
                       <div className="">
@@ -784,10 +799,10 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div style={{
+                {/* <div style={{
                   background:
                     "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
-                }} className="w-full mt-5 p-4 4xl:h-[270px] 3xl:h-[260px] md:h-[220px] rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-center items-center gap-[52px] inline-flex">
+                }} className="w-full h-[28vh] 3xl:h-[34vh]  group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] mt-5 p-4  rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-center items-center gap-[52px] inline-flex">
                   <div className="self-stretch  flex-col justify-start items-center gap-0 flex">
                     <div className="self-stretch flex-col justify-start items-center gap-0 flex">
                       <div className="self-stretch py-2 justify-center items-center  inline-flex">
@@ -805,6 +820,35 @@ const Home = () => {
                     className="rounded-[78px] mt-0 cursor-pointer px-6 py-2 w-[120px] flex flex-row mb-4 gap-0 bg-white text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 items-center justify-center shrink-0  relative overflow-hidden"
                   >
                     <div className="flex  flex-row gap-0 items-center justify-center shrink-0 relative ">
+                      <div className=" text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
+                        Contact
+                      </div>
+                    </div>
+                  </div>
+                </div> */}
+                 <div
+                  style={{
+                    background:
+                      "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
+                  }}
+                  className="w-full mt-5 p-2 h-[28vh] 3xl:h-[33vh] group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] bg-opacity-70 rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
+                  <div className="self-stretch h-[115px] flex-col justify-start items-center gap-9 flex">
+                    <div className="self-stretch h-[115px] flex-col justify-start items-center gap-0 flex">
+                      <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
+                        <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] tracking-wide">Get In Touch</div>
+                      </div>
+                      <div className="self-stretch py-0 px-3 justify-start items-center inline-flex">
+                        <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
+                          <div className="grow shrink basis-0 text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">We work with discerning founders and visionary companies to elevate their user-experience. Join the collective.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div  onClick={() => { window.open("https://www.tria.so/sdk", "_blank") }}
+                    className="rounded-[78px] cursor-pointer px-6 py-2 w-[120px] flex flex-row mb-4 gap-0 bg-white text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 items-center justify-center shrink-0  relative overflow-hidden"
+
+                  >
+                    <div className="flex flex-row gap-0 items-center justify-center shrink-0 relative ">
                       <div className=" text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
                         Contact
                       </div>
@@ -833,7 +877,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="text-xl grow shrink basis-0 text-center px-8">
+              <div className="text-xl grow shrink basis-0 text-center px-4">
                 <span className="text-white text-opacity-90 font-semibold font-['Neue Haas Grotesk Display Pro'] ">Explore</span>
                 <span className="text-white t font-semibold font-['Neue Haas Grotesk Display Pro'] "> </span>
                 {walletColor === "#FF4E17" ? <span className="text-[#FF4E17]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
@@ -842,16 +886,13 @@ const Home = () => {
                 {walletColor === "#FF249D" ? <span className="text-[#FF249D]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
                 <span className="text-white text-opacity-90 relative font-semibold font-['Neue Haas Grotesk Display Pro']  ">in real time. Tailor and construct the wallet to match your app.</span>
               </div>
-              <div className="flex items-center gap-4 mt-5 px-7">
+              <div className="flex items-center gap-4 mt-5 px-3">
                 <div className="h-[30vh] relative w-1/2 border-stone-800 rounded-xl  ">
                   {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
                   {walletColor === "#7D40FF" ? <img src="/icons/card_purple.svg" className="h-[100%] w-full absolute" /> : null}
                   {walletColor === "#D7FF01" ? <img src="/icons/card_green.svg" className="h-[100%] w-full absolute" /> : null}
                   {walletColor === "#FF249D" ? <img src="/icons/card_pink.svg" className="h-[100%] w-full absolute" /> : null}
-                  {/* <div className="w-full flex justify-center h-full items-center absolute -top-24 ml-20 left-0 text-white ">
-                      <img src="/icons/tria.svg" alt="logo" />
-
-                    </div> */}
+                 
                   <div className="w-full flex justify-center h-full items-center ">
                     <div className={`w-16 h-16 relative  bg-neutral-50 bg-opacity-20 justify-center items-center flex rounded-full`}>
                       {avatar && <img alt="avatar" className="w-16 h-16 rounded-[32.73px]" src={avatar} />}
@@ -872,7 +913,7 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="mx-7">
+              <div className="mx-3">
                 <div className={
                   "rounded-xl border-solid  border-stone-800 border-[0.7px] px-9 py-2 flex flex-col gap-5 items-start justify-start shrink-0 relative w-full "
                 }
@@ -980,7 +1021,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="mx-7">
+              <div className="mx-3">
                 <div className="grid grid-cols-6 gap-4 w-full mt-6 ">
                   <div className="flex flex-col gap-0 col-span-4 ">
                     <div className="">
@@ -1001,13 +1042,13 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="mx-7 mt-10 mb-10">
+              <div className="mx-3 mt-10 mb-10">
                 <div className="w-full text-center"><span className="text-white text-opacity-90 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]">Explore </span>
-                <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>basic</span>
-                <span className="text-white text-opacity-90 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> features</span></div>
+                  <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>basic</span>
+                  <span className="text-white text-opacity-90 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> features</span></div>
               </div>
 
-              <div className="mt-5 mx-7">
+              <div className="mt-5 mx-3">
                 <div
                   className={
                     " border rounded-xl md:h-[280px] border-stone-800 border-solid p-8 flex flex-col items-center justify-between self-stretch shrink-0 w-full relative overflow-hidden "
@@ -1077,12 +1118,12 @@ const Home = () => {
                   }
                 </div>
               </div>
-              <div className="mx-7 mt-7 mb-10">
+              <div className="mx-3 mt-7 mb-10">
                 <div className="w-full text-center"><span className="text-white text-opacity-90 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]">Explore </span>
                   <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>advanced</span>
                   <span className="text-white text-opacity-90 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> features</span></div>
               </div>
-              <div className="mt-5 mb-7 mx-7">
+              <div className="mt-5 mb-7 mx-3">
                 <div style={{
                   background:
                     "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
@@ -1139,7 +1180,7 @@ const Home = () => {
 
 
               </div>
-              <div className="mx-7 mb-10">
+              <div className="mx-3 mb-10">
                 <div style={{
                   background:
                     "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",

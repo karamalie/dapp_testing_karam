@@ -2,7 +2,7 @@ import Home from "./pages/Home";
 import { useTriaConnector, useDisconnect } from "@tria-sdk/connect-staging";
 import { TriaConnectProvider } from "@tria-sdk/authenticate";
 import Application from "@tria-sdk/authenticate";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Wallet from "./pages/Wallet";
 import TriaLogin from "./components/TriaLogin";
 import { useAccount } from "wagmi";
@@ -23,6 +23,8 @@ function App() {
   const [walletColor, setWalletColor] = useState("#FF4E17")
   const [reloadFlag, setReloadFlag] = useState(false);
   const [launchTria, setLaunchTria] = useState(false)
+  const [clicked, setClicked] = useState(false)
+  const walletRef = useRef(null);
 
   const { account } = useAccount()
 
@@ -57,8 +59,32 @@ function App() {
     reloadFlag,
     setReloadFlag,
     launchTria,
-    setLaunchTria
+    setLaunchTria,
+    clicked
   }
+
+  function useOutsideAlerter(ref) {
+    useEffect(() => {
+
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setClicked(false)
+        }
+      }
+
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+
+  useOutsideAlerter(walletRef);
+
+  useEffect(() => {
+    console.log("clicked --> ", clicked)
+  }, [clicked])
 
   return (
     <>
@@ -82,7 +108,9 @@ function App() {
           <TriaConnectProvider />
 
           {localStorage.getItem('tria.wallet.store') || localStorage.getItem("wagmi.connected") ? <Home /> : null}
-          <TriaLogin walletColor={walletColor} reloadFlag={reloadFlag} launchTria={launchTria} />
+          <div ref={walletRef}>
+            <TriaLogin walletColor={walletColor} reloadFlag={reloadFlag} launchTria={launchTria} clicked={clicked} setClicked={setClicked} />
+          </div>
         </div>
       </Context.Provider>
     </>

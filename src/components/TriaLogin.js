@@ -1,7 +1,7 @@
 import Application from "@tria-sdk/authenticate";
 import { useEffect, useState } from "react";
 
-const TriaLogin = ({ walletColor, reloadFlag, launchTria }) => {
+const TriaLogin = ({ walletColor, reloadFlag, launchTria, clicked, setClicked }) => {
 
     const [loadAgain, setloadAgain] = useState(false)
 
@@ -34,6 +34,7 @@ const TriaLogin = ({ walletColor, reloadFlag, launchTria }) => {
 
     return (
         <div
+            onClick={() => setClicked(!clicked)}
             style={{
                 position: 'fixed',
                 top: 0,

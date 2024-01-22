@@ -88,3 +88,7 @@ input[type=number] {
     background: linear-gradient(var(--angle), #FF249D, #000000, #000000, #000000);
   }
 }
+
+.blur-background {
+  filter: blur(5px); 
+}
