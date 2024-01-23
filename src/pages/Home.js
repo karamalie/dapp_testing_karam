@@ -62,7 +62,7 @@ const Home = () => {
     console.log(item);
     ReactGA.pageview("/dashboard");
     getUserWallet();
-    callReadContract();
+    //callReadContract();
   }, []);
 
   const getUserWallet = async () => {
@@ -365,14 +365,18 @@ const Home = () => {
 
   window.addEventListener("scroll", reveal);
 
-  var cards = document.querySelectorAll('.flip-card-inner');
+  const tapToRotate = () => {
+    var cards = document.querySelectorAll('.flip-card-inner');
 
-  [...cards].forEach((card) => {
-    card.addEventListener('click', function () {
-      card.classList.toggle('is-flipped');
+    [...cards].forEach((card) => {
+      card.addEventListener('click', function () {
+        card.classList.toggle('is-flipped');
+      });
+
+      
     });
-  });
 
+  }
 
   return (
     <>
@@ -661,10 +665,10 @@ const Home = () => {
                     <div className="w-full col-span-2">
 
                       <div className="w-full h-full relative group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] rounded-xl border border-stone-800 overflow-hidden ">
-                        {walletColor === "#FF4E17" ? <img className=" absolute " src="/icons/person_card_orange.svg" alt="person" /> : null}
-                        {walletColor === "#7D40FF" ? <img className=" absolute " src="/icons/person_card_purple.svg" alt="person" /> : null}
-                        {walletColor === "#D7FF01" ? <img className=" absolute " src="/icons/person_card_green.svg" alt="person" /> : null}
-                        {walletColor === "#FF249D" ? <img className=" absolute " src="/icons/person_card_pink.svg" alt="person" /> : null}
+                        {walletColor === "#FF4E17" ? <img className=" absolute w-full " src="/icons/person_card_orange.svg" alt="person" /> : null}
+                        {walletColor === "#7D40FF" ? <img className=" absolute w-full " src="/icons/person_card_purple.svg" alt="person" /> : null}
+                        {walletColor === "#D7FF01" ? <img className=" absolute w-full " src="/icons/person_card_green.svg" alt="person" /> : null}
+                        {walletColor === "#FF249D" ? <img className=" absolute w-full " src="/icons/person_card_pink.svg" alt="person" /> : null}
                         {/* <div className="w-[298.50px] h-[387.84px] left-[20px] top-[33.38px] absolute origin-top-left rotate-[-64.04deg] opacity-80 bg-orange-600 rounded-full blur-[37.67px]" /> */}
                         <img className="w-[64.95px] h-[64.95px] left-[1vw] top-[1vh] absolute rounded-full" src="/icons/person_2.svg" alt="person" />
                         <div className="h-[123.79px] left-[-16px] top-[18px] absolute">
@@ -788,7 +792,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 mt-5 4xl:mt-8">
-                  <div className="flip-card cursor-pointer">
+                  <div onClick={tapToRotate()} className="flip-card cursor-pointer">
                     <div className="flip-card-inner ">
                       <div className="flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl">
                         {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
@@ -958,10 +962,10 @@ const Home = () => {
                   {walletColor === "#D7FF01" ? <img className="absolute top-0 left-0 w-[70%]" src="/icons/ellipse_green.svg" alt="ellipse" /> : null}
                   {walletColor === "#FF249D" ? <img className="absolute top-0 left-0 w-[70%]" src="/icons/ellipse_pink.svg" alt="ellipse" /> : null}
 
-                  <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
+                  <div className="p-[8.83px] flex-col justify-center items-center gap-0 -mt-12 flex">
                     <div className="text-white text-opacity-80 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience Tria’s Personalised</div>
                     <div className="text-neutral-50 text-4xl font-medium font-['Neue Haas Grotesk Display Pro'] leading-[79.20px]">Embedded Wallet</div>
-                    <div className="w-full px-5 h-12 text-center text-white text-opacity-40 text-xs font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Personalized, user-focused journeys built with Tria's exclusive SDKs. Elevate beyond social onboarding, smart-accounts, and programmable TXs. </div>
+                    <div className="w-full px-5 h-12 text-center text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Personalized, user-focused journeys built with Tria's exclusive SDKs. Elevate beyond social onboarding, smart-accounts, and programmable TXs. </div>
                   </div>
                 </div>
               </div>
@@ -976,7 +980,7 @@ const Home = () => {
               </div>
               <div className="flex items-center gap-4 mt-5 px-3 ">
 
-                <div className="flip-card cursor-pointer">
+                <div onClick={tapToRotate()} className="flip-card cursor-pointer">
                   <div className="flip-card-inner ">
                     <div className="flip-card-front h-[210px] w-1/2 border-stone-800 rounded-xl">
                       {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
@@ -998,14 +1002,14 @@ const Home = () => {
                     </div>
                     <div className="flip-card-back h-[210px] w-1/2 border-stone-800 rounded-xl">
                       <img src="/icons/grey_rotate.svg" className="h-[100%] w-full absolute" />
-                      <div className="w-full flex justify-end absolute top-0  text-white ">
-                        <div className="flex flex-col mr-8 mt-4 items-end">
-                          <div className="text-white text-base  font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ">{logged_user}</div>
-                          <div className="text-white text-base font-light font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ">Tap to rotate</div>
+                      <div className="w-full flex justify-end absolute top-4 text-white ">
+                        <div className="flex flex-col mr-4 mt-4 items-end">
+                          <div className="text-white text-xs  font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ">{logged_user}</div>
+                          <div className="text-white text-xs font-light font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ">Tap to rotate</div>
                         </div>
                       </div>
-                      <div className="w-full flex justify-end absolute bottom-4  text-white ">
-                        <div className="flex flex-col mr-8 mt-4 items-end">
+                      <div className="w-full flex justify-end absolute bottom-10  text-white ">
+                        <div className="flex flex-col mr-4 mt-0 items-end">
                           <div className="text-white text-lg flex items-center gap-0 font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ">
                             <img src="/icons/tria_card.svg" alt="tria_card" />
                             tria
@@ -1032,8 +1036,14 @@ const Home = () => {
                     {walletColor === "#FF249D" ? <img className="absolute top-0 w-full" src="/icons/top_pink.svg" /> : null}
                     {walletColor === "#FF249D" ? <img className="absolute bottom-0 w-full rotate-[180deg]" src="/icons/top_pink.svg" /> : null}
 
-                    <div className="w-full h-full p-8 left-0 top-0 absolute rounded-xl flex-col justify-center items-center gap-[52px] inline-flex">
-                      <div className="text-white text-opacity-90 text-[20px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] tracking-wide">All EVMs, and major non-EVMS, supported.</div>
+                    <div className="w-full h-full  rounded-xl flex justify-center items-center ">
+                      <div className="text-white ml-5 text-opacity-90 text-[27px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] tracking-wide">One name, all things
+                        {walletColor === "#FF4E17" ? <span className="text-[#FF4E17]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3</span> : null}
+                        {walletColor === "#7D40FF" ? <span className="text-[#7D40FF]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3 </span> : null}
+                        {walletColor === "#D7FF01" ? <span className="text-[#D7FF01]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3 </span> : null}
+                        {walletColor === "#FF249D" ? <span className="text-[#FF249D]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3 </span> : null}
+                      </div>
+
                     </div>
                   </div>
 
