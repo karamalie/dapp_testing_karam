@@ -373,7 +373,7 @@ const Home = () => {
         card.classList.toggle('is-flipped');
       });
 
-      
+
     });
 
   }
@@ -413,8 +413,7 @@ const Home = () => {
 
         {/* Lower Functional Grid */}
         {window.innerWidth > 900 ?
-
-          <div className={clicked === true ? "blur-background" : ""}>
+          <div className={clicked === true ? "blur-background " : ""}>
             <div className="w-[140vw] 3xl:w-[90vw] 4xl:w-[90vw] md:grid md:grid-cols-12 gap-5 mt-20 ">
               <div className="md:col-span-4 mt-10 ml-10">
                 <div className="w-full h-[45vh] 3xl:h-[50vh] 4xl:h-[50vh] relative rounded-xl ">
@@ -608,22 +607,34 @@ const Home = () => {
                         <div onClick={() => {
                           setWalletColor("#7D40FF");
                           setReloadFlag(!reloadFlag);
-                        }} className="bg-[#7D40FF] h-5 w-5 rounded-full cursor-pointer">
+                        }} className="bg-[#7D40FF] h-5 w-5 rounded-full cursor-pointer flex justify-center items-center">
+                          {walletColor === "#7D40FF" ? <div className="h-3 w-3 rounded-full bg-white flex justify-center items-center">
+                            <div className="bg-[#7D40FF] h-2 w-2 rounded-full"></div>
+                          </div> : null}
                         </div>
                         <div onClick={() => {
                           setWalletColor("#FF4E17");
                           setReloadFlag(!reloadFlag);
-                        }} className="bg-[#FF4E17] h-5 w-5 rounded-full cursor-pointer">
+                        }} className="bg-[#FF4E17] h-5 w-5 rounded-full cursor-pointer flex justify-center items-center">
+                          {walletColor === "#FF4E17" ? <div className="h-3 w-3 rounded-full bg-white flex justify-center items-center">
+                            <div className="bg-[#FF4E17] h-2 w-2 rounded-full"></div>
+                          </div> : null}
                         </div>
                         <div onClick={() => {
                           setWalletColor("#D7FF01");
                           setReloadFlag(!reloadFlag);
-                        }} className="bg-[#D7FF01] h-5 w-5 rounded-full cursor-pointer">
+                        }} className="bg-[#D7FF01] h-5 w-5 rounded-full cursor-pointer flex justify-center items-center">
+                          {walletColor === "#D7FF01" ? <div className="h-3 w-3 rounded-full bg-white flex justify-center items-center">
+                            <div className="bg-[#D7FF01] h-2 w-2 rounded-full"></div>
+                          </div> : null}
                         </div>
                         <div onClick={() => {
                           setWalletColor("#FF249D");
                           setReloadFlag(!reloadFlag);
-                        }} className="bg-[#FF249D] h-5 w-5 rounded-full cursor-pointer">
+                        }} className="bg-[#FF249D] h-5 w-5 rounded-full cursor-pointer flex justify-center items-center">
+                          {walletColor === "#FF249D" ? <div className="h-3 w-3 rounded-full bg-white flex justify-center items-center">
+                            <div className="bg-[#FF249D] h-2 w-2 rounded-full"></div>
+                          </div> : null}
                         </div>
                       </div>
                     </div>
@@ -792,13 +803,13 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 mt-5 4xl:mt-8">
-                  <div onClick={tapToRotate()} className="flip-card cursor-pointer">
+                  <div onClick={tapToRotate()} className={walletColor === "#FF4E17" ? "flip-card cursor-pointer background-container-orange" : walletColor === "#7D40FF" ? "flip-card cursor-pointer background-container-purple" : walletColor === "#D7FF01" ? "flip-card cursor-pointer background-container-green" : "flip-card cursor-pointer background-container-pink"}>
                     <div className="flip-card-inner ">
-                      <div className="flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl">
-                        {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
+                      <div className="flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl ">
+                        {/* {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#7D40FF" ? <img src="/icons/card_purple.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#D7FF01" ? <img src="/icons/card_green.svg" className="h-[100%] w-full absolute" /> : null}
-                        {walletColor === "#FF249D" ? <img src="/icons/card_pink.svg" className="h-[100%] w-full absolute" /> : null}
+                        {walletColor === "#FF249D" ? <img src="/icons/card_pink.svg" className="h-[100%] w-full absolute" /> : null} */}
 
                         <div className="w-full flex justify-center h-full items-center ">
                           <div className={`w-20 h-20 relative  bg-neutral-50 bg-opacity-20 justify-center items-center flex rounded-full`}>
@@ -812,7 +823,7 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flip-card-back h-[30vh] w-1/2 border-stone-800 rounded-xl">
+                      <div className="flip-card-back h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-back">
                         <img src="/icons/grey_rotate.svg" className="h-[100%] w-full absolute" />
                         <div className="w-full flex justify-end absolute top-0  text-white ">
                           <div className="flex flex-col mr-8 mt-4 items-end">
