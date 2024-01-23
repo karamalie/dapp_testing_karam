@@ -365,18 +365,18 @@ const Home = () => {
 
   window.addEventListener("scroll", reveal);
 
-  const tapToRotate = () => {
-    var cards = document.querySelectorAll('.flip-card-inner');
 
-    [...cards].forEach((card) => {
-      card.addEventListener('click', function () {
-        card.classList.toggle('is-flipped');
-      });
+  var cards = document.querySelectorAll('.flip-card-inner');
 
-
+  [...cards].forEach((card) => {
+    card.addEventListener('click', function () {
+      card.classList.toggle('is-flipped');
     });
 
-  }
+
+  });
+
+
 
   return (
     <>
@@ -803,9 +803,9 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 mt-5 4xl:mt-8">
-                  <div onClick={tapToRotate()} className={walletColor === "#FF4E17" ? "flip-card cursor-pointer background-container-orange" : walletColor === "#7D40FF" ? "flip-card cursor-pointer background-container-purple" : walletColor === "#D7FF01" ? "flip-card cursor-pointer background-container-green" : "flip-card cursor-pointer background-container-pink"}>
+                  <div className="flip-card cursor-pointer">
                     <div className="flip-card-inner ">
-                      <div className="flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl ">
+                      <div className={walletColor === "#FF4E17" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-orange" : walletColor === "#7D40FF" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-purple" : walletColor === "#D7FF01" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-green" : "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-pink"}>
                         {/* {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#7D40FF" ? <img src="/icons/card_purple.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#D7FF01" ? <img src="/icons/card_green.svg" className="h-[100%] w-full absolute" /> : null}
@@ -991,7 +991,7 @@ const Home = () => {
               </div>
               <div className="flex items-center gap-4 mt-5 px-3 ">
 
-                <div onClick={tapToRotate()} className="flip-card cursor-pointer">
+                <div className="flip-card cursor-pointer">
                   <div className="flip-card-inner ">
                     <div className="flip-card-front h-[210px] w-1/2 border-stone-800 rounded-xl">
                       {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
