@@ -376,6 +376,10 @@ const Home = () => {
 
   });
 
+  //Mobile carousels
+  const [carouselOne, setCarouselOne] = useState(0)
+  const [carouselTwo, setCarouselTwo] = useState(0)
+
 
 
   return (
@@ -1265,69 +1269,126 @@ const Home = () => {
               </div>
 
               <div className="mt-5 mx-3">
-                <div
-                  className={
-                    " border rounded-xl md:h-[280px] border-stone-800 border-solid py-8 px-4 flex flex-col items-center justify-between self-stretch shrink-0 w-full relative overflow-hidden "
+                {carouselOne === 0 ?
+                  <div
+                    className={
+                      " border rounded-xl md:h-[280px] border-stone-800 border-solid py-8 px-4 flex flex-col items-center justify-between self-stretch shrink-0 w-full relative overflow-hidden "
 
-                  }
-                  style={{
-                    background:
-                      "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 40%)",
-                  }}
-                >
-                  <div className="flex flex-col gap-7 items-center justify-start self-stretch shrink-0 relative">
-                    <div className="flex flex-col gap-5 items-center justify-start self-stretch shrink-0 relative">
-                      <div className="pt-2 pb-2 flex flex-row gap-0 -mt-3 items-center justify-center self-stretch shrink-0 relative">
-                        <div className="text-[#fafafa] text-left font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-[20px] leading-[120%] font-semibold relative flex items-center justify-start">
-                          Add Funds{" "}
-                        </div>
-                      </div>
-                      <div className="pt-1 pb-1 flex flex-row gap-0 items-center justify-start self-stretch shrink-0 relative overflow-hidden">
-                        <div className="flex flex-row gap-0 items-center justify-start self-stretch flex-1 relative">
-                          <div className="text-[rgba(255,255,255,0.40)] text-left font-['NeueHaasGroteskDisplayPro-55Roman',_sans-serif] text-sm leading-[135%] font-normal relative flex-1 flex items-center justify-start">
-                            To start exploring, you would require some funds. Click the
-                            button below to receive Matic on Polygon Mumbai testnet.{" "}
+                    }
+                    style={{
+                      background:
+                        "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 40%)",
+                    }}
+                  >
+                    <div className="flex flex-col gap-7 items-center justify-start self-stretch shrink-0 relative">
+                      <div className="flex flex-col gap-5 items-center justify-start self-stretch shrink-0 relative">
+                        <div className="pt-2 pb-2 flex flex-row gap-0 -mt-3 items-center justify-center self-stretch shrink-0 relative">
+                          <div className="text-[#fafafa] text-left font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-[20px] leading-[120%] font-semibold relative flex items-center justify-start">
+                            Add Funds{" "}
                           </div>
                         </div>
+                        <div className="pt-1 pb-1 flex flex-row gap-0 items-center justify-start self-stretch shrink-0 relative overflow-hidden">
+                          <div className="flex flex-row gap-0 items-center justify-start self-stretch flex-1 relative">
+                            <div className="text-[rgba(255,255,255,0.40)] text-left font-['NeueHaasGroteskDisplayPro-55Roman',_sans-serif] text-sm leading-[135%] font-normal relative flex-1 flex items-center justify-start">
+                              To start exploring, you would require some funds. Click the
+                              button below to receive Matic on Polygon Mumbai testnet.{" "}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {!success ?
+                      <>
+                        {!loader ?
+                          <div
+                            className="rounded-[78px] bg-white cursor-pointer px-6 py-2 w-[120px] mt-6 flex flex-row gap-0 items-center justify-center shrink-0  relative overflow-hidden"
+
+                            onClick={() => fundTriaWallet()}
+                          >
+                            <div className="flex flex-row gap-0 items-center justify-center shrink-0 relative">
+                              <div className="text-black text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
+                                Add funds{" "}
+                              </div>
+                            </div>
+                          </div> :
+                          <div className={`relative px-[2px] py-[2px] w-[120px] mt-6 bg-animation-${walletColor === "#FF4E17" ? "orange" : walletColor === "#7D40FF" ? "purple" : walletColor === "#D7FF01" ? "green" : "pink"}`}>
+                            <div className=" rounded-[78px] z-50 relative bg-black text-white  p-2">
+                              <div>
+                                <div className="text-center flex justify-center text-neutral-50 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-[16.80px] ">Loading...</div>
+                              </div>
+                            </div>
+                          </div>}
+                      </>
+                      :
+                      <div>
+                        <div className="pt-1 pb-1 flex flex-row gap-0 mt-3   items-center justify-start self-stretch shrink-0 relative overflow-hidden">
+                          <div className="flex flex-col gap-0 items-center justify-start self-stretch flex-1 relative">
+                            <div className="text-[rgba(255,255,255,0.40)] text-left font-['NeueHaasGroteskDisplayPro-55Roman',_sans-serif] text-sm leading-[135%] font-normal relative flex-1 flex items-center justify-start">
+                              Sent 0.001 MUMBAI MATIC!
+                            </div>
+                            <div onClick={() => { window.open(`https://mumbai.polygonscan.com/address/${userWalletAddress}`, "_blank"); setSuccess(false) }} className="text-white cursor-pointer underline text-left font-['NeueHaasGroteskDisplayPro-55Roman',_sans-serif] text-sm leading-[135%] font-normal relative flex-1 flex items-center justify-start">
+                              View details
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    }
+                  </div> :
+                  <div
+                    className={
+                      " border rounded-xl md:h-[280px] border-stone-800 border-solid py-8 px-4 flex flex-col items-center justify-between self-stretch shrink-0 w-full relative overflow-hidden "
+
+                    }
+                    style={{
+                      background:
+                        "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 40%)",
+                    }}
+                  >
+                    <div className="flex flex-col gap-7 items-center justify-start self-stretch shrink-0 relative">
+                      <div className="flex flex-col gap-5 items-center justify-start self-stretch shrink-0 relative">
+                        <div className="pt-2 pb-2 flex flex-row gap-0 -mt-3 items-center justify-center self-stretch shrink-0 relative">
+                          <div className="text-[#fafafa] text-left font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-[20px] leading-[120%] font-semibold relative flex items-center justify-start">
+                            Sign Message{" "}
+                          </div>
+                        </div>
+                        <div className="pt-1 pb-1 flex flex-row gap-0 items-center justify-start self-stretch shrink-0 relative overflow-hidden">
+                          <div className="flex flex-row gap-0 items-center justify-start self-stretch flex-1 relative">
+                            <div className="text-[rgba(255,255,255,0.40)] text-left font-['NeueHaasGroteskDisplayPro-55Roman',_sans-serif] text-sm leading-[135%] font-normal relative flex-1 flex items-center justify-start">
+                              Sample wallet interaction of a message signature. To test a transaction signature, mint a Tria Concept NFT from the right.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      className="rounded-[78px] bg-white cursor-pointer px-6 py-2 w-[120px] mt-6 flex flex-row gap-0 items-center justify-center shrink-0  relative overflow-hidden"
+                      onClick={() => callSign()}
+                    >
+                      <div className="flex flex-row gap-0 items-center justify-center shrink-0 relative">
+                        <div className="text-black text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
+                          Sign
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                }
+                <div className="w-full h-10 justify-center mt-5 items-center gap-3 inline-flex">
+                  <div onClick={() => setCarouselOne(0)} className="p-2 bg-zinc-500 bg-opacity-20 rounded-[22px] justify-start items-start gap-2 flex">
+                    <div className="w-6 h-6 justify-center items-center flex">
+                      <div className="w-5 h-5 relative">
+                        <img className="rotate-[180deg]" src="/icons/arrow.svg" alt="arrow" />
                       </div>
                     </div>
                   </div>
-                  {!success ?
-                    <>
-                      {!loader ?
-                        <div
-                          className="rounded-[78px] bg-white cursor-pointer px-6 py-2 w-[120px] mt-6 flex flex-row gap-0 items-center justify-center shrink-0  relative overflow-hidden"
-
-                          onClick={() => fundTriaWallet()}
-                        >
-                          <div className="flex flex-row gap-0 items-center justify-center shrink-0 relative">
-                            <div className="text-black text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
-                              Add funds{" "}
-                            </div>
-                          </div>
-                        </div> :
-                        <div className={`relative px-[2px] py-[2px] w-[120px] mt-6 bg-animation-${walletColor === "#FF4E17" ? "orange" : walletColor === "#7D40FF" ? "purple" : walletColor === "#D7FF01" ? "green" : "pink"}`}>
-                          <div className=" rounded-[78px] z-50 relative bg-black text-white  p-2">
-                            <div>
-                              <div className="text-center flex justify-center text-neutral-50 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-[16.80px] ">Loading...</div>
-                            </div>
-                          </div>
-                        </div>}
-                    </>
-                    :
-                    <div>
-                      <div className="pt-1 pb-1 flex flex-row gap-0 mt-3   items-center justify-start self-stretch shrink-0 relative overflow-hidden">
-                        <div className="flex flex-col gap-0 items-center justify-start self-stretch flex-1 relative">
-                          <div className="text-[rgba(255,255,255,0.40)] text-left font-['NeueHaasGroteskDisplayPro-55Roman',_sans-serif] text-sm leading-[135%] font-normal relative flex-1 flex items-center justify-start">
-                            Sent 0.001 MUMBAI MATIC!
-                          </div>
-                          <div onClick={() => { window.open(`https://mumbai.polygonscan.com/address/${userWalletAddress}`, "_blank"); setSuccess(false) }} className="text-white cursor-pointer underline text-left font-['NeueHaasGroteskDisplayPro-55Roman',_sans-serif] text-sm leading-[135%] font-normal relative flex-1 flex items-center justify-start">
-                            View details
-                          </div>
-                        </div>
+                  <div onClick={() => setCarouselOne(1)} className="p-2 bg-zinc-500 bg-opacity-20 rounded-[22px] justify-start items-start gap-2 flex">
+                    <div className="w-6 h-6 justify-center items-center flex">
+                      <div className="w-5 h-5 relative">
+                        <img src="/icons/arrow.svg" alt="arrow" />
                       </div>
                     </div>
-                  }
+                  </div>
                 </div>
               </div>
               <div className="mx-3 mt-7 mb-10">
