@@ -60,6 +60,7 @@ function App() {
     launchTria,
     setLaunchTria,
     clicked,
+    setClicked
   }
 
   function useOutsideAlerter(ref) {

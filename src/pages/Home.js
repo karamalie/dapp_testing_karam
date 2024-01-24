@@ -27,7 +27,9 @@ const Home = () => {
   const [userWalletAddress, setUserWalletAddress] = useState("")
   const [loader, setLoader] = useState(false)
   const [success, setSuccess] = useState(false)
-  const { setWalletColor, walletColor, setReloadFlag, reloadFlag, setLaunchTria, launchTria, clicked } = useContext(Context)
+  const { setWalletColor, walletColor, setReloadFlag, reloadFlag, setLaunchTria, launchTria, clicked, setClicked } = useContext(Context)
+
+  const [openLogout, setOpenLogout] = useState(false)
 
   const [clickedTap, setClickedTap] = useState(false)
 
@@ -406,7 +408,7 @@ const Home = () => {
                   {avatar && <img alt="avatar" className="w-10 h-10 rounded-[32.73px]" src={avatar} />}
                 </div>
               </div> :
-              <div className="flex gap-2 items-center">
+              <div onClick={() => setOpenLogout(!openLogout)} className="flex gap-2 items-center">
                 <div className="text-neutral-50 text-xs md:text-md font-normal font-['Neue Haas Grotesk Display Pro'] ">{logged_user}</div>
                 <div style={{ background: bg }} className={`w-8 h-8  justify-center items-center flex rounded-full`}>
                   {avatar && <img alt="avatar" className="w-8 h-8 rounded-[32.73px]" src={avatar} />}
@@ -414,6 +416,22 @@ const Home = () => {
               </div>}
           </div>
         </div>
+
+        {windowSize.innerWidth < 500 && openLogout ?
+          <div style={{ zIndex: 9999 }} className="absolute right-2 top-20">
+            <div onClick={() => Logout()} className="w-[194px] cursor-pointer relative h-14 px-6 py-3 bg-zinc-500 bg-opacity-10 rounded-xl border-opacity-10 backdrop-blur-[100px] flex-col justify-center items-center gap-[52px] inline-flex">
+              <div className="self-stretch py-1 justify-start items-center inline-flex">
+                <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
+                  <div className="grow shrink basis-0 text-red-400 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Logout</div>
+                </div>
+                <div className="w-6 h-6 justify-center items-center flex">
+                  <div className="w-6 h-6 relative">
+                    <img src="/icons/logout.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> : null}
 
         {/* Lower Functional Grid */}
         {window.innerWidth > 1000 ?
@@ -967,7 +985,7 @@ const Home = () => {
           :
 
 
-          <div className="">
+          <div className={clicked === true ? "blur-background " : ""}>
             <div>
               <div className="w-full h-[40vh] relative">
                 <div className="w-full h-full px-5 py-4 left-0 top-0 absolute bg-transparent flex-col justify-center items-center gap-[34px] inline-flex">
@@ -1583,7 +1601,7 @@ const Home = () => {
 
         {/* Launch Tria Mobile */}
         {windowSize.innerWidth < 500 ?
-          <div onClick={() => setLaunchTria(!launchTria)} className="mx-4 sticky bottom-4">
+          <div onClick={() => {setLaunchTria(!launchTria); setClicked(!clicked)}} className="mx-4 sticky bottom-4">
             <div className={`relative px-[2px] py-[2px] w-full backdrop-blur-[11.33px] bg-opacity-20 bg-animation-${walletColor === "#FF4E17" ? "orange" : walletColor === "#7D40FF" ? "purple" : walletColor === "#D7FF01" ? "green" : "pink"}`}>
               <div className=" rounded-[78px] z-50 relative bg-black backdrop-blur-[11.33px]  text-white  p-4">
                 <div>
