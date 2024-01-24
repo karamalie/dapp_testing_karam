@@ -703,9 +703,9 @@ const Home = () => {
                         {walletColor === "#D7FF01" ? <img className=" absolute w-full group-hover:transition duration-[500ms] group-hover:duration-[500ms]  group-hover:-translate-y-6" src="/icons/person_card_green.svg" alt="person" /> : null}
                         {walletColor === "#FF249D" ? <img className=" absolute w-full group-hover:transition duration-[500ms] group-hover:duration-[500ms]  group-hover:-translate-y-6" src="/icons/person_card_pink.svg" alt="person" /> : null}
                         {/* <div className="w-[298.50px] h-[387.84px] left-[20px] top-[33.38px] absolute origin-top-left rotate-[-64.04deg] opacity-80 bg-orange-600 rounded-full blur-[37.67px]" /> */}
-                        <img className="w-[64.95px] h-[64.95px] left-[1vw] top-[1vh] absolute rounded-full" src="/icons/person_2.svg" alt="person" />
+                        <img className="w-[64.95px] h-[64.95px] left-[1vw] top-[1vh] absolute rounded-full group-hover:transition duration-[500ms] group-hover:duration-[500ms]  group-hover:translate-x-2" src="/icons/person_2.svg" alt="person" />
                         <div className="h-[123.79px] left-[-16px] top-[18px] absolute">
-                          <div className="w-[137.59px] h-[33.83px] left-[2.92px] top-[7vh] absolute origin-top-left rotate-[4.96deg] backdrop-blur-[9.44px] flex-col justify-center items-start gap-[3.15px] inline-flex">
+                          <div className="w-[137.59px] h-[33.83px] left-[2.92px] top-[7vh] absolute  origin-top-left rotate-[4.96deg] backdrop-blur-[9.44px] flex-col justify-center items-start gap-[3.15px] inline-flex">
                             <div className="px-[15.74px] py-[9.44px] bg-sky-300 bg-opacity-50 rounded-[9.44px] justify-start items-center inline-flex">
                               <div className="justify-start items-center flex">
                                 <div className="text-neutral-50 text-xs font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[15.11px] tracking-tight">grandpa.john@tria</div>
@@ -714,7 +714,7 @@ const Home = () => {
                           </div>
                         </div>
                         <div className="w-[79.72px] h-[98.38px] left-[5vw] top-[17vh] absolute">
-                          <img className="w-[55.95px] h-[55.95px] left-[1.73px] top-[1vh] absolute rounded-full" src="/icons/person.svg" alt="person" />
+                          <img className="w-[55.95px] h-[55.95px] left-[1.73px] top-[1vh] absolute rounded-full " src="/icons/person.svg" alt="person" />
                           <div className="w-[77.30px] h-[27.93px] left-0 top-[70.59px] absolute origin-top-left rotate-[-5.79deg] backdrop-blur-[7.79px] flex-col justify-center items-start gap-[2.60px] inline-flex">
                             <div className="px-[12.99px] py-[7.79px] bg-orange-300 bg-opacity-70 rounded-lg justify-start items-center inline-flex">
                               <div className="justify-start items-center flex">
@@ -731,7 +731,7 @@ const Home = () => {
                         <div className="w-[36.77px] h-[36.77px] -left-[1vw] bottom-[1vh] absolute origin-top-left rotate-[-17.48deg] bg-red-600 rounded-[45.28px] backdrop-blur-[4.60px] justify-center items-center flex">
                           <img className="w-[44.12px] h-[45.12px] pl-2" src="/icons/optimism.svg" />
                         </div>
-                        <div className="w-[50.76px] h-[50.76px] left-[1vw] top-[15vh] absolute bg-violet-600 rounded-[33.84px] backdrop-blur-[6.34px] flex-col justify-center items-center inline-flex">
+                        <div className="w-[50.76px] h-[50.76px] left-[1vw] top-[15vh] group-hover:transition duration-[500ms] group-hover:duration-[500ms]  group-hover:translate-y-1 absolute bg-violet-600 rounded-[33.84px] backdrop-blur-[6.34px] flex-col justify-center items-center inline-flex">
                           <img src="/icons/Polygon.svg" alt="polygon_logo" />
                         </div>
                       </div>
@@ -863,11 +863,8 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-
                     </div>
                   </div>
-
-
                   <div className="h-[30vh] overflow-hidden group relative w-1/2 border border-stone-800 rounded-xl group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] ">
 
                     <div className="w-full h-full relative rounded-xl">
