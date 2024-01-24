@@ -803,7 +803,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 mt-5 4xl:mt-8">
-                  <div className="flip-card cursor-pointer">
+                  <div className="flip-card cursor-pointer h-[30vh]">
                     <div className="flip-card-inner ">
                       <div className={walletColor === "#FF4E17" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-orange" : walletColor === "#7D40FF" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-purple" : walletColor === "#D7FF01" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-green" : "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-pink"}>
                         {/* {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
@@ -980,47 +980,39 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="text-xl grow shrink basis-0 text-center px-4">
-                <span className="text-white text-opacity-90 font-semibold font-['Neue Haas Grotesk Display Pro'] ">Explore</span>
-                <span className="text-white t font-semibold font-['Neue Haas Grotesk Display Pro'] "> </span>
-                {walletColor === "#FF4E17" ? <span className="text-[#FF4E17]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
-                {walletColor === "#7D40FF" ? <span className="text-[#7D40FF]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
-                {walletColor === "#D7FF01" ? <span className="text-[#D7FF01]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
-                {walletColor === "#FF249D" ? <span className="text-[#FF249D]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
-                <span className="text-white text-opacity-90 relative font-semibold font-['Neue Haas Grotesk Display Pro']  ">in real time. Tailor and construct the wallet to match your app.</span>
-              </div>
-              <div className="flex items-center gap-4 mt-5 px-3 ">
+              
+              <div className="flex items-center gap-4 -mt-5 px-3 mb-6">
 
-                <div className="flip-card cursor-pointer">
+                <div className="flip-card cursor-pointer h-[24vh]">
                   <div className="flip-card-inner ">
-                    <div className="flip-card-front h-[210px] w-1/2 border-stone-800 rounded-xl">
-                      {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
-                      {walletColor === "#7D40FF" ? <img src="/icons/card_purple.svg" className="h-[100%] w-full absolute" /> : null}
-                      {walletColor === "#D7FF01" ? <img src="/icons/card_green.svg" className="h-[100%] w-full absolute" /> : null}
-                      {walletColor === "#FF249D" ? <img src="/icons/card_pink.svg" className="h-[100%] w-full absolute" /> : null}
+                    <div className={walletColor === "#FF4E17" ? "flip-card-front  w-1/2 border-stone-800 rounded-xl background-container-orange" : walletColor === "#7D40FF" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-purple" : walletColor === "#D7FF01" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-green" : "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-pink"}>
+                      {/* {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
+                        {walletColor === "#7D40FF" ? <img src="/icons/card_purple.svg" className="h-[100%] w-full absolute" /> : null}
+                        {walletColor === "#D7FF01" ? <img src="/icons/card_green.svg" className="h-[100%] w-full absolute" /> : null}
+                        {walletColor === "#FF249D" ? <img src="/icons/card_pink.svg" className="h-[100%] w-full absolute" /> : null} */}
 
                       <div className="w-full flex justify-center h-full items-center ">
                         <div className={`w-16 h-16 relative  bg-neutral-50 bg-opacity-20 justify-center items-center flex rounded-full`}>
                           {avatar && <img alt="avatar" className="w-16 h-16 rounded-[32.73px]" src={avatar} />}
                         </div>
                       </div>
-                      <div className="w-full flex h-full items-center absolute top-20  right-0 text-white ">
-                        <div className="flex flex-col items-right">
-                          <div className="text-white text-xs  font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ml-3 ">{logged_user}</div>
-                          <div className="text-white text-xs font-light font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] -ml-1 ">Tap to rotate</div>
+                      <div className="w-full flex h-full items-center absolute top-16 right-0 text-white ">
+                        <div className="flex flex-col mt-2 ml-3">
+                          <div className="text-white text-sm font-bold  font-['Neue Haas Grotesk Display Pro'] leading-[33.60px]">{logged_user}</div>
+                          <div className="text-white text-xs font-light font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] flex justify-start">Tap to rotate</div>
                         </div>
                       </div>
                     </div>
-                    <div className="flip-card-back h-[210px] w-1/2 border-stone-800 rounded-xl">
+                    <div className="flip-card-back  w-1/2 border-stone-800 rounded-xl background-container-back">
                       <img src="/icons/grey_rotate.svg" className="h-[100%] w-full absolute" />
-                      <div className="w-full flex justify-end absolute top-4 text-white ">
-                        <div className="flex flex-col mr-4 mt-4 items-end">
-                          <div className="text-white text-xs  font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ">{logged_user}</div>
+                      <div className="w-full flex justify-end absolute top-0  text-white ">
+                        <div className="flex flex-col mr-3 mt-4 items-end">
+                          <div className="text-white text-sm font-bold  font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ">{logged_user}</div>
                           <div className="text-white text-xs font-light font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ">Tap to rotate</div>
                         </div>
                       </div>
-                      <div className="w-full flex justify-end absolute bottom-10  text-white ">
-                        <div className="flex flex-col mr-4 mt-0 items-end">
+                      <div className="w-full flex justify-end absolute bottom-4  text-white ">
+                        <div className="flex flex-col mr-3 mt-4 items-end">
                           <div className="text-white text-lg flex items-center gap-0 font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ">
                             <img src="/icons/tria_card.svg" alt="tria_card" />
                             tria
@@ -1032,7 +1024,8 @@ const Home = () => {
 
                   </div>
                 </div>
-                <div className="h-[210px] relative w-1/2 border border-stone-800 rounded-xl group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] ">
+
+                <div className="h-[24vh] relative w-1/2 border border-stone-800 rounded-xl group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] ">
 
                   <div className="w-full h-full relative rounded-xl">
                     {walletColor === "#FF4E17" ? <img className="absolute top-0 w-full" src="/icons/top_orange.svg" /> : null}
@@ -1061,10 +1054,19 @@ const Home = () => {
 
                 </div>
               </div>
+              <div className="text-xl grow shrink basis-0 text-center px-7 mb-6">
+                <span className="text-white text-opacity-90 font-semibold font-['Neue Haas Grotesk Display Pro'] ">Explore</span>
+                <span className="text-white t font-semibold font-['Neue Haas Grotesk Display Pro'] "> </span>
+                {walletColor === "#FF4E17" ? <span className="text-[#FF4E17]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
+                {walletColor === "#7D40FF" ? <span className="text-[#7D40FF]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
+                {walletColor === "#D7FF01" ? <span className="text-[#D7FF01]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
+                {walletColor === "#FF249D" ? <span className="text-[#FF249D]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
+                <span className="text-white text-opacity-90 relative font-semibold font-['Neue Haas Grotesk Display Pro']  ">in real time. Tailor and construct the wallet to match your app.</span>
+              </div>
 
               <div className="mx-3">
                 <div className={
-                  "rounded-xl border-solid  border-stone-800 border-[0.7px] px-9 py-2 flex flex-col gap-5 items-start justify-start shrink-0 relative w-full "
+                  "rounded-xl border-solid  border-stone-800 border-[0.7px] px-4 py-2 flex flex-col gap-5 items-start justify-start shrink-0 relative w-full "
                 }
                   style={{
                     background:
@@ -1144,25 +1146,37 @@ const Home = () => {
                         </div>
                       </div>
                       <div className="flex items-center gap-4">
-                        <div onClick={() => {
+                      <div onClick={() => {
                           setWalletColor("#7D40FF");
                           setReloadFlag(!reloadFlag);
-                        }} className="bg-[#7D40FF] h-3 w-3 rounded-full cursor-pointer">
+                        }} className="bg-[#7D40FF] h-5 w-5 rounded-full cursor-pointer flex justify-center items-center">
+                          {walletColor === "#7D40FF" ? <div className="h-3 w-3 rounded-full bg-white flex justify-center items-center">
+                            <div className="bg-[#7D40FF] h-2 w-2 rounded-full"></div>
+                          </div> : null}
                         </div>
                         <div onClick={() => {
                           setWalletColor("#FF4E17");
                           setReloadFlag(!reloadFlag);
-                        }} className="bg-[#FF4E17] h-3 w-3 rounded-full cursor-pointer">
+                        }} className="bg-[#FF4E17] h-5 w-5 rounded-full cursor-pointer flex justify-center items-center">
+                          {walletColor === "#FF4E17" ? <div className="h-3 w-3 rounded-full bg-white flex justify-center items-center">
+                            <div className="bg-[#FF4E17] h-2 w-2 rounded-full"></div>
+                          </div> : null}
                         </div>
                         <div onClick={() => {
                           setWalletColor("#D7FF01");
                           setReloadFlag(!reloadFlag);
-                        }} className="bg-[#D7FF01] h-3 w-3 rounded-full cursor-pointer">
+                        }} className="bg-[#D7FF01] h-5 w-5 rounded-full cursor-pointer flex justify-center items-center">
+                          {walletColor === "#D7FF01" ? <div className="h-3 w-3 rounded-full bg-white flex justify-center items-center">
+                            <div className="bg-[#D7FF01] h-2 w-2 rounded-full"></div>
+                          </div> : null}
                         </div>
                         <div onClick={() => {
                           setWalletColor("#FF249D");
                           setReloadFlag(!reloadFlag);
-                        }} className="bg-[#FF249D] h-3 w-3 rounded-full cursor-pointer">
+                        }} className="bg-[#FF249D] h-5 w-5 rounded-full cursor-pointer flex justify-center items-center">
+                          {walletColor === "#FF249D" ? <div className="h-3 w-3 rounded-full bg-white flex justify-center items-center">
+                            <div className="bg-[#FF249D] h-2 w-2 rounded-full"></div>
+                          </div> : null}
                         </div>
                       </div>
 
@@ -1192,9 +1206,10 @@ const Home = () => {
                 </div>
               </div>
               <div className="mx-3 mt-10 mb-10">
-                <div className="w-full text-center"><span className="text-white text-opacity-90 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]">Explore </span>
-                  <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>basic</span>
-                  <span className="text-white text-opacity-90 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> features</span></div>
+                <div className="w-full text-center">
+               
+                  <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Add</span>
+                  <span className="text-white text-opacity-90 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> funds and sign messages.</span></div>
               </div>
 
               <div className="mt-5 mx-3">
@@ -1268,9 +1283,10 @@ const Home = () => {
                 </div>
               </div>
               <div className="mx-3 mt-7 mb-10">
-                <div className="w-full text-center"><span className="text-white text-opacity-90 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]">Explore </span>
-                  <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>advanced</span>
-                  <span className="text-white text-opacity-90 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> features</span></div>
+                <div className="w-full text-center">
+                  
+                  <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Send</span>
+                  <span className="text-white text-opacity-90 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> token and claim NFTs.</span></div>
               </div>
               <div className="mt-5 mb-7 mx-3">
                 <div style={{
