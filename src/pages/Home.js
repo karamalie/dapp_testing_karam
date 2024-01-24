@@ -439,12 +439,12 @@ const Home = () => {
             <div className="w-[140vw] 3xl:w-[90vw] 4xl:w-[90vw] md:grid md:grid-cols-12 gap-5 mt-20 ">
               <div className="md:col-span-4 mt-10 ml-10">
                 <div className="w-full h-[45vh] 3xl:h-[50vh] 4xl:h-[50vh] relative rounded-xl ">
-                  <div className="w-full h-full px-5 py-4 group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] left-0 top-0 absolute bg-transparent rounded-xl border border-neutral-800 backdrop-blur-[100px] flex-col justify-center items-center gap-[34px] inline-flex">
+                  <div className="w-full h-full overflow-hidden px-5 py-4 group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] left-0 top-0 absolute bg-transparent rounded-xl border border-neutral-800 backdrop-blur-[100px] flex-col justify-center items-center gap-[34px] inline-flex">
 
-                    {walletColor === "#FF4E17" ? <img className="absolute top-0 rounded-xl left-0 w-[60%] " src="/icons/ellipse.svg" alt="ellipse" /> : null}
-                    {walletColor === "#7D40FF" ? <img className="absolute top-0 rounded-xl left-0 w-[60%]" src="/icons/ellipse_purple.svg" alt="ellipse" /> : null}
-                    {walletColor === "#D7FF01" ? <img className="absolute top-0 rounded-xl left-0 w-[60%]" src="/icons/ellipse_green.svg" alt="ellipse" /> : null}
-                    {walletColor === "#FF249D" ? <img className="absolute top-0 rounded-xl left-0 w-[60%]" src="/icons/ellipse_pink.svg" alt="ellipse" /> : null}
+                    {walletColor === "#FF4E17" ? <img className="absolute top-0 rounded-xl left-0 w-[60%] group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6  " src="/icons/ellipse.svg" alt="ellipse" /> : null}
+                    {walletColor === "#7D40FF" ? <img className="absolute top-0 rounded-xl left-0 w-[60%] group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ellipse_purple.svg" alt="ellipse" /> : null}
+                    {walletColor === "#D7FF01" ? <img className="absolute top-0 rounded-xl left-0 w-[60%] group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ellipse_green.svg" alt="ellipse" /> : null}
+                    {walletColor === "#FF249D" ? <img className="absolute top-0 rounded-xl left-0 w-[60%] group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ellipse_pink.svg" alt="ellipse" /> : null}
 
                     <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
                       <div className="text-white text-opacity-80 text-lg font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience Tria’s Personalised</div>
@@ -456,11 +456,11 @@ const Home = () => {
                 <div className="w-full justify-between items-start gap-5 flex mt-5 ">
 
                   <div className="w-full h-full relative group rounded-xl hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95]">
-                    <div className="w-full h-[35vh]  p-7 left-0 top-0 absolute rounded-xl border border-stone-800 border-solid backdrop-blur-[100px] flex-col justify-start items-start gap-[52px] inline-flex">
-                      {walletColor === "#FF4E17" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full group-hover:transition duration-1000" src="/icons/second_card.svg" alt="ellipse" /> : null}
-                      {walletColor === "#7D40FF" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full" src="/icons/second_card_purple.svg" alt="ellipse" /> : null}
-                      {walletColor === "#D7FF01" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full" src="/icons/second_card_green.svg" alt="ellipse" /> : null}
-                      {walletColor === "#FF249D" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full" src="/icons/second_card_pink.svg" alt="ellipse" /> : null}
+                    <div className="w-full h-[35vh] overflow-hidden group p-7 left-0 top-0 absolute rounded-xl border border-stone-800 border-solid backdrop-blur-[100px] flex-col justify-start items-start gap-[52px] inline-flex">
+                      {walletColor === "#FF4E17" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:translate-x-6 group-hover:translate-y-6" src="/icons/second_card.svg" alt="ellipse" /> : null}
+                      {walletColor === "#7D40FF" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:translate-x-6 group-hover:translate-y-6" src="/icons/second_card_purple.svg" alt="ellipse" /> : null}
+                      {walletColor === "#D7FF01" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:translate-x-6 group-hover:translate-y-6" src="/icons/second_card_green.svg" alt="ellipse" /> : null}
+                      {walletColor === "#FF249D" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:translate-x-6 group-hover:translate-y-6" src="/icons/second_card_pink.svg" alt="ellipse" /> : null}
                       <div className="text-xl md:text-2xl grow shrink basis-0">
                         <span className="text-white text-opacity-90  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Explore the</span>
                         <span className="text-white t font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] "> </span>
@@ -665,12 +665,12 @@ const Home = () => {
                 <div className="mt-5 w-full h-[30vh]">
                   <div className="grid grid-cols-6 gap-4 w-full h-full  ">
                     <div className="flex flex-col gap-5 col-span-4 ">
-                      <div className="w-full h-1/2 relative rounded-xl group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95]">
-                        <div className="w-full h-full flex justify-center items-center py-4 left-0 top-0 absolute rounded-xl border border-stone-800 border-solid  flex-col justify-start items-start gap-[52px] inline-flex">
-                          {walletColor === "#FF4E17" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full" src="/icons/ring_orange.svg" alt="ellipse" /> : null}
-                          {walletColor === "#7D40FF" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full" src="/icons/ring_purple.svg" alt="ellipse" /> : null}
-                          {walletColor === "#D7FF01" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full" src="/icons/ring_green.svg" alt="ellipse" /> : null}
-                          {walletColor === "#FF249D" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full" src="/icons/ring_pink.svg" alt="ellipse" /> : null}
+                      <div className="w-full h-1/2 relative rounded-xl group overflow-hidden hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95]">
+                        <div className="w-full h-full  flex group justify-center items-center py-4 left-0 top-0 absolute rounded-xl border border-stone-800 border-solid  flex-col justify-start items-start gap-[52px] inline-flex">
+                          {walletColor === "#FF4E17" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ring_orange.svg" alt="ellipse" /> : null}
+                          {walletColor === "#7D40FF" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ring_purple.svg" alt="ellipse" /> : null}
+                          {walletColor === "#D7FF01" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ring_green.svg" alt="ellipse" /> : null}
+                          {walletColor === "#FF249D" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ring_pink.svg" alt="ellipse" /> : null}
                           <div className="text-xl md:text-3xl grow shrink basis-0">
                             <span className="text-white text-opacity-90 relative font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">One name,<br></br></span>
                             <span className="text-white relative font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">all things </span>
@@ -698,10 +698,10 @@ const Home = () => {
                     <div className="w-full col-span-2">
 
                       <div className="w-full h-full relative group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] rounded-xl border border-stone-800 overflow-hidden ">
-                        {walletColor === "#FF4E17" ? <img className=" absolute w-full " src="/icons/person_card_orange.svg" alt="person" /> : null}
-                        {walletColor === "#7D40FF" ? <img className=" absolute w-full " src="/icons/person_card_purple.svg" alt="person" /> : null}
-                        {walletColor === "#D7FF01" ? <img className=" absolute w-full " src="/icons/person_card_green.svg" alt="person" /> : null}
-                        {walletColor === "#FF249D" ? <img className=" absolute w-full " src="/icons/person_card_pink.svg" alt="person" /> : null}
+                        {walletColor === "#FF4E17" ? <img className=" absolute w-full group-hover:transition duration-[500ms] group-hover:duration-[500ms]  group-hover:-translate-y-6" src="/icons/person_card_orange.svg" alt="person" /> : null}
+                        {walletColor === "#7D40FF" ? <img className=" absolute w-full group-hover:transition duration-[500ms] group-hover:duration-[500ms]  group-hover:-translate-y-6 " src="/icons/person_card_purple.svg" alt="person" /> : null}
+                        {walletColor === "#D7FF01" ? <img className=" absolute w-full group-hover:transition duration-[500ms] group-hover:duration-[500ms]  group-hover:-translate-y-6" src="/icons/person_card_green.svg" alt="person" /> : null}
+                        {walletColor === "#FF249D" ? <img className=" absolute w-full group-hover:transition duration-[500ms] group-hover:duration-[500ms]  group-hover:-translate-y-6" src="/icons/person_card_pink.svg" alt="person" /> : null}
                         {/* <div className="w-[298.50px] h-[387.84px] left-[20px] top-[33.38px] absolute origin-top-left rotate-[-64.04deg] opacity-80 bg-orange-600 rounded-full blur-[37.67px]" /> */}
                         <img className="w-[64.95px] h-[64.95px] left-[1vw] top-[1vh] absolute rounded-full" src="/icons/person_2.svg" alt="person" />
                         <div className="h-[123.79px] left-[-16px] top-[18px] absolute">
@@ -868,20 +868,20 @@ const Home = () => {
                   </div>
 
 
-                  <div className="h-[30vh] relative w-1/2 border border-stone-800 rounded-xl group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] ">
+                  <div className="h-[30vh] overflow-hidden group relative w-1/2 border border-stone-800 rounded-xl group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] ">
 
                     <div className="w-full h-full relative rounded-xl">
-                      {walletColor === "#FF4E17" ? <img className="absolute top-0 w-full" src="/icons/top_orange.svg" /> : null}
-                      {walletColor === "#FF4E17" ? <img className="absolute bottom-0 w-full rotate-[180deg]" src="/icons/top_orange.svg" /> : null}
+                      {walletColor === "#FF4E17" ? <img className="absolute top-0 w-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-y-5" src="/icons/top_orange.svg" /> : null}
+                      {walletColor === "#FF4E17" ? <img className="absolute bottom-0 w-full rotate-[180deg] group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:translate-y-5" src="/icons/top_orange.svg" /> : null}
 
-                      {walletColor === "#7D40FF" ? <img className="absolute top-0 w-full" src="/icons/top_purple.svg" /> : null}
-                      {walletColor === "#7D40FF" ? <img className="absolute bottom-0 w-full rotate-[180deg]" src="/icons/top_purple.svg" /> : null}
+                      {walletColor === "#7D40FF" ? <img className="absolute top-0 w-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-y-5" src="/icons/top_purple.svg" /> : null}
+                      {walletColor === "#7D40FF" ? <img className="absolute bottom-0 w-full rotate-[180deg] group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:translate-y-5" src="/icons/top_purple.svg" /> : null}
 
-                      {walletColor === "#D7FF01" ? <img className="absolute top-0 w-full" src="/icons/top_green.svg" /> : null}
-                      {walletColor === "#D7FF01" ? <img className="absolute bottom-0 w-full rotate-[180deg]" src="/icons/top_green.svg" /> : null}
+                      {walletColor === "#D7FF01" ? <img className="absolute top-0 w-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-y-5" src="/icons/top_green.svg" /> : null}
+                      {walletColor === "#D7FF01" ? <img className="absolute bottom-0 w-full rotate-[180deg] group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:translate-y-5" src="/icons/top_green.svg" /> : null}
 
-                      {walletColor === "#FF249D" ? <img className="absolute top-0 w-full" src="/icons/top_pink.svg" /> : null}
-                      {walletColor === "#FF249D" ? <img className="absolute bottom-0 w-full rotate-[180deg]" src="/icons/top_pink.svg" /> : null}
+                      {walletColor === "#FF249D" ? <img className="absolute top-0 w-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-y-5" src="/icons/top_pink.svg" /> : null}
+                      {walletColor === "#FF249D" ? <img className="absolute bottom-0 w-full rotate-[180deg] group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:translate-y-5" src="/icons/top_pink.svg" /> : null}
 
                       <div className="w-full h-full p-8 left-0 top-0 absolute rounded-xl flex-col justify-center items-center gap-[52px] inline-flex">
                         <div className="text-white text-opacity-90 text-[30px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] tracking-wide">All EVMs, and major non-EVMS, supported.</div>
@@ -1601,7 +1601,7 @@ const Home = () => {
 
         {/* Launch Tria Mobile */}
         {windowSize.innerWidth < 500 ?
-          <div onClick={() => {setLaunchTria(!launchTria); setClicked(!clicked)}} className="mx-4 sticky bottom-4">
+          <div onClick={() => { setLaunchTria(!launchTria); setClicked(!clicked) }} className="mx-4 sticky bottom-4">
             <div className={`relative px-[2px] py-[2px] w-full backdrop-blur-[11.33px] bg-opacity-20 bg-animation-${walletColor === "#FF4E17" ? "orange" : walletColor === "#7D40FF" ? "purple" : walletColor === "#D7FF01" ? "green" : "pink"}`}>
               <div className=" rounded-[78px] z-50 relative bg-black backdrop-blur-[11.33px]  text-white  p-4">
                 <div>
