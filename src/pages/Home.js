@@ -1395,58 +1395,132 @@ const Home = () => {
                 <div className="w-full text-center">
 
                   <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Send</span>
-                  <span className="text-white text-opacity-90 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> token and claim NFTs.</span></div>
+                  <span className="text-white text-opacity-90 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> token and claim NFTs.</span>
+                </div>
+
               </div>
               <div className="mt-5 mb-7 mx-3">
-                <div style={{
-                  background:
-                    "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 40%)",
-                }} className="w-full md:h-[410px] 3xl:h-[400px] 4xl:h-[470px] p-3 bg-opacity-70 rounded-xl border border-stone-800  backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
-                  <div className="self-stretch h-[385px] flex-col justify-start items-center gap-9 flex">
-                    <div className="self-stretch h-[137px] flex-col justify-start items-center gap-6 flex">
-                      <div className="self-stretch py-0 justify-center items-center gap-4 inline-flex">
-                        <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] tracking-wide">Send Token</div>
+                {carouselTwo === 0 ?
+                  <div style={{
+                    background:
+                      "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 40%)",
+                  }} className="w-full  p-3 bg-opacity-70 rounded-xl border border-stone-800  backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
+                    <div className="self-stretch h-[385px] flex-col justify-start items-center gap-9 flex">
+                      <div className="self-stretch h-[137px] flex-col justify-start items-center gap-6 flex">
+                        <div className="self-stretch py-0 justify-center items-center gap-4 inline-flex">
+                          <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] tracking-wide">Send Token</div>
+                        </div>
+                        <div className="pt-1 pb-1 flex flex-row gap-0 items-center justify-start self-stretch shrink-0 relative overflow-hidden">
+                          <div className="flex flex-row gap-0 items-center justify-start self-stretch flex-1 relative">
+                            <div className="text-[rgba(255,255,255,0.40)] text-left font-['NeueHaasGroteskDisplayPro-55Roman',_sans-serif] text-sm leading-[135%] font-normal relative flex-1 flex items-center justify-start">
+                              A send token interaction – transfer to a blockchain wallet, or a @tria name. Token transfers to email, social accounts and mobile numbers are disabled in the demo.
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="self-stretch py-1 px-2 justify-start items-center inline-flex">
-                        <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
-                          <div className="grow shrink basis-0 text-justify text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug ">A send token interaction – transfer to a blockchain wallet, or a @tria name. Token transfers to email, social accounts and mobile numbers are disabled in the demo.</div>
+                      <div className="self-stretch flex-col  mt-1 justify-start items-center gap-3 flex">
+                        <div className="w-full h-[45px] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 inline-flex">
+                          <div className="w-6 h-6 p-[2.40px] bg-violet-600 rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
+                            <div className="w-[19.20px] h-[19.20px] relative flex-col justify-start items-start flex" />
+                            <img src="/icons/Polygon.svg" alt="polygon" />
+                          </div>
+                          <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
+                            <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">MATIC</div>
+                          </div>
+
+                        </div>
+                        <div className="w-full h-[45px] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
+                          <div className="justify-start items-center flex">
+                            <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} className="w-full text-white text-opacity-90 text-base focus:outline-none font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-[transparent]" placeholder="Token value" />
+                          </div>
+                        </div>
+                        <div className="w-full h-[45px] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
+                          <div className="justify-start items-center flex w-full">
+                            <input value={recepientAddress} onChange={(e) => setrecepientAddress(e.target.value)} className="w-full text-white text-opacity-90 text-base focus:outline-none font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-[transparent]" placeholder="Recipient wallet or @tria address" />
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="self-stretch flex-col  mt-1 justify-start items-center gap-3 flex">
-                      <div className="w-full h-[45px] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 inline-flex">
-                        <div className="w-6 h-6 p-[2.40px] bg-violet-600 rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
-                          <div className="w-[19.20px] h-[19.20px] relative flex-col justify-start items-start flex" />
+                    <div
+                      className={`rounded-[78px] relative cursor-${recepientAddress.length > 0 ? "pointer" : "not-allowed"} px-6 py-2 w-[120px] mt-6 mb-3 flex flex-row mb-4 gap-0 bg-white text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 items-center justify-center shrink-0  relative`}
+                      onClick={() => {
+                        if (recepientAddress.length > 0) {
+                          sendTransaction()
+                        }
+                      }}
+                    >
+                      <div className="flex flex-row gap-0 items-center justify-center shrink-0  ">
+                        <div className=" text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
+                          Send
+                        </div>
+                      </div>
+                    </div>
+                  </div> :
+                  <div style={{
+                    background:
+                      "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 40%)",
+                  }} className="w-full  p-4  rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-start items-center gap-5 inline-flex">
+                    <div className=" h-[20vh] relative mb-5 mt-2">
+                      <img className="max-w-[180px] rounded-[20.07px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmTntuKccRaU7vedr6AU7pPdEJoCQ9KhwwKt5ZaLZ4a5N3" />
+                      <div className="w-[58.47px] h-[58.47px] p-[11.24px] left-[0.11px] top-0 absolute justify-center items-center gap-[12.12px] inline-flex">
+                        <div className="w-8 h-8 pl-[5.26px] pr-[5.27px] pt-[5.13px] pb-[5.39px] bg-gradient-to-br from-stone-950 to-stone-950 rounded-[30.94px] border-2 backdrop-blur-[4.50px] justify-center items-center flex">
                           <img src="/icons/Polygon.svg" alt="polygon" />
                         </div>
-                        <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
-                          <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">MATIC</div>
-                        </div>
+                      </div>
+                    </div>
+                    <div className="self-stretch  h-full flex-col gap-5 items-center flex">
+                      <div className="self-stretch gap-4 flex">
 
-                      </div>
-                      <div className="w-full h-[45px] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
-                        <div className="justify-start items-center flex">
-                          <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} className="w-full text-white text-opacity-90 text-base focus:outline-none font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-[transparent]" placeholder="Token value" />
+                        <div className="self-stretch  flex justify-between p-1 w-full items-start gap-0 inline-flex  ">
+                          <div className="self-stretch flex-col justify-start items-start flex">
+                            <div className="self-stretch p-0 justify-start items-center gap-0 inline-flex">
+                              <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ">Tria NFT</div>
+                            </div>
+                            <div className="px-0 py-0 rounded-[27.15px] justify-start items-center gap-[13.57px] inline-flex">
+                              <div className=" justify-start items-center gap-[13.57px] flex">
+                                <div className="text-center text-white text-opacity-80 text-xl font-medium font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">Concept #1</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            onClick={() => callWriteContract()}
+                            className="rounded-[78px] mt-4 cursor-pointer px-6 py-2 w-[120px] flex flex-row mb-4 gap-0 bg-white text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 items-center justify-center shrink-0  relative overflow-hidden"
+                          >
+                            <div className="flex  flex-row gap-0 items-center justify-center shrink-0 relative ">
+                              <div className=" text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
+                                Mint NFT
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div className="w-full h-[45px] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
-                        <div className="justify-start items-center flex w-full">
-                          <input value={recepientAddress} onChange={(e) => setrecepientAddress(e.target.value)} className="w-full text-white text-opacity-90 text-base focus:outline-none font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-[transparent]" placeholder="Recipient wallet or @tria address" />
+                      <div className="self-stretch flex-col justify-start items-center gap-3 3xl:-mt-10 flex ">
+                        <div className="self-stretch px-1 py-1 justify-start items-center inline-flex">
+                          <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
+                            <div className="grow shrink basis-0 text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">This is an example on Polygon Testnet. Tria supports 100+ blockchains. Speak with the team to discuss more.</div>
+                          </div>
+                        </div>
+                        <div className="self-stretch px-1 py-1 justify-start items-center inline-flex">
+                          <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
+                            <div className="grow shrink basis-0"><span className="text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Supported Standards:<br /></span><span className="text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">ERC 721, 1155 and 6551<br />SPL<br />ICS-721</span></div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={`rounded-[78px] relative cursor-${recepientAddress.length > 0 ? "pointer" : "not-allowed"} px-6 py-2 w-[120px] mt-6 mb-3 flex flex-row mb-4 gap-0 bg-white text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 items-center justify-center shrink-0  relative`}
-                    onClick={() => {
-                      if (recepientAddress.length > 0) {
-                        sendTransaction()
-                      }
-                    }}
-                  >
-                    <div className="flex flex-row gap-0 items-center justify-center shrink-0  ">
-                      <div className=" text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
-                        Send
+                }
+                <div className="w-full h-10 justify-center mt-5 items-center gap-3 inline-flex">
+                  <div onClick={() => setCarouselTwo(0)} className="p-2 bg-zinc-500 bg-opacity-20 rounded-[22px] justify-start items-start gap-2 flex">
+                    <div className="w-6 h-6 justify-center items-center flex">
+                      <div className="w-5 h-5 relative">
+                        <img className="rotate-[180deg]" src="/icons/arrow.svg" alt="arrow" />
+                      </div>
+                    </div>
+                  </div>
+                  <div onClick={() => setCarouselTwo(1)} className="p-2 bg-zinc-500 bg-opacity-20 rounded-[22px] justify-start items-start gap-2 flex">
+                    <div className="w-6 h-6 justify-center items-center flex">
+                      <div className="w-5 h-5 relative">
+                        <img src="/icons/arrow.svg" alt="arrow" />
                       </div>
                     </div>
                   </div>
