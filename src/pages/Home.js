@@ -665,7 +665,7 @@ const Home = () => {
                 <div className="mt-5 w-full h-[30vh]">
                   <div className="grid grid-cols-6 gap-4 w-full h-full  ">
                     <div className="flex flex-col gap-5 col-span-4 ">
-                      <div className="w-full h-1/2 relative rounded-xl group overflow-hidden hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95]">
+                      <div onClick={() => window.open("https://www.youtube.com/watch?v=kPqTHt9v48A", "_blank")} className="w-full cursor-pointer h-1/2 relative rounded-xl group overflow-hidden hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95]">
                         <div className="w-full h-full  flex group justify-center items-center py-4 left-0 top-0 absolute rounded-xl border border-stone-800 border-solid  flex-col justify-start items-start gap-[52px] inline-flex">
                           {walletColor === "#FF4E17" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ring_orange.svg" alt="ellipse" /> : null}
                           {walletColor === "#7D40FF" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ring_purple.svg" alt="ellipse" /> : null}
@@ -1059,7 +1059,7 @@ const Home = () => {
                     {walletColor === "#FF249D" ? <img className="absolute top-0 w-full" src="/icons/top_pink.svg" /> : null}
                     {walletColor === "#FF249D" ? <img className="absolute bottom-0 w-full rotate-[180deg]" src="/icons/top_pink.svg" /> : null}
 
-                    <div className="w-full h-full  rounded-xl flex justify-center items-center ">
+                    <div onClick={() => window.open("https://www.youtube.com/watch?v=kPqTHt9v48A", "_blank")} className="w-full h-full  rounded-xl flex justify-center items-center ">
                       <div className="text-white ml-5 text-opacity-90 text-[27px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] tracking-wide">One name, all things
                         {walletColor === "#FF4E17" ? <span className="text-[#FF4E17]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3</span> : null}
                         {walletColor === "#7D40FF" ? <span className="text-[#7D40FF]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3 </span> : null}
