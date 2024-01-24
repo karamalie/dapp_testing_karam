@@ -1025,7 +1025,7 @@ const Home = () => {
                   </div>
                 </div>
 
-                <div className="h-[24vh] relative w-1/2 border border-stone-800 rounded-xl group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] ">
+                <div className="h-[24vh] relative w-1/2 border border-stone-800 rounded-xl  ">
 
                   <div className="w-full h-full relative rounded-xl">
                     {walletColor === "#FF4E17" ? <img className="absolute top-0 w-full" src="/icons/top_orange.svg" /> : null}
