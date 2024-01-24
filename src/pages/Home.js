@@ -412,7 +412,7 @@ const Home = () => {
         </div>
 
         {/* Lower Functional Grid */}
-        {window.innerWidth > 900 ?
+        {window.innerWidth > 1000 ?
           <div className={clicked === true ? "blur-background " : ""}>
             <div className="w-[140vw] 3xl:w-[90vw] 4xl:w-[90vw] md:grid md:grid-cols-12 gap-5 mt-20 ">
               <div className="md:col-span-4 mt-10 ml-10">
@@ -980,7 +980,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-4 -mt-5 px-3 mb-6">
 
                 <div className="flip-card cursor-pointer h-[24vh]">
@@ -1047,11 +1047,8 @@ const Home = () => {
                         {walletColor === "#D7FF01" ? <span className="text-[#D7FF01]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3 </span> : null}
                         {walletColor === "#FF249D" ? <span className="text-[#FF249D]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3 </span> : null}
                       </div>
-
                     </div>
                   </div>
-
-
                 </div>
               </div>
               <div className="text-xl grow shrink basis-0 text-center px-7 mb-6">
@@ -1146,7 +1143,7 @@ const Home = () => {
                         </div>
                       </div>
                       <div className="flex items-center gap-4">
-                      <div onClick={() => {
+                        <div onClick={() => {
                           setWalletColor("#7D40FF");
                           setReloadFlag(!reloadFlag);
                         }} className="bg-[#7D40FF] h-5 w-5 rounded-full cursor-pointer flex justify-center items-center">
@@ -1179,48 +1176,103 @@ const Home = () => {
                           </div> : null}
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="mx-3">
-                <div className="grid grid-cols-6 gap-4 w-full mt-6 ">
-                  <div className="flex flex-col gap-0 col-span-4 ">
-                    <div className="">
-                      {walletColor === "#FF4E17" ? <img className="" src="/icons/one_name.svg" alt="one_name" /> : null}
-                      {walletColor === "#7D40FF" ? <img className="" src="/icons/one_name_purple.svg" alt="one_name" /> : null}
-                      {walletColor === "#D7FF01" ? <img className="" src="/icons/one_name_green.svg" alt="one_name" /> : null}
-                      {walletColor === "#FF249D" ? <img className="" src="/icons/one_name_pink.svg" alt="one_name" /> : null}
+              <div className="mx-3 mt-5">
+                <div className="grid grid-cols-6 gap-3 w-full h-full  ">
+                  <div className="flex flex-col gap-3 col-span-4 ">
+                    <div className="w-full h-[14vh] relative rounded-xl">
+                      <div className="w-full h-full flex justify-center items-center py-4 left-0 top-0 absolute rounded-xl border border-stone-800 border-solid  flex-col justify-start items-start gap-[52px] inline-flex">
+                        {walletColor === "#FF4E17" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full" src="/icons/ring_orange.svg" alt="ellipse" /> : null}
+                        {walletColor === "#7D40FF" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full" src="/icons/ring_purple.svg" alt="ellipse" /> : null}
+                        {walletColor === "#D7FF01" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full" src="/icons/ring_green.svg" alt="ellipse" /> : null}
+                        {walletColor === "#FF249D" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full" src="/icons/ring_pink.svg" alt="ellipse" /> : null}
+                        <div className="text-2xl md:text-3xl grow shrink basis-0">
+                          <span className="text-white text-opacity-90 relative font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">One name,<br></br></span>
+                          <span className="text-white relative font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">all things </span>
+                          {walletColor === "#FF4E17" ? <span className="text-[#FF4E17]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3</span> : null}
+                          {walletColor === "#7D40FF" ? <span className="text-[#7D40FF]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
+                          {walletColor === "#D7FF01" ? <span className="text-[#D7FF01]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
+                          {walletColor === "#FF249D" ? <span className="text-[#FF249D]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
+
+                        </div>
+                      </div>
                     </div>
-                    <div className="mt-3">
-                      <img className="" src="/icons/testnet.svg" alt="testnet" />
+                    <div style={{
+                      background:
+                        "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
+                    }} className="w-full h-[14vh] p-4 bg-opacity-70 rounded-xl border border-stone-800 flex-col justify-between items-center inline-flex">
+                      <div className="w-full h-full flex justify-center items-center">
+                        <div className="flex gap-2 items-start">
+                          <img src="/icons/danger.svg" />
+                          <div className=" text-white text-opacity-40 text-xs font-medium font-['Neue Haas Grotesk Display Pro'] ">This demo is on Polygon Mumbai testnet, some features might be restricted.</div>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
                   <div className="w-full col-span-2">
-                    {walletColor === "#FF4E17" ? <img className="" src="/icons/tria_names.svg" alt="name_card" /> : null}
-                    {walletColor === "#7D40FF" ? <img className="" src="/icons/tria_names_purple.svg" alt="name_card" /> : null}
-                    {walletColor === "#D7FF01" ? <img className="" src="/icons/tria_names_green.svg" alt="name_card" /> : null}
-                    {walletColor === "#FF249D" ? <img className="" src="/icons/tria_names_pink.svg" alt="name_card" /> : null}
+
+                    <div className="w-full h-full relative rounded-xl border border-stone-800 overflow-hidden ">
+                      {walletColor === "#FF4E17" ? <img className=" absolute w-full " src="/icons/person_card_orange.svg" alt="person" /> : null}
+                      {walletColor === "#7D40FF" ? <img className=" absolute w-full " src="/icons/person_card_purple.svg" alt="person" /> : null}
+                      {walletColor === "#D7FF01" ? <img className=" absolute w-full " src="/icons/person_card_green.svg" alt="person" /> : null}
+                      {walletColor === "#FF249D" ? <img className=" absolute w-full " src="/icons/person_card_pink.svg" alt="person" /> : null}
+                      {/* <div className="w-[298.50px] h-[387.84px] left-[20px] top-[33.38px] absolute origin-top-left rotate-[-64.04deg] opacity-80 bg-orange-600 rounded-full blur-[37.67px]" /> */}
+                      <img className="w-[64.95px] h-[64.95px] left-[1vw] top-[1vh] absolute rounded-full" src="/icons/person_2.svg" alt="person" />
+                      <div className="h-[123.79px] left-[-16px] top-[18px] absolute">
+                        <div className="w-[137.59px] h-[33.83px] left-[2.92px] top-[7vh] absolute origin-top-left rotate-[4.96deg] backdrop-blur-[9.44px] flex-col justify-center items-start gap-[3.15px] inline-flex">
+                          <div className="px-[15.74px] py-[9.44px] bg-sky-300 bg-opacity-50 rounded-[9.44px] justify-start items-center inline-flex">
+                            <div className="justify-start items-center flex">
+                              <div className="text-neutral-50 text-xs font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[15.11px] tracking-tight">grandpa.john@tria</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="w-[79.72px] h-[98.38px] left-[14vw] top-[17vh] absolute">
+                        <img className="w-[55.95px] h-[55.95px] left-[1.73px] top-[1vh] absolute rounded-full" src="/icons/person.svg" alt="person" />
+                        <div className="w-[77.30px] h-[27.93px] left-0 top-[70.59px] absolute origin-top-left rotate-[-5.79deg] backdrop-blur-[7.79px] flex-col justify-center items-start gap-[2.60px] inline-flex">
+                          <div className="px-[12.99px] py-[7.79px] bg-orange-300 bg-opacity-70 rounded-lg justify-start items-center inline-flex">
+                            <div className="justify-start items-center flex">
+                              <div className="text-neutral-50 text-[10.39px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-3 tracking-tight">katie@tria</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="w-[46.74px] h-[46.74px] pl-[12.67px] pr-[12.21px] pt-[7.50px] pb-[7.44px] left-[151.03px] top-[107px] absolute origin-top-left rotate-[9.90deg] bg-indigo-500 rounded-[55.86px] backdrop-blur-[4.97px] justify-center items-center inline-flex">
+                        <div className="grow shrink basis-0 self-stretch pl-[0.57px] pr-[1.77px] flex-col justify-center items-center inline-flex">
+                          <img src="/icons/eth.svg" alt="eth" />
+                        </div>
+                      </div>
+                      <div className="w-[36.77px] h-[36.77px] -left-[4vw] bottom-[1vh] absolute origin-top-left rotate-[-17.48deg] bg-red-600 rounded-[45.28px] backdrop-blur-[4.60px] justify-center items-center flex">
+                        <img className="w-[44.12px] h-[45.12px] pl-2" src="/icons/optimism.svg" />
+                      </div>
+                      <div className="w-[50.76px] h-[50.76px] left-[1vw] top-[15vh] absolute bg-violet-600 rounded-[33.84px] backdrop-blur-[6.34px] flex-col justify-center items-center inline-flex">
+                        <img src="/icons/Polygon.svg" alt="polygon_logo" />
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
               <div className="mx-3 mt-10 mb-10">
                 <div className="w-full text-center">
-               
-                  <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Add</span>
+
+                  <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Add</span>
                   <span className="text-white text-opacity-90 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> funds and sign messages.</span></div>
               </div>
 
               <div className="mt-5 mx-3">
                 <div
                   className={
-                    " border rounded-xl md:h-[280px] border-stone-800 border-solid p-8 flex flex-col items-center justify-between self-stretch shrink-0 w-full relative overflow-hidden "
+                    " border rounded-xl md:h-[280px] border-stone-800 border-solid py-8 px-4 flex flex-col items-center justify-between self-stretch shrink-0 w-full relative overflow-hidden "
 
                   }
                   style={{
                     background:
-                      "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
+                      "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 40%)",
                   }}
                 >
                   <div className="flex flex-col gap-7 items-center justify-start self-stretch shrink-0 relative">
@@ -1244,16 +1296,12 @@ const Home = () => {
                     <>
                       {!loader ?
                         <div
-                          className="rounded-[78px] rainbow cursor-pointer px-6 py-2 w-[120px] mt-6 flex flex-row gap-0 items-center justify-center shrink-0  relative overflow-hidden"
-                          style={{
-                            background:
-                              "linear-gradient(111.34deg, rgba(159, 139, 255, 1.00) 0%,rgba(112, 83, 255, 1.00) 100%)",
-                            backdropFilter: "blur(10px)",
-                          }}
+                          className="rounded-[78px] bg-white cursor-pointer px-6 py-2 w-[120px] mt-6 flex flex-row gap-0 items-center justify-center shrink-0  relative overflow-hidden"
+
                           onClick={() => fundTriaWallet()}
                         >
                           <div className="flex flex-row gap-0 items-center justify-center shrink-0 relative">
-                            <div className="text-[#ffffff] text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
+                            <div className="text-black text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
                               Add funds{" "}
                             </div>
                           </div>
@@ -1284,15 +1332,15 @@ const Home = () => {
               </div>
               <div className="mx-3 mt-7 mb-10">
                 <div className="w-full text-center">
-                  
-                  <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Send</span>
-                  <span className="text-white text-opacity-90 text-2xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> token and claim NFTs.</span></div>
+
+                  <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Send</span>
+                  <span className="text-white text-opacity-90 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> token and claim NFTs.</span></div>
               </div>
               <div className="mt-5 mb-7 mx-3">
                 <div style={{
                   background:
-                    "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
-                }} className="w-full md:h-[410px] 3xl:h-[400px] 4xl:h-[470px] p-4 bg-opacity-70 rounded-xl border border-stone-800  backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
+                    "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 40%)",
+                }} className="w-full md:h-[410px] 3xl:h-[400px] 4xl:h-[470px] p-3 bg-opacity-70 rounded-xl border border-stone-800  backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
                   <div className="self-stretch h-[385px] flex-col justify-start items-center gap-9 flex">
                     <div className="self-stretch h-[137px] flex-col justify-start items-center gap-6 flex">
                       <div className="self-stretch py-0 justify-center items-center gap-4 inline-flex">
@@ -1300,11 +1348,11 @@ const Home = () => {
                       </div>
                       <div className="self-stretch py-1 px-2 justify-start items-center inline-flex">
                         <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
-                          <div className="grow shrink basis-0 text-justify text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">A send token interaction – transfer to a blockchain wallet, or a @tria name. Token transfers to email, social accounts and mobile numbers are disabled in the demo.</div>
+                          <div className="grow shrink basis-0 text-justify text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug ">A send token interaction – transfer to a blockchain wallet, or a @tria name. Token transfers to email, social accounts and mobile numbers are disabled in the demo.</div>
                         </div>
                       </div>
                     </div>
-                    <div className="self-stretch flex-col -mt-6 3xl:-mt-10 justify-start items-center gap-3 flex">
+                    <div className="self-stretch flex-col  mt-1 justify-start items-center gap-3 flex">
                       <div className="w-full h-[45px] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 inline-flex">
                         <div className="w-6 h-6 p-[2.40px] bg-violet-600 rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
                           <div className="w-[19.20px] h-[19.20px] relative flex-col justify-start items-start flex" />
@@ -1345,8 +1393,8 @@ const Home = () => {
 
 
               </div>
-              <div className="mx-3 mb-10">
-                <div style={{
+              <div className="mx-3 mb-10 flex justify-center">
+                {/* <div style={{
                   background:
                     "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
                 }} className="w-full mt-5 p-4 4xl:h-[270px] 3xl:h-[260px] md:h-[220px] rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-center items-center gap-[52px] inline-flex">
@@ -1369,6 +1417,25 @@ const Home = () => {
                     <div className="flex  flex-row gap-0 items-center justify-center shrink-0 relative ">
                       <div className=" text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
                         Contact
+                      </div>
+                    </div>
+                  </div>
+                </div> */}
+                <div className="mx-7">
+                  <div className="text-white flex justify-center my-6 text-opacity-80 text-lg font-light font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Get the SDKs</div>
+                  <div className="w-full text-center">
+                    <span className="text-white flex justify-center text-opacity-90 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">We work with discerning founders and visionary companies to elevate their UX.<br /></span>
+                    <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Get in touch and join the collective.</span>
+                  </div>
+                  <div className="flex justify-center mt-5 mb-5">
+                    <div
+                      onClick={() => { window.open("https://www.tria.so/sdk", "_blank") }}
+                      className="rounded-[78px] mt-0 cursor-pointer px-6 py-2 w-[120px] flex flex-row mb-4 gap-0 bg-white text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 items-center justify-center shrink-0  relative overflow-hidden"
+                    >
+                      <div className="flex items-center justify-center shrink-0 relative ">
+                        <div className=" text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
+                          Contact
+                        </div>
                       </div>
                     </div>
                   </div>
