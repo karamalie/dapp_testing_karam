@@ -372,11 +372,13 @@ const Home = () => {
 
   [...cards].forEach((card) => {
     card.addEventListener('click', function () {
+      console.log("flip")
       card.classList.toggle('is-flipped');
     });
 
-
   });
+
+ 
 
   //Mobile carousels
   const [carouselOne, setCarouselOne] = useState(0)
@@ -402,7 +404,7 @@ const Home = () => {
               </div>
             </div>
             {windowSize.innerWidth > 500 ?
-              <div className="flex gap-4 items-center ">
+              <div onClick={() => setOpenLogout(!openLogout)} className="flex gap-4 cursor-pointer hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] items-center ">
                 <div className="text-neutral-50 text-md font-normal font-['Neue Haas Grotesk Display Pro'] ">{logged_user}</div>
                 <div style={{ background: bg }} className={`w-10 h-10 justify-center items-center flex rounded-full`}>
                   {avatar && <img alt="avatar" className="w-10 h-10 rounded-[32.73px]" src={avatar} />}
@@ -417,8 +419,8 @@ const Home = () => {
           </div>
         </div>
 
-        {windowSize.innerWidth < 500 && openLogout ?
-          <div style={{ zIndex: 9999 }} className="absolute right-2 top-20">
+        {openLogout ?
+          <div style={{ zIndex: 9999 }} className="absolute md:right-10 right-4 top-20">
             <div onClick={() => Logout()} className="w-[194px] cursor-pointer relative h-14 px-6 py-3 bg-zinc-500 bg-opacity-10 rounded-xl border-opacity-10 backdrop-blur-[100px] flex-col justify-center items-center gap-[52px] inline-flex">
               <div className="self-stretch py-1 justify-start items-center inline-flex">
                 <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
@@ -832,7 +834,7 @@ const Home = () => {
                         {walletColor === "#7D40FF" ? <img src="/icons/card_purple.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#D7FF01" ? <img src="/icons/card_green.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#FF249D" ? <img src="/icons/card_pink.svg" className="h-[100%] w-full absolute" /> : null} */}
-
+                        
                         <div className="w-full flex justify-center h-full items-center ">
                           <div className={`w-20 h-20 relative  bg-neutral-50 bg-opacity-20 justify-center items-center flex rounded-full`}>
                             {avatar && <img alt="avatar" className="w-20 h-20 rounded-[32.73px]" src={avatar} />}
