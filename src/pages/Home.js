@@ -367,18 +367,26 @@ const Home = () => {
 
   window.addEventListener("scroll", reveal);
 
+  // var cards = document.querySelectorAll('.flip-card-inner');
 
-  var cards = document.querySelectorAll('.flip-card-inner');
 
-  [...cards].forEach((card) => {
-    card.addEventListener('click', function () {
-      console.log("flip")
-      card.classList.toggle('is-flipped');
-    });
+  // [...cards].forEach((card) => {
+  //   card.addEventListener('click', function () {
+  //     console.log("card-classList", card.classList.value)
+  //     if (card.classList.value === "flip-card-inner is-flipped") {
+  //       card.classList.remove('is-flipped');
+  //     } else {
+  //       card.classList.add('is-flipped');
+  //     }
+  //   });
+  // });
 
-  });
 
- 
+  const [toggleState, setToggleState] = useState(false)
+
+  const toggleClasslist = () => {
+    setToggleState(!toggleState)
+  }
 
   //Mobile carousels
   const [carouselOne, setCarouselOne] = useState(0)
@@ -827,14 +835,14 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 mt-5 4xl:mt-8">
-                  <div className="flip-card cursor-pointer h-[30vh]">
-                    <div className="flip-card-inner ">
+                  <div onClick={() => toggleClasslist()} className="flip-card cursor-pointer h-[30vh]">
+                    <div className={`flip-card-inner ${toggleState ? "flip-card-flip" : ""}`}>
                       <div className={walletColor === "#FF4E17" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-orange" : walletColor === "#7D40FF" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-purple" : walletColor === "#D7FF01" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-green" : "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-pink"}>
                         {/* {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#7D40FF" ? <img src="/icons/card_purple.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#D7FF01" ? <img src="/icons/card_green.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#FF249D" ? <img src="/icons/card_pink.svg" className="h-[100%] w-full absolute" /> : null} */}
-                        
+
                         <div className="w-full flex justify-center h-full items-center ">
                           <div className={`w-20 h-20 relative  bg-neutral-50 bg-opacity-20 justify-center items-center flex rounded-full`}>
                             {avatar && <img alt="avatar" className="w-20 h-20 rounded-[32.73px]" src={avatar} />}
@@ -1004,8 +1012,8 @@ const Home = () => {
 
               <div className="flex items-center gap-4 -mt-5 px-3 mb-6">
 
-                <div className="flip-card cursor-pointer h-[24vh]">
-                  <div className="flip-card-inner ">
+                <div onClick={() => toggleClasslist()} className="flip-card cursor-pointer h-[24vh]">
+                  <div className={`flip-card-inner ${toggleState ? "flip-card-flip" : ""}`}>
                     <div className={walletColor === "#FF4E17" ? "flip-card-front  w-1/2 border-stone-800 rounded-xl background-container-orange" : walletColor === "#7D40FF" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-purple" : walletColor === "#D7FF01" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-green" : "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-pink"}>
                       {/* {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#7D40FF" ? <img src="/icons/card_purple.svg" className="h-[100%] w-full absolute" /> : null}
