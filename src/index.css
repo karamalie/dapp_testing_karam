@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 
+
+
 body {
   background-color: black;
   overflow-y: hidden;
@@ -247,7 +249,7 @@ input[type=number] {
   transform: rotateY(180deg);
 }
 
-.flip-card-flip{
+.flip-card-flip {
   transform: rotateY(180deg);
 }
 
@@ -263,4 +265,80 @@ input[type=number] {
 
 .flip-card-back {
   transform: rotateY(180deg);
+}
+
+
+.cards:hover .card {
+  background: radial-gradient(100rem circle at var(--xPos) var(--yPos),
+      rgba($ciBlue, 0.4),
+      transparent 15%);
+}
+
+.cards .card {
+  width: 20rem;
+  height: 15rem;
+  background: radial-gradient(150rem circle at 0 0,
+      rgba($ciBlue, 0),
+      transparent 0%);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.15s;
+}
+
+.cards .card:hover {
+  transform: scale(0.97);
+}
+
+.cards .card:hover::before {
+  opacity: 1;
+}
+
+.cards .card::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  background: radial-gradient(60rem circle at var(--xPos) var(--yPos),
+      rgba("#FFFFFF", 0.1),
+      transparent 35%);
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+}
+
+.cards .card .card-content {
+  background-color: #13161c;
+  border-radius: inherit;
+  transition: all 0.25s;
+  height: calc(100% - 0.1rem);
+  width: calc(100% - 0.1rem);
+}
+
+.orange_gradient_text {
+  background: linear-gradient(to right, #FF4E17, #FFBC39, #FF4E17);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.purple_gradient_text {
+  background: linear-gradient(to right, #6445FF, #BCAEFF, #6445FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.green_gradient_text {
+  background: linear-gradient(to right, #D7FF01, #eeff8f, #D7FF01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pink_gradient_text {
+  background: linear-gradient(to right, #AD1B6B,#ff76c1, #E52B92 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

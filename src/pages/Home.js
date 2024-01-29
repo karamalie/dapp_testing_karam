@@ -394,6 +394,7 @@ const Home = () => {
 
 
 
+
   return (
     <>
       <div className="w-full h-screen ">
@@ -402,14 +403,14 @@ const Home = () => {
         <div style={{ zIndex: 9999 }} className={`w-full h-20 px-${windowSize.innerWidth < 500 ? "5" : "10"} py-4 ${windowSize.innerWidth < 900 ? "sticky" : "fixed"} top-0 bg-neutral-900 border-b border-stone-950 justify-start items-center gap-4 inline-flex`}>
           <div className="grow shrink basis-0 h-10 justify-between items-center flex">
             <div className=" justify-center items-center gap-2.5 flex">
-              <div className=" h-7 relative">
+              <div className="h-7 relative">
                 <div className="">
-                  <img src="/icons/logoName.svg" alt="tria_logo" />
+                  {windowSize.innerWidth > 400 ? <img src="/icons/new_logo_demo.svg" alt="tria_logo" /> : <img className="h-7" src="/icons/new_logo_demo.svg" alt="tria_logo" />}
                 </div>
               </div>
-              <div className="px-2 py-1 rounded-[69px] border border-violet-400 justify-center items-center gap-2.5 flex">
+              {/* <div className="px-2 py-1 rounded-[69px] border border-violet-400 justify-center items-center gap-2.5 flex">
                 <div className="text-center text-violet-400 text-[10px] font-normal font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">Demo</div>
-              </div>
+              </div> */}
             </div>
             {windowSize.innerWidth > 500 ?
               <div onClick={() => setOpenLogout(!openLogout)} className="flex gap-4 cursor-pointer hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] items-center ">
@@ -456,10 +457,10 @@ const Home = () => {
                     {walletColor === "#D7FF01" ? <img className="absolute top-0 rounded-xl left-0 w-[60%] group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ellipse_green.svg" alt="ellipse" /> : null}
                     {walletColor === "#FF249D" ? <img className="absolute top-0 rounded-xl left-0 w-[60%] group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ellipse_pink.svg" alt="ellipse" /> : null}
 
-                    <div className="p-[8.83px] flex-col justify-center items-center gap-2 flex">
+                    <div className="p-[8.83px] flex-col justify-center items-center flex ">
                       <div className="text-white text-opacity-80 text-lg font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience Tria’s Personalised</div>
-                      <div className="text-neutral-50 text-5xl font-medium font-['Neue Haas Grotesk Display Pro'] leading-[79.20px]">Embedded Wallet</div>
-                      <div className="w-full h-12 text-center text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Personalized, user-focused journeys built with Tria's exclusive SDKs. Elevate beyond social onboarding, smart-accounts, and programmable TXs. </div>
+                      <div className="bg-gradient-to-b from-white via-white to-indigo-[rgba(250, 250, 250, 0.46)] inline-block text-transparent bg-clip-text text-5xl font-medium font-['Neue Haas Grotesk Display Pro'] leading-[79.20px] -mt-1">Embedded Wallet</div>
+                      <div className="w-full h-12 px-6 text-center text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Personalized, user-focused journeys built with Tria's exclusive SDKs. Elevate beyond social onboarding, smart-accounts, and programmable TXs. </div>
                     </div>
                   </div>
                 </div>
@@ -471,13 +472,13 @@ const Home = () => {
                       {walletColor === "#7D40FF" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:translate-x-6 group-hover:translate-y-6" src="/icons/second_card_purple.svg" alt="ellipse" /> : null}
                       {walletColor === "#D7FF01" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:translate-x-6 group-hover:translate-y-6" src="/icons/second_card_green.svg" alt="ellipse" /> : null}
                       {walletColor === "#FF249D" ? <img className="absolute left-0 w-full right-0 bottom-0 h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:translate-x-6 group-hover:translate-y-6" src="/icons/second_card_pink.svg" alt="ellipse" /> : null}
-                      <div className="text-xl md:text-2xl grow shrink basis-0">
-                        <span className="text-white text-opacity-90  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Explore the</span>
+                      <div className="text-xl md:text-[28px] grow shrink basis-0">
+                        <span className="text-white text-opacity-90  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Explore</span>
                         <span className="text-white t font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] "> </span>
-                        {walletColor === "#FF4E17" ? <span className="text-[#FF4E17]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Tria’s embedded wallet </span> : null}
-                        {walletColor === "#7D40FF" ? <span className="text-[#7D40FF]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Tria’s embedded wallet </span> : null}
-                        {walletColor === "#D7FF01" ? <span className="text-[#D7FF01]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Tria’s embedded wallet </span> : null}
-                        {walletColor === "#FF249D" ? <span className="text-[#FF249D]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Tria’s embedded wallet </span> : null}
+                        {walletColor === "#FF4E17" ? <span className="orange_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Tria’s embedded wallet </span> : null}
+                        {walletColor === "#7D40FF" ? <span className="purple_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Tria’s embedded wallet </span> : null}
+                        {walletColor === "#D7FF01" ? <span className="green_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Tria’s embedded wallet </span> : null}
+                        {walletColor === "#FF249D" ? <span className="pink_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Tria’s embedded wallet </span> : null}
                         <span className="text-white text-opacity-90 relative font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">in real time. Tailor and construct the wallet to match your app.</span>
                       </div>
                     </div>
@@ -684,10 +685,10 @@ const Home = () => {
                           <div className="text-xl md:text-3xl grow shrink basis-0">
                             <span className="text-white text-opacity-90 relative font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">One name,<br></br></span>
                             <span className="text-white relative font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">all things </span>
-                            {walletColor === "#FF4E17" ? <span className="text-[#FF4E17]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3</span> : null}
-                            {walletColor === "#7D40FF" ? <span className="text-[#7D40FF]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
-                            {walletColor === "#D7FF01" ? <span className="text-[#D7FF01]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
-                            {walletColor === "#FF249D" ? <span className="text-[#FF249D]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
+                            {walletColor === "#FF4E17" ? <span className="orange_gradient_text font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3</span> : null}
+                            {walletColor === "#7D40FF" ? <span className="purple_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
+                            {walletColor === "#D7FF01" ? <span className="green_gradient_text   font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
+                            {walletColor === "#FF249D" ? <span className="pink_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
 
                           </div>
                         </div>
