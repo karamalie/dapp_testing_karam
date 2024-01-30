@@ -496,7 +496,7 @@ const Home = () => {
                     <div className="">
                       <div className="">
                         <div className="pt-0 pb-2 flex flex-row gap-4 items-center justify-center self-stretch shrink-0 relative">
-                          <div className="text-[#fafafa] flex flex-col gap-3 text-left font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-[22px] leading-[120%] font-semibold relative flex items-center justify-start">
+                          <div className="text-[#fafafa] flex flex-col gap-3 text-left font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-xl leading-[120%] font-semibold relative flex items-center justify-start">
                             <div>
                               <img className="h-5 w-5" src="/icons/add-square.svg" alt="add-square" />
                             </div>
