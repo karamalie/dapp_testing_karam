@@ -677,12 +677,12 @@ const Home = () => {
                   <div className="grid grid-cols-6 gap-4 w-full h-full  ">
                     <div className="flex flex-col gap-5 col-span-4 ">
                       <div onClick={() => window.open("https://www.youtube.com/watch?v=kPqTHt9v48A", "_blank")} className="w-full cursor-pointer h-1/2 relative rounded-xl group overflow-hidden hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95]">
-                        <div className="w-full h-full  flex group justify-center items-center py-4 left-0 top-0 absolute rounded-xl border border-stone-800 border-solid  flex-col justify-start items-start gap-[52px] inline-flex">
+                        <div className="w-full h-full group flex items-center py-4 left-0 top-0 absolute rounded-xl border border-stone-800 border-solid  ">
                           {walletColor === "#FF4E17" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ring_orange.svg" alt="ellipse" /> : null}
                           {walletColor === "#7D40FF" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ring_purple.svg" alt="ellipse" /> : null}
                           {walletColor === "#D7FF01" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ring_green.svg" alt="ellipse" /> : null}
                           {walletColor === "#FF249D" ? <img className="absolute left-0 w-full right-0 top-0 h-3/4  rounded-xl h-full group-hover:transition duration-[500ms] group-hover:duration-[500ms] group-hover:-translate-x-6 group-hover:-translate-y-6" src="/icons/ring_pink.svg" alt="ellipse" /> : null}
-                          <div className="text-xl md:text-3xl grow shrink basis-0">
+                          <div className="text-xl md:text-3xl ml-[2vw] grow shrink basis-0">
                             <span className="text-white text-opacity-90 relative font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">One name,<br></br></span>
                             <span className="text-white relative font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">all things </span>
                             {walletColor === "#FF4E17" ? <span className="orange_gradient_text font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3</span> : null}
@@ -716,10 +716,10 @@ const Home = () => {
                         {/* <div className="w-[298.50px] h-[387.84px] left-[20px] top-[33.38px] absolute origin-top-left rotate-[-64.04deg] opacity-80 bg-orange-600 rounded-full blur-[37.67px]" /> */}
                         <img className="w-[64.95px] h-[64.95px] left-[1vw] top-[1vh] absolute rounded-full group-hover:transition duration-[500ms] group-hover:duration-[500ms]  group-hover:translate-x-2" src="/icons/person_2.svg" alt="person" />
                         <div className="h-[123.79px] left-[-16px] top-[18px] absolute">
-                          <div className="w-[137.59px] h-[33.83px] left-[2.92px] top-[7vh] absolute  origin-top-left rotate-[4.96deg] backdrop-blur-[9.44px] flex-col justify-center items-start gap-[3.15px] inline-flex">
+                          <div className="w-[137.59px] h-[33.83px] left-[2.92px] top-[7vh] absolute  origin-top-left rotate-[4.96deg]  flex-col justify-center items-start gap-[3.15px] inline-flex">
                             <div className="px-[15.74px] py-[9.44px] bg-sky-300 bg-opacity-50 rounded-[9.44px] justify-start items-center inline-flex">
                               <div className="justify-start items-center flex">
-                                <div className="text-neutral-50 text-xs font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[15.11px] tracking-tight">grandpa.john@tria</div>
+                                <div className="text-neutral-50 text-xs font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[15.11px] tracking-tight">papabera@tria</div>
                               </div>
                             </div>
                           </div>
@@ -734,7 +734,7 @@ const Home = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="w-[46.74px] h-[46.74px] pl-[12.67px] pr-[12.21px] pt-[7.50px] pb-[7.44px] left-[151.03px] top-[107px] absolute origin-top-left rotate-[9.90deg] bg-indigo-500 rounded-[55.86px] backdrop-blur-[4.97px] justify-center items-center inline-flex">
+                        <div className="w-[40.74px] h-[40.74px] pl-[12.67px] pr-[12.21px] pt-[7.50px] pb-[7.44px] left-[110.03px] top-[90px] absolute origin-top-left rotate-[9.90deg] bg-indigo-500 rounded-[55.86px] backdrop-blur-[4.97px] justify-center items-center inline-flex">
                           <div className="grow shrink basis-0 self-stretch pl-[0.57px] pr-[1.77px] flex-col justify-center items-center inline-flex">
                             <img src="/icons/eth.svg" alt="eth" />
                           </div>
@@ -742,8 +742,8 @@ const Home = () => {
                         <div className="w-[36.77px] h-[36.77px] -left-[1vw] bottom-[1vh] absolute origin-top-left rotate-[-17.48deg] bg-red-600 rounded-[45.28px] backdrop-blur-[4.60px] justify-center items-center flex">
                           <img className="w-[44.12px] h-[45.12px] pl-2" src="/icons/optimism.svg" />
                         </div>
-                        <div className="w-[50.76px] h-[50.76px] left-[1vw] top-[15vh] group-hover:transition duration-[500ms] group-hover:duration-[500ms]  group-hover:translate-y-1 absolute bg-violet-600 rounded-[33.84px] backdrop-blur-[6.34px] flex-col justify-center items-center inline-flex">
-                          <img src="/icons/Polygon.svg" alt="polygon_logo" />
+                        <div className="w-[45.76px] h-[45.76px] left-[1vw] top-[15vh] group-hover:transition duration-[500ms] group-hover:duration-[500ms]  group-hover:translate-y-1 absolute bg-violet-600 rounded-[33.84px] backdrop-blur-[6.34px] flex-col justify-center items-center inline-flex">
+                          <img className="h-8 w-8" src="/icons/Polygon.svg" alt="polygon_logo" />
                         </div>
                       </div>
 
@@ -843,16 +843,18 @@ const Home = () => {
                         {walletColor === "#7D40FF" ? <img src="/icons/card_purple.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#D7FF01" ? <img src="/icons/card_green.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#FF249D" ? <img src="/icons/card_pink.svg" className="h-[100%] w-full absolute" /> : null} */}
-
+                        <div className="absolute top-4 right-1">
+                          <img src="/icons/tria_name_card_logo.svg" alt="tria-logo" />
+                        </div>
                         <div className="w-full flex justify-center h-full items-center ">
                           <div className={`w-20 h-20 relative  bg-neutral-50 bg-opacity-20 justify-center items-center flex rounded-full`}>
                             {avatar && <img alt="avatar" className="w-20 h-20 rounded-[32.73px]" src={avatar} />}
                           </div>
                         </div>
-                        <div className="w-full flex h-full items-center absolute top-20 3xl:top-28 4xl:top-36 right-0 text-white ">
-                          <div className="flex flex-col items-left">
-                            <div className="text-white text-base  font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ml-6 3xl:ml-5 4xl:ml-10 ">{logged_user}</div>
-                            <div className="text-white text-base font-light font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ml-1 3xl:ml-5 4xl:ml-10 ">Tap to rotate</div>
+                        <div className="w-full flex h-full absolute text-white  ">
+                          <div className="flex flex-col ml-4 absolute bottom-4">
+                            <div className="text-white text-lg font-semibold  font-['Neue Haas Grotesk Display Pro'] leading-[33.60px]">{logged_user}</div>
+                            <div className="text-white text-sm font-light font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] flex justify-start">Tap to rotate</div>
                           </div>
                         </div>
                       </div>
@@ -911,11 +913,12 @@ const Home = () => {
                       <div className="">
                         <div className=" h-[20vh] relative ">
                           <img className="max-w-[180px] rounded-[20.07px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmTntuKccRaU7vedr6AU7pPdEJoCQ9KhwwKt5ZaLZ4a5N3" />
-                          <div className="w-[58.47px] h-[58.47px] p-[11.24px] left-[0.11px] top-0 absolute justify-center items-center gap-[12.12px] inline-flex">
+                          {/* <div className="w-[58.47px] h-[58.47px] p-[11.24px] left-[0.11px] top-0 absolute justify-center items-center gap-[12.12px] inline-flex">
                             <div className="w-8 h-8 pl-[5.26px] pr-[5.27px] pt-[5.13px] pb-[5.39px] bg-gradient-to-br from-stone-950 to-stone-950 rounded-[30.94px] border-2 backdrop-blur-[4.50px] justify-center items-center flex">
-                              <img src="/icons/Polygon.svg" alt="polygon" />
+                              <img src="/icons/polygon_nft.svg" alt="polygon" />
                             </div>
-                          </div>
+                          </div> */}
+                          <img className="absolute top-2 left-2 w-8 h-8" src="/icons/polygon_nft.svg" alt="polygon" />
                         </div>
                       </div>
                       <div className="self-stretch  flex-col justify-start items-start gap-3 inline-flex  ">
@@ -1026,7 +1029,7 @@ const Home = () => {
                           {avatar && <img alt="avatar" className="w-16 h-16 rounded-[32.73px]" src={avatar} />}
                         </div>
                       </div>
-                      <div className="w-full flex h-full  absolute text-white  ">
+                      <div className="w-full flex h-full absolute text-white  ">
                         <div className="flex flex-col ml-3 absolute bottom-3">
                           <div className="text-white text-sm font-bold  font-['Neue Haas Grotesk Display Pro'] leading-[33.60px]">{logged_user}</div>
                           <div className="text-white text-xs font-light font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] flex justify-start">Tap to rotate</div>
