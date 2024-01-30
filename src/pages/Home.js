@@ -459,8 +459,8 @@ const Home = () => {
 
                     <div className="p-[8.83px] flex-col justify-center items-center flex ">
                       <div className="text-white text-opacity-80 text-lg font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience Tria’s Personalised</div>
-                      <div className="bg-gradient-to-b from-white via-white to-indigo-[rgba(250, 250, 250, 0.46)] inline-block text-transparent bg-clip-text text-5xl font-medium font-['Neue Haas Grotesk Display Pro'] leading-[79.20px] -mt-1">Embedded Wallet</div>
-                      <div className="w-full h-12 px-6 text-center text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Personalized, user-focused journeys built with Tria's exclusive SDKs. Elevate beyond social onboarding, smart-accounts, and programmable TXs. </div>
+                      <div className="bg-gradient-to-b from-white via-white to-indigo-[rgba(250, 250, 250, 0.46)] inline-block text-transparent bg-clip-text text-5xl font-bold font-['Neue Haas Grotesk Display Pro'] leading-[79.20px] -mt-1">Embedded Wallet</div>
+                      <div className="w-full h-12 px-24 text-center text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Personalized, user-focused journeys built with Tria's exclusive SDKs. Elevate beyond social onboarding, smart-accounts, and programmable TXs. </div>
                     </div>
                   </div>
                 </div>
@@ -493,16 +493,19 @@ const Home = () => {
                         "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
                     }}
                   >
-                    <div className="flex flex-col gap-9 items-center justify-start self-stretch shrink-0 relative">
-                      <div className="flex flex-col gap-6 items-center justify-start self-stretch shrink-0 relative">
-                        <div className="pt-2 pb-2 flex flex-row gap-4 items-center justify-center self-stretch shrink-0 relative">
-                          <div className="text-[#fafafa] text-left font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-[22px] leading-[120%] font-semibold relative flex items-center justify-start">
+                    <div className="">
+                      <div className="">
+                        <div className="pt-0 pb-2 flex flex-row gap-4 items-center justify-center self-stretch shrink-0 relative">
+                          <div className="text-[#fafafa] flex flex-col gap-3 text-left font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-[22px] leading-[120%] font-semibold relative flex items-center justify-start">
+                            <div>
+                              <img className="h-5 w-5" src="/icons/add-square.svg" alt="add-square" />
+                            </div>
                             Add Funds{" "}
                           </div>
                         </div>
-                        <div className="pt-1 pb-1 flex flex-row gap-0 items-center justify-start self-stretch shrink-0 relative overflow-hidden">
+                        <div className="pt-0 pb-1 flex flex-row gap-0 items-center justify-start self-stretch shrink-0 relative overflow-hidden">
                           <div className="flex flex-row gap-0 items-center justify-start self-stretch flex-1 relative">
-                            <div className="text-[rgba(255,255,255,0.40)] text-left font-['NeueHaasGroteskDisplayPro-55Roman',_sans-serif] text-sm leading-[135%] font-normal relative flex-1 flex items-center justify-start">
+                            <div className="text-[rgba(255,255,255,0.40)] text-center font-['NeueHaasGroteskDisplayPro-55Roman',_sans-serif] text-[13px] leading-[135%] font-normal relative flex-1 flex items-center justify-center">
                               To start exploring, you would require some funds. Click the
                               button below to receive Matic on Polygon Mumbai testnet.{" "}
                             </div>
@@ -515,21 +518,17 @@ const Home = () => {
                       <>
                         {!loader ?
                           <div
-                            className="rounded-[78px] rainbow cursor-pointer px-6 py-2 w-[120px] mt-6 flex flex-row gap-0 items-center justify-center shrink-0  relative overflow-hidden"
-                            style={{
-                              background:
-                                "linear-gradient(111.34deg, rgba(159, 139, 255, 1.00) 0%,rgba(112, 83, 255, 1.00) 100%)",
-                              backdropFilter: "blur(10px)",
-                            }}
+                            className="rounded-[78px] bg-white text-black cursor-pointer px-6 py-2 w-[150px] mt-6 flex flex-row gap-0 items-center justify-center shrink-0  relative overflow-hidden"
+
                             onClick={() => fundTriaWallet()}
                           >
                             <div className="flex flex-row gap-0 items-center justify-center shrink-0 relative">
-                              <div className="text-[#ffffff] text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
+                              <div className="text-black text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
                                 Add funds{" "}
                               </div>
                             </div>
                           </div> :
-                          <div className={`relative px-[2px] py-[2px] w-[120px] bg-animation-${walletColor === "#FF4E17" ? "orange" : walletColor === "#7D40FF" ? "purple" : walletColor === "#D7FF01" ? "green" : "pink"}`}>
+                          <div className={`relative px-[2px] py-[2px] w-[150px] bg-animation-${walletColor === "#FF4E17" ? "orange" : walletColor === "#7D40FF" ? "purple" : walletColor === "#D7FF01" ? "green" : "pink"}`}>
                             <div className=" rounded-[78px] z-50 relative bg-black text-white  p-2">
                               <div>
                                 <div className="text-center flex justify-center text-neutral-50 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-[16.80px] ">Loading...</div>
@@ -673,7 +672,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div className="mt-5 w-full h-[30vh]">
+                <div className="mt-5 w-full h-[27vh]">
                   <div className="grid grid-cols-6 gap-4 w-full h-full  ">
                     <div className="flex flex-col gap-5 col-span-4 ">
                       <div onClick={() => window.open("https://www.youtube.com/watch?v=kPqTHt9v48A", "_blank")} className="w-full cursor-pointer h-1/2 relative rounded-xl group overflow-hidden hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95]">
@@ -700,7 +699,7 @@ const Home = () => {
                         <div className="w-full h-full flex justify-center items-center">
                           <div className="flex gap-2 items-start">
                             <img src="/icons/danger.svg" />
-                            <div className=" text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] ">This demo is on Polygon Mumbai testnet, some features might be restricted.</div>
+                            <div className=" text-white text-opacity-80 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] ">This demo is on Polygon Mumbai testnet, some features might be restricted.</div>
                           </div>
                         </div>
 
@@ -755,26 +754,29 @@ const Home = () => {
                     background:
                       "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
                   }}
-                  className="w-full mt-5 p-2 3xl:h-[30vh] h-[25vh] group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] bg-opacity-70 rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
-                  <div className="self-stretch h-[115px] flex-col justify-start items-center gap-9 flex">
-                    <div className="self-stretch h-[115px] flex-col justify-start items-center gap-0 flex">
-                      <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
-                        <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] tracking-wide">Sign Message</div>
+                  className="w-full mt-5 p-2 3xl:h-[33vh] h-[28vh] group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] bg-opacity-70 rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
+                  <div className="">
+                    <div className="">
+                      <div className="flex justify-center">
+                        <div className="self-stretch pt-4 flex flex-col gap-2 items-center">
+                          <div><img className="h-5 w-5" src="/icons/pen-add.svg" alt="pen" /></div>
+                          <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] tracking-wide">Sign Message</div>
+                        </div>
                       </div>
-                      <div className="self-stretch py-0 px-3 justify-start items-center inline-flex">
-                        <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
-                          <div className="grow shrink basis-0 text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Sample wallet interaction of a message signature. To test a transaction signature, mint a Tria Concept NFT from the right.</div>
+                      <div className="py-0 px-10 justify-start items-center mt-1">
+                        <div className=" justify-center items-center flex  ">
+                          <div className="text-white text-opacity-40 text-[13px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight text-center">Sample wallet interaction of a message signature. To test a transaction signature, mint a Tria Concept NFT from the right.</div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div onClick={() => callSign()}
-                    className="rounded-[78px] cursor-pointer px-6 py-2 w-[120px] flex flex-row mb-4 gap-0 bg-white text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 items-center justify-center shrink-0  relative overflow-hidden"
+                    className="rounded-[78px] cursor-pointer px-6 py-2 w-[150px] flex flex-row mb-4 gap-0 bg-white text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 items-center justify-center shrink-0  relative overflow-hidden"
 
                   >
                     <div className="flex flex-row gap-0 items-center justify-center shrink-0 relative ">
                       <div className=" text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
-                        Sign
+                        Sign Message
                       </div>
                     </div>
                   </div>
@@ -785,43 +787,53 @@ const Home = () => {
                 <div style={{
                   background:
                     "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
-                }} className="w-full group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] h-[50vh] 3xl:h-[53vh] p-4 bg-opacity-70 rounded-xl border border-stone-800  backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
-                  <div className="self-stretch h-[385px] flex-col justify-start items-center gap-9 flex">
-                    <div className="self-stretch h-[137px] flex-col justify-start items-center gap-6 flex">
-                      <div className="self-stretch py-0 justify-center items-center gap-4 inline-flex">
-                        <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] tracking-wide">Send Token</div>
+                }} className="w-full overflow-hidden group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] h-[50vh] 3xl:h-[53vh] p-4 bg-opacity-70 rounded-xl border border-stone-800  backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
+                  <div className="">
+                    <div className="">
+                      <div className="flex justify-center">
+                        <div className="self-stretch pt-4 flex flex-col gap-2 items-center">
+                          <div><img className="h-5 w-5" src="/icons/send-2.svg" alt="pen" /></div>
+                          <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] tracking-wide">Send Token</div>
+                        </div>
                       </div>
-                      <div className="self-stretch py-1 px-2 justify-start items-center inline-flex">
+                      <div className="self-stretch py-1 px-20 ">
                         <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
-                          <div className="grow shrink basis-0 text-justify text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">A send token interaction – transfer to a blockchain wallet, or a @tria name. Token transfers to email, social accounts and mobile numbers are disabled in the demo.</div>
+                          <div className="grow shrink basis-0 text-center text-white text-opacity-40 text-[13px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">
+                            A send token interaction – transfer to a blockchain wallet, or a @tria name.
+                          </div>
+                        </div>
+                        <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
+                          <div className="grow shrink basis-0 text-center text-white text-opacity-40 text-[13px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">
+                            Token transfers to email, social accounts and mobile numbers are disabled in the demo.
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="self-stretch flex-col -mt-6 3xl:-mt-10 justify-start items-center gap-3 flex">
-                      <div className="w-full h-[3vh] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 inline-flex">
+                    <div className="self-stretch flex-col mt-5 justify-start items-center gap-3 flex">
+                      <div className="w-full h-[2vh] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center gap-3 inline-flex">
                         <div className="w-6 h-6 p-[2.40px] bg-violet-600 rounded-2xl backdrop-blur-[3px] flex-col justify-center items-center inline-flex">
                           <div className="w-[19.20px] h-[19.20px] relative flex-col justify-start items-start flex" />
                           <img src="/icons/Polygon.svg" alt="polygon" />
                         </div>
                         <div className="grow shrink basis-0 h-[19px] justify-start items-center flex">
-                          <div className="text-center text-neutral-50 text-base font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">MATIC</div>
+                          <div className="text-center text-neutral-50 text-[14px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight">MATIC</div>
                         </div>
 
                       </div>
-                      <div className="w-full h-[3vh] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
+                      <div className="w-full h-[2vh] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
                         <div className="justify-start items-center flex">
-                          <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} className="w-full text-white text-opacity-90 text-base focus:outline-none font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-[transparent]" placeholder="Token value" />
+                          <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value))} className="w-full text-white text-opacity-90 text-[14px] focus:outline-none font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-[transparent]" placeholder="Token value" />
                         </div>
                       </div>
-                      <div className="w-full h-[3vh] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
+                      <div className="w-full h-[2vh] p-5 bg-zinc-500 bg-opacity-10 rounded-xl justify-start items-center inline-flex">
                         <div className="justify-start items-center flex w-full">
-                          <input value={recepientAddress} onChange={(e) => setrecepientAddress(e.target.value)} className="w-full text-white text-opacity-90 text-base focus:outline-none font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-[transparent]" placeholder="Recipient wallet or @tria address" />
+                          <input value={recepientAddress} onChange={(e) => setrecepientAddress(e.target.value)} className="w-full text-white text-opacity-90 text-[14px] focus:outline-none font-medium font-['Neue Haas Grotesk Display Pro'] leading-tight tracking-tight bg-[transparent]" placeholder="Recipient wallet or @tria address" />
                         </div>
                       </div>
                     </div>
                   </div>
                   <div
-                    className={`rounded-[78px] relative cursor-${recepientAddress.length > 0 ? "pointer" : "not-allowed"} px-6 py-2 w-[120px] mt-6 mb-3 flex flex-row mb-4 gap-0 bg-white text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 items-center justify-center shrink-0  relative`}
+                    className={`rounded-[78px] relative cursor-${recepientAddress.length > 0 ? "pointer" : "not-allowed"} px-6 py-2 w-[150px] mt-6 mb-3 flex flex-row mb-4 gap-0 bg-white text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 items-center justify-center shrink-0  relative`}
                     onClick={() => {
                       if (recepientAddress.length > 0) {
                         sendTransaction()
@@ -830,7 +842,7 @@ const Home = () => {
                   >
                     <div className="flex flex-row gap-0 items-center justify-center shrink-0  ">
                       <div className=" text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
-                        Send
+                        Send Token
                       </div>
                     </div>
                   </div>
@@ -1009,7 +1021,7 @@ const Home = () => {
                   <div className="p-[8.83px] flex-col justify-center items-center gap-0 -mt-12 flex">
                     <div className="text-white text-opacity-80 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience Tria’s Personalised</div>
                     <div className="text-neutral-50 text-4xl font-medium font-['Neue Haas Grotesk Display Pro'] leading-[79.20px]">Embedded Wallet</div>
-                    <div className="w-full px-5 h-12 text-center text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Personalized, user-focused journeys built with Tria's exclusive SDKs. Elevate beyond social onboarding, smart-accounts, and programmable TXs. </div>
+                    <div className="w-full px-5 h-12 text-center text-white text-opacity-40 text-[13px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Personalized, user-focused journeys built with Tria's exclusive SDKs. Elevate beyond social onboarding, smart-accounts, and programmable TXs. </div>
                   </div>
                 </div>
               </div>
