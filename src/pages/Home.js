@@ -420,7 +420,7 @@ const Home = () => {
                 </div>
               </div> :
               <div onClick={() => setOpenLogout(!openLogout)} className="flex gap-2 items-center">
-                <div className="text-neutral-50 text-xs md:text-md font-normal font-['Neue Haas Grotesk Display Pro'] ">{logged_user}</div>
+                <div className="text-neutral-50 text-sm md:text-md font-normal font-['Neue Haas Grotesk Display Pro'] ">{logged_user}</div>
                 <div style={{ background: bg }} className={`w-8 h-8  justify-center items-center flex rounded-full`}>
                   {avatar && <img alt="avatar" className="w-8 h-8 rounded-[32.73px]" src={avatar} />}
                 </div>
