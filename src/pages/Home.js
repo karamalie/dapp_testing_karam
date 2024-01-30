@@ -405,7 +405,7 @@ const Home = () => {
             <div className=" justify-center items-center gap-2.5 flex">
               <div className="h-7 relative">
                 <div className="">
-                  {windowSize.innerWidth > 400 ? <img src="/icons/new_logo_demo.svg" alt="tria_logo" /> : <img className="h-7" src="/icons/new_logo_demo.svg" alt="tria_logo" />}
+                  {windowSize.innerWidth > 400 ? <img src="/icons/new_logo_demo.svg" alt="tria_logo" /> : <img src="/icons/tria_logo_mobile.svg" alt="tria_logo" />}
                 </div>
               </div>
               {/* <div className="px-2 py-1 rounded-[69px] border border-violet-400 justify-center items-center gap-2.5 flex">
@@ -1031,7 +1031,7 @@ const Home = () => {
 
               <div className="flex items-center gap-4 -mt-5 px-3 mb-6">
 
-                <div onClick={() => toggleClasslist()} className="flip-card cursor-pointer h-[24vh]">
+                <div onClick={() => toggleClasslist()} className="flip-card cursor-pointer h-[27vh]">
                   <div className={`flip-card-inner ${toggleState ? "flip-card-flip" : ""}`}>
                     <div className={walletColor === "#FF4E17" ? "flip-card-front  w-1/2 border-stone-800 rounded-xl background-container-orange" : walletColor === "#7D40FF" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-purple" : walletColor === "#D7FF01" ? "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-green" : "flip-card-front h-[30vh] w-1/2 border-stone-800 rounded-xl background-container-pink"}>
                       {/* {walletColor === "#FF4E17" ? <img src="/icons/card.svg" className="h-[100%] w-full absolute" /> : null}
@@ -1073,7 +1073,7 @@ const Home = () => {
                   </div>
                 </div>
 
-                <div className="h-[24vh] relative w-1/2 border border-stone-800 rounded-xl  ">
+                <div className="h-[27vh] relative w-1/2 border border-stone-800 rounded-xl  ">
 
                   <div className="w-full h-full relative rounded-xl">
                     {walletColor === "#FF4E17" ? <img className="absolute top-0 w-full" src="/icons/top_orange.svg" /> : null}
@@ -1090,10 +1090,10 @@ const Home = () => {
 
                     <div onClick={() => window.open("https://www.youtube.com/watch?v=kPqTHt9v48A", "_blank")} className="w-full h-full  rounded-xl flex justify-center items-center ">
                       <div className="text-white ml-5 text-opacity-90 text-[27px] font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] tracking-wide">One name, all things
-                        {walletColor === "#FF4E17" ? <span className="text-[#FF4E17]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3</span> : null}
-                        {walletColor === "#7D40FF" ? <span className="text-[#7D40FF]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3 </span> : null}
-                        {walletColor === "#D7FF01" ? <span className="text-[#D7FF01]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3 </span> : null}
-                        {walletColor === "#FF249D" ? <span className="text-[#FF249D]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3 </span> : null}
+                        {walletColor === "#FF4E17" ? <span className="orange_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3</span> : null}
+                        {walletColor === "#7D40FF" ? <span className="purple_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3 </span> : null}
+                        {walletColor === "#D7FF01" ? <span className="green_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3 </span> : null}
+                        {walletColor === "#FF249D" ? <span className="pink_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[34.40px] "> Web3 </span> : null}
                       </div>
                     </div>
                   </div>
@@ -1102,10 +1102,10 @@ const Home = () => {
               <div className="text-xl grow shrink basis-0 text-center px-7 mb-6">
                 <span className="text-white text-opacity-90 font-semibold font-['Neue Haas Grotesk Display Pro'] ">Explore</span>
                 <span className="text-white t font-semibold font-['Neue Haas Grotesk Display Pro'] "> </span>
-                {walletColor === "#FF4E17" ? <span className="text-[#FF4E17]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
-                {walletColor === "#7D40FF" ? <span className="text-[#7D40FF]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
-                {walletColor === "#D7FF01" ? <span className="text-[#D7FF01]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
-                {walletColor === "#FF249D" ? <span className="text-[#FF249D]  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
+                {walletColor === "#FF4E17" ? <span className="orange_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
+                {walletColor === "#7D40FF" ? <span className="purple_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
+                {walletColor === "#D7FF01" ? <span className="green_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
+                {walletColor === "#FF249D" ? <span className="pink_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] ">Tria’s embedded wallet </span> : null}
                 <span className="text-white text-opacity-90 relative font-semibold font-['Neue Haas Grotesk Display Pro']  ">in real time. Tailor and construct the wallet to match your app.</span>
               </div>
 
@@ -1240,10 +1240,10 @@ const Home = () => {
                         <div className="text-2xl md:text-3xl grow shrink basis-0">
                           <span className="text-white text-opacity-90 relative font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">One name,<br></br></span>
                           <span className="text-white relative font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">all things </span>
-                          {walletColor === "#FF4E17" ? <span className="text-[#FF4E17]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3</span> : null}
-                          {walletColor === "#7D40FF" ? <span className="text-[#7D40FF]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
-                          {walletColor === "#D7FF01" ? <span className="text-[#D7FF01]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
-                          {walletColor === "#FF249D" ? <span className="text-[#FF249D]  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
+                          {walletColor === "#FF4E17" ? <span className="orange_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3</span> : null}
+                          {walletColor === "#7D40FF" ? <span className="purple_gradient_text font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
+                          {walletColor === "#D7FF01" ? <span className="green_gradient_text  font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
+                          {walletColor === "#FF249D" ? <span className="pink_gradient_text font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[38.40px] ">Web3 </span> : null}
 
                         </div>
                       </div>
@@ -1274,7 +1274,7 @@ const Home = () => {
                         <div className="w-[137.59px] h-[33.83px] left-[2.92px] top-[7vh] absolute origin-top-left rotate-[4.96deg] backdrop-blur-[9.44px] flex-col justify-center items-start gap-[3.15px] inline-flex">
                           <div className="px-[15.74px] py-[9.44px] bg-sky-300 bg-opacity-50 rounded-[9.44px] justify-start items-center inline-flex">
                             <div className="justify-start items-center flex">
-                              <div className="text-neutral-50 text-xs font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[15.11px] tracking-tight">grandpa.john@tria</div>
+                              <div className="text-neutral-50 text-xs font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[15.11px] tracking-tight">papabera@tria</div>
                             </div>
                           </div>
                         </div>
@@ -1308,7 +1308,7 @@ const Home = () => {
               <div className="mx-3 mt-10 mb-10">
                 <div className="w-full text-center">
 
-                  <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Add</span>
+                  <span className={`${walletColor === "#FF4E17" ? "orange_gradient_text" : walletColor === "#7D40FF" ? "purple_gradient_text" : walletColor === "#D7FF01" ? "green_gradient_text" : "pink_gradient_text"} text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Add</span>
                   <span className="text-white text-opacity-90 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> funds and sign messages.</span></div>
               </div>
 
@@ -1438,7 +1438,7 @@ const Home = () => {
               <div className="mx-3 mt-7 mb-10">
                 <div className="w-full text-center">
 
-                  <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Send</span>
+                  <span className={`${walletColor === "#FF4E17" ? "orange_gradient_text" : walletColor === "#7D40FF" ? "purple_gradient_text" : walletColor === "#D7FF01" ? "green_gradient_text" : "pink_gradient_text"} text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Send</span>
                   <span className="text-white text-opacity-90 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]"> token and claim NFTs.</span>
                 </div>
 
@@ -1604,7 +1604,7 @@ const Home = () => {
                   <div className="text-white flex justify-center my-6 text-opacity-80 text-lg font-light font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Get the SDKs</div>
                   <div className="w-full text-center">
                     <span className="text-white flex justify-center text-opacity-90 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px] tracking-wide">We work with discerning founders and visionary companies to elevate their UX.<br /></span>
-                    <span className={`text-${walletColor === "#FF4E17" ? "[#FF4E17]" : walletColor === "#7D40FF" ? "[#7D40FF]" : walletColor === "#D7FF01" ? "[#D7FF01]" : "[#FF249D]"} text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Get in touch and join the collective.</span>
+                    <span className={`${walletColor === "#FF4E17" ? "orange_gradient_text" : walletColor === "#7D40FF" ? "purple_gradient_text" : walletColor === "#D7FF01" ? "green_gradient_text" : "pink_gradient_text"} text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[28.80px]`}>Get in touch and join the collective.</span>
                   </div>
                   <div className="flex justify-center mt-5 mb-5">
                     <div
