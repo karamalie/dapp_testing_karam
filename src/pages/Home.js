@@ -802,11 +802,11 @@ const Home = () => {
                             A send token interaction – transfer to a blockchain wallet, or a @tria name.
                           </div>
                         </div>
-                        <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
+                        {/* <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
                           <div className="grow shrink basis-0 text-center text-white text-opacity-40 text-[13px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">
                             Token transfers to email, social accounts and mobile numbers are disabled in the demo.
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                     <div className="self-stretch flex-col mt-5 justify-start items-center gap-3 flex">
@@ -920,8 +920,8 @@ const Home = () => {
                   background:
                     "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
                 }} className="w-full h-[52vh] p-5 group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-start items-center gap-5 inline-flex">
-                  <div className="self-stretch  h-full flex-col gap-5 items-center flex">
-                    <div className="self-stretch gap-4 flex">
+                  <div className=" h-full flex-col gap-4 items-center flex">
+                    <div className="self-stretch gap-4 flex mb-2">
                       <div className="">
                         <div className=" h-[20vh] relative ">
                           <img className="max-w-[180px] rounded-[20.07px]" src="https://coffee-usual-coyote-592.mypinata.cloud/ipfs/QmTntuKccRaU7vedr6AU7pPdEJoCQ9KhwwKt5ZaLZ4a5N3" />
@@ -956,15 +956,15 @@ const Home = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="self-stretch flex-col justify-start items-center gap-3 3xl:-mt-10 flex ">
+                    <div className="self-stretch flex-col justify-start items-center gap-3 flex ">
                       <div className="self-stretch px-1 py-1 justify-start items-center inline-flex">
                         <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
-                          <div className="grow shrink basis-0 text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">An exclusive NFT commemorating the pioneering testers of Tria’s SDKs. Symbolizing the collaborative spirit of early adopters, marking a new era in onboarding the world to the decentralized internet.</div>
+                          <div className="grow shrink basis-0 text-white text-opacity-40 text-[13px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">An exclusive NFT commemorating the pioneering testers of Tria’s SDKs. Symbolizing the collaborative spirit of early adopters, marking a new era in onboarding the world to the decentralized internet.</div>
                         </div>
                       </div>
                       <div className="self-stretch px-1 py-1 justify-start items-center inline-flex">
                         <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
-                          <div className="grow shrink basis-0"><span className="text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Supported Standards:<br /></span><span className="text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">ERC 721, 1155 and 6551<br />SPL<br />ICS-721</span></div>
+                          <div className="grow shrink basis-0"><span className="text-white text-opacity-40 text-[13px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Supported Standards:<br /></span><span className="text-white text-opacity-40 text-[13px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">ERC 721, 1155 and 6551<br />SPL<br />ICS-721</span></div>
                         </div>
                       </div>
                     </div>
@@ -976,14 +976,17 @@ const Home = () => {
                       "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
                   }}
                   className="w-full mt-5 p-2 h-[28vh] 3xl:h-[33vh] group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] bg-opacity-70 rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
-                  <div className="self-stretch h-[115px] flex-col justify-start items-center gap-9 flex">
-                    <div className="self-stretch h-[115px] flex-col justify-start items-center gap-0 flex">
-                      <div className="self-stretch py-2 justify-center items-center gap-4 inline-flex">
-                        <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] tracking-wide">Get In Touch</div>
+                  <div className="">
+                    <div className="">
+                      <div className="flex justify-center">
+                        <div className="self-stretch pt-4 flex flex-col gap-2 items-center">
+                          <div><img className="h-5 w-5" src="/icons/pen-add.svg" alt="pen" /></div>
+                          <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] tracking-wide">Get In Touch</div>
+                        </div>
                       </div>
-                      <div className="self-stretch py-0 px-3 justify-start items-center inline-flex">
-                        <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
-                          <div className="grow shrink basis-0 text-white text-opacity-40 text-sm font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">We work with discerning founders and visionary companies to elevate their user-experience. Join the collective.</div>
+                      <div className="self-stretch py-0 px-10 justify-center items-center inline-flex">
+                        <div className="grow shrink basis-0 self-stretch justify-center items-center flex">
+                          <div className="grow shrink basis-0 text-white text-center text-opacity-40 text-[13px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">We work with discerning founders and visionary companies to elevate their user-experience. Join the collective.</div>
                         </div>
                       </div>
                     </div>
@@ -994,7 +997,7 @@ const Home = () => {
                   >
                     <div className="flex flex-row gap-0 items-center justify-center shrink-0 relative ">
                       <div className=" text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
-                        Contact
+                        Book a call
                       </div>
                     </div>
                   </div>
