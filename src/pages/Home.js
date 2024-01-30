@@ -980,7 +980,7 @@ const Home = () => {
                     <div className="">
                       <div className="flex justify-center">
                         <div className="self-stretch pt-4 flex flex-col gap-2 items-center">
-                          <div><img className="h-5 w-5" src="/icons/pen-add.svg" alt="pen" /></div>
+                          <div><img className="h-5 w-5" src="/icons/user-tag.svg" alt="tag" /></div>
                           <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] tracking-wide">Get In Touch</div>
                         </div>
                       </div>
