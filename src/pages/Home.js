@@ -523,7 +523,7 @@ const Home = () => {
                             onClick={() => fundTriaWallet()}
                           >
                             <div className="flex flex-row gap-0 items-center justify-center shrink-0 relative">
-                              <div className="text-black text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
+                              <div className="text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
                                 Add funds{" "}
                               </div>
                             </div>
@@ -1353,7 +1353,7 @@ const Home = () => {
                             onClick={() => fundTriaWallet()}
                           >
                             <div className="flex flex-row gap-0 items-center justify-center shrink-0 relative">
-                              <div className="text-black text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
+                              <div className="text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
                                 Add funds{" "}
                               </div>
                             </div>
