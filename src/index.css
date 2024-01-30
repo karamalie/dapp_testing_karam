@@ -3,14 +3,16 @@
 @tailwind utilities;
 
 
-body{
-    background-color: black;
-    overflow: hidden;
+
+
+body {
+  background-color: black;
+  overflow-y: hidden;
 }
 
 @media only screen and (max-width: 1200px) {
   body {
-   overflow-y: scroll;
+    overflow-y: scroll;
   }
 }
 
@@ -23,4 +25,320 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false
+}
+
+@keyframes rotate-animation {
+  to {
+    --angle: 360deg
+  }
+}
+
+.bg-animation-orange:after {
+  content: "";
+  --angle: 0deg;
+  border-radius: 78px;
+  @apply absolute inset-0 z-0 bg-gradient-to-r from-[##FF4E17] via-[#000000] to-[#000000]
+}
+
+.bg-animation-purple:after {
+  content: "";
+  --angle: 0deg;
+  border-radius: 78px;
+  @apply absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+}
+
+.bg-animation-green:after {
+  content: "";
+  --angle: 0deg;
+  border-radius: 78px;
+  @apply absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+}
+
+.bg-animation-pink:after {
+  content: "";
+  --angle: 0deg;
+  border-radius: 78px;
+  @apply absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+}
+
+
+.bg-animation-orange:after {
+  animation: rotate-animation 6s linear infinite;
+  background: linear-gradient(var(--angle), #FF4E17, #000000, #000000, #000000);
+}
+
+.bg-animation-purple:after {
+  animation: rotate-animation 6s linear infinite;
+  background: linear-gradient(var(--angle), #7D40FF, #000000, #000000, #000000);
+}
+
+.bg-animation-green:after {
+  animation: rotate-animation 6s linear infinite;
+  background: linear-gradient(var(--angle), #D7FF01, #000000, #000000, #000000);
+}
+
+.bg-animation-pink:after {
+  animation: rotate-animation 6s linear infinite;
+  background: linear-gradient(var(--angle), #FF249D, #000000, #000000, #000000);
+}
+
+
+.blur-background {
+  filter: blur(5px);
+}
+
+.background-container-orange {
+  background-image: url('/public/icons/card.svg');
+  /* Add your image path */
+  background-size: cover;
+  /* Adjust as needed */
+  background-position: center;
+  /* Adjust as needed */
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  /* Set the height to the viewport height or adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-container-purple {
+  background-image: url('/public/icons/card_purple.svg');
+  /* Add your image path */
+  background-size: cover;
+  /* Adjust as needed */
+  background-position: center;
+  /* Adjust as needed */
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  /* Set the height to the viewport height or adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-container-green {
+  background-image: url('/public/icons/card_green.svg');
+  /* Add your image path */
+  background-size: cover;
+  /* Adjust as needed */
+  background-position: center;
+  /* Adjust as needed */
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  /* Set the height to the viewport height or adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-container-pink {
+  background-image: url('/public/icons/card_pink.svg');
+  /* Add your image path */
+  background-size: cover;
+  /* Adjust as needed */
+  background-position: center;
+  /* Adjust as needed */
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  /* Set the height to the viewport height or adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-container-back {
+  background-image: url('/public/icons/grey_rotate.svg');
+  /* Add your image path */
+  background-size: cover;
+  /* Adjust as needed */
+  background-position: center;
+  /* Adjust as needed */
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  /* Set the height to the viewport height or adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.reveal {
+  position: relative;
+  opacity: 0;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+
+.active.fade-bottom {
+  animation: fade-bottom 1s ease-in;
+}
+
+.active.fade-left {
+  animation: fade-left 1s ease-in;
+}
+
+.active.fade-right {
+  animation: fade-right 1s ease-in;
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 50%;
+
+
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+
+.flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-flip {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+
+.cards:hover .card {
+  background: radial-gradient(100rem circle at var(--xPos) var(--yPos),
+      rgba($ciBlue, 0.4),
+      transparent 15%);
+}
+
+.cards .card {
+  width: 20rem;
+  height: 15rem;
+  background: radial-gradient(150rem circle at 0 0,
+      rgba($ciBlue, 0),
+      transparent 0%);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.15s;
+}
+
+.cards .card:hover {
+  transform: scale(0.97);
+}
+
+.cards .card:hover::before {
+  opacity: 1;
+}
+
+.cards .card::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  background: radial-gradient(60rem circle at var(--xPos) var(--yPos),
+      rgba("#FFFFFF", 0.1),
+      transparent 35%);
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+}
+
+.cards .card .card-content {
+  background-color: #13161c;
+  border-radius: inherit;
+  transition: all 0.25s;
+  height: calc(100% - 0.1rem);
+  width: calc(100% - 0.1rem);
+}
+
+.orange_gradient_text {
+  background: linear-gradient(to right, #FF4E17, #FFBC39, #FF4E17);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.purple_gradient_text {
+  background: linear-gradient(to right, #6445FF, #BCAEFF, #6445FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.green_gradient_text {
+  background: linear-gradient(to right, #D7FF01, #eeff8f, #D7FF01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pink_gradient_text {
+  background: linear-gradient(to right, #AD1B6B,#ff76c1, #E52B92 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
