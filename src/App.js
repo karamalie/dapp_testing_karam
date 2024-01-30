@@ -1,5 +1,5 @@
 import Home from './pages/Home'
-import { useTriaConnector, useDisconnect } from '@tria-sdk/connect-staging'
+import { useTriaConnector, useDisconnect } from '@tria-sdk/connect'
 import { TriaConnectProvider } from '@tria-sdk/authenticate'
 import Application from '@tria-sdk/authenticate'
 import { useEffect, useState, useRef } from 'react'
@@ -15,8 +15,8 @@ ReactGA.initialize('G-8B9M5DSMB4', {
 
 function App() {
   const { globalData } = useTriaConnector({
-    authUrl: 'https://auth-tria.vercel.app',
-    walletUrl: 'https://staging-tria-wallet.vercel.app',
+    authUrl: 'https://auth.tria.so',
+    walletUrl: 'https://wallet.tria.so',
   })
 
   const [walletColor, setWalletColor] = useState('#FF4E17')

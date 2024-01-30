@@ -11,7 +11,7 @@ import {
   disconnect,
   getAccount,
   readContract,
-} from "@tria-sdk/connect-staging";
+} from "@tria-sdk/connect";
 import axios from "axios";
 import ReactGA from "react-ga";
 import Context from "../Context";
@@ -122,7 +122,7 @@ const Home = () => {
       chainName,
     },
     undefined,
-    "https://auth-tria.vercel.app"
+    "https://auth.tria.so"
   );
 
   const { data, sendTransaction } = useSendTransaction(
@@ -134,7 +134,7 @@ const Home = () => {
       tokenAddress,
     },
     undefined,
-    "https://auth-tria.vercel.app"
+    "https://auth.tria.so"
   );
 
   const { data: contractwrite, write } = useContractWrite({
@@ -162,7 +162,7 @@ const Home = () => {
 
   const { data: contractread } = useContractRead({
     chainName,
-    baseUrl: "https://staging.tria.so",
+    baseUrl: "https://prod.tria.so",
     contractDetails: {
       contractAddress: "0x5927Aa58fb36691A4be262c63955b47b67c6e641",
       abi: [
@@ -210,7 +210,7 @@ const Home = () => {
 
   const getTriaImage = async (item) => {
     const resp = await fetch(
-      `https://staging.tria.so/api/v2/user/getAvatarByTriaName?triaNames=${item}`,
+      `https://prod.tria.so/api/v2/user/getAvatarByTriaName?triaNames=${item}`,
       {
         method: "GET",
       }
@@ -227,7 +227,7 @@ const Home = () => {
     const data = await signMessage(
       { sign_message, chainName },
       undefined,
-      "https://auth-tria.vercel.app"
+      "https://auth.tria.so"
     );
     console.log("function returned data", data);
   };
@@ -263,8 +263,8 @@ const Home = () => {
         },
       },
       undefined,
-      "https://auth-tria.vercel.app",
-      "wss://staging.tria.so"
+      "https://auth.tria.so",
+      "wss://prod.tria.so"
     );
     console.log("function returned data", data);
   };
@@ -276,8 +276,8 @@ const Home = () => {
         contractDetails,
       },
       undefined,
-      "https://auth-tria.vercel.app",
-      "wss://staging.tria.so"
+      "https://auth.tria.so",
+      "wss://prod.tria.so"
     );
     console.log("function returned data", data);
   };
@@ -297,7 +297,7 @@ const Home = () => {
     const userAddress = await getAccount();
     try {
       const call = await axios.post(
-        "https://staging.tria.so/api/v2/wallet/fundWallet",
+        "https://prod.tria.so/api/v2/wallet/fundWallet",
         {
           walletAddress: userAddress?.evm?.address,
           chainName: "MUMBAI",
