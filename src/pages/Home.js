@@ -429,11 +429,11 @@ const Home = () => {
         </div>
 
         {openLogout ?
-          <div style={{ zIndex: 9999 }} className="absolute md:right-10 right-4 top-20">
+          <div style={{ zIndex: 9999 }} className="fixed md:right-10 right-4 top-20">
             <div onClick={() => Logout()} className="w-[194px] cursor-pointer relative h-14 px-6 py-3 bg-zinc-500 bg-opacity-10 rounded-xl border-opacity-10 backdrop-blur-[100px] flex-col justify-center items-center gap-[52px] inline-flex">
               <div className="self-stretch py-1 justify-start items-center inline-flex">
                 <div className="grow shrink basis-0 self-stretch justify-start items-center flex">
-                  <div className="grow shrink basis-0 text-red-400 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Logout</div>
+                  <div className="grow shrink basis-0 text-red-400 hover:text-red-600 hover:transition duration-200 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-snug tracking-tight">Logout</div>
                 </div>
                 <div className="w-6 h-6 justify-center items-center flex">
                   <div className="w-6 h-6 relative">
