@@ -1023,7 +1023,7 @@ const Home = () => {
 
                   <div className="p-[8.83px] flex-col justify-center items-center gap-0 -mt-12 flex">
                     <div className="text-white text-opacity-80 text-base font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Experience Tria’s Personalised</div>
-                    <div className="text-neutral-50 text-4xl font-medium font-['Neue Haas Grotesk Display Pro'] leading-[79.20px]">Embedded Wallet</div>
+                    <div className="bg-gradient-to-b from-white via-white to-indigo-[rgba(250, 250, 250, 0.46)] inline-block text-transparent bg-clip-text text-4xl font-bold font-['Neue Haas Grotesk Display Pro'] leading-[79.20px] ">Embedded Wallet</div>
                     <div className="w-full px-5 h-12 text-center text-white text-opacity-40 text-[13px] font-medium font-['Neue Haas Grotesk Display Pro'] leading-normal tracking-tight">Personalized, user-focused journeys built with Tria's exclusive SDKs. Elevate beyond social onboarding, smart-accounts, and programmable TXs. </div>
                   </div>
                 </div>
