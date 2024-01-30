@@ -933,7 +933,7 @@ const Home = () => {
                           <img className="absolute top-2 left-2 w-8 h-8" src="/icons/polygon_nft.svg" alt="polygon" />
                         </div>
                       </div>
-                      <div className="self-stretch  flex-col justify-start items-start gap-3 inline-flex  ">
+                      <div className="self-stretch  flex-col justify-start items-start inline-flex  ">
                         <div className="self-stretch flex-col justify-start items-start flex">
                           <div className="self-stretch p-0 justify-start items-center gap-0 inline-flex">
                             <div className="text-neutral-50 text-xl font-semibold font-['Neue Haas Grotesk Display Pro'] leading-[33.60px] ">Tria NFT</div>
@@ -946,7 +946,7 @@ const Home = () => {
                         </div>
                         <div
                           onClick={() => callWriteContract()}
-                          className="rounded-[78px] mt-4 cursor-pointer px-6 py-2 w-[120px] flex flex-row mb-4 gap-0 bg-white text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 items-center justify-center shrink-0  relative overflow-hidden"
+                          className="rounded-[78px] mt-4 cursor-pointer px-6 py-2 w-[150px] flex flex-row mb-4 gap-0 bg-white text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 items-center justify-center shrink-0  relative overflow-hidden"
                         >
                           <div className="flex  flex-row gap-0 items-center justify-center shrink-0 relative ">
                             <div className=" text-center font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif] text-sm leading-[120%] font-semibold relative flex items-center justify-center">
