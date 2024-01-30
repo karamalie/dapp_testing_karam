@@ -18,7 +18,7 @@ import Context from "../Context";
 
 const Home = () => {
   const [showWallet, setShowWallet] = useState(false);
-  const [message, setMessage] = useState("Sign in with Tria");
+  const [message, setMessage] = useState("Sample wallet interaction of a message signature. To test a transaction signature, mint a Tria Concept NFT from the right");
   const [amount, setAmount] = useState(0.00001);
   const [senderAddress, setSenderAddress] = useState("");
   const [recepientAddress, setrecepientAddress] = useState("");
@@ -221,7 +221,7 @@ const Home = () => {
     setAvatar(res?.response[item]?.[0]?.avatar);
   };
 
-  const sign_message = "Sign in with Tria";
+  const sign_message = "Sample wallet interaction of a message signature. To test a transaction signature, mint a Tria Concept NFT from the right";
 
   const callSign = async () => {
     const data = await signMessage(
