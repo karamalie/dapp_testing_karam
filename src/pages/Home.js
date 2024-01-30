@@ -1038,6 +1038,9 @@ const Home = () => {
                         {walletColor === "#7D40FF" ? <img src="/icons/card_purple.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#D7FF01" ? <img src="/icons/card_green.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#FF249D" ? <img src="/icons/card_pink.svg" className="h-[100%] w-full absolute" /> : null} */}
+                        <div className="absolute top-4 right-1">
+                          <img src="/icons/tria_name_card_logo.svg" alt="tria-logo" />
+                        </div>
 
                       <div className="w-full flex justify-center h-full items-center ">
                         <div className={`w-16 h-16 relative  bg-neutral-50 bg-opacity-20 justify-center items-center flex rounded-full`}>
