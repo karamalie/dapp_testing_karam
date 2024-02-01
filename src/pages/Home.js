@@ -446,7 +446,7 @@ const Home = () => {
 
         {/* Lower Functional Grid */}
         {window.innerWidth > 1000 ?
-          <div className={clicked === true ? "blur-background " : ""}>
+          <div className={clicked === true ? " " : ""}>
             <div className="w-[140vw] 3xl:w-[90vw] 4xl:w-[90vw] md:grid md:grid-cols-12 gap-5 mt-20 ">
               <div className="md:col-span-4 mt-10 ml-10">
                 <div className="w-full h-[45vh] 3xl:h-[50vh] 4xl:h-[50vh] relative rounded-xl ">
