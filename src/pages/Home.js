@@ -400,7 +400,7 @@ const Home = () => {
       <div className="w-full h-screen ">
 
         {/* Topbar */}
-        <div style={{ zIndex: 9999 }} className={`w-full h-20 px-${windowSize.innerWidth < 500 ? "5" : "10"} py-4 ${windowSize.innerWidth < 900 ? "sticky" : "fixed"} top-0 bg-neutral-900 border-b border-stone-950 justify-start items-center gap-4 inline-flex`}>
+        <div style={{ zIndex: 88 }} className={`w-full h-20 px-${windowSize.innerWidth < 500 ? "5" : "10"} py-4 ${windowSize.innerWidth < 900 ? "sticky" : "fixed"} top-0 bg-neutral-900 border-b border-stone-950 justify-start items-center gap-4 inline-flex`}>
           <div className="grow shrink basis-0 h-10 justify-between items-center flex">
             <div className=" justify-center items-center gap-2.5 flex">
               <div className="h-7 relative">
