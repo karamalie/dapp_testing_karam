@@ -160,28 +160,28 @@ const Home = () => {
     },
   });
 
-  const { data: contractread } = useContractRead({
-    chainName,
-    baseUrl: "https://staging.tria.so",
-    contractDetails: {
-      contractAddress: "0x5927Aa58fb36691A4be262c63955b47b67c6e641",
-      abi: [
-        {
-          inputs: [
-            { internalType: "uint256", name: "id", type: "uint256" },
-            { internalType: "uint256", name: "amount", type: "uint256" },
-          ],
-          name: "getItemsNativePrice",
-          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-          stateMutability: "view",
-          type: "function",
-        },
-      ],
-      functionName: "getItemsNativePrice",
-      args: [1, 1],
-      // value: 0,
-    },
-  });
+  // const { data: contractread } = useContractRead({
+  //   chainName,
+  //   baseUrl: "https://staging.tria.so",
+  //   contractDetails: {
+  //     contractAddress: "0x5927Aa58fb36691A4be262c63955b47b67c6e641",
+  //     abi: [
+  //       {
+  //         inputs: [
+  //           { internalType: "uint256", name: "id", type: "uint256" },
+  //           { internalType: "uint256", name: "amount", type: "uint256" },
+  //         ],
+  //         name: "getItemsNativePrice",
+  //         outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+  //         stateMutability: "view",
+  //         type: "function",
+  //       },
+  //     ],
+  //     functionName: "getItemsNativePrice",
+  //     args: [1, 1],
+  //     // value: 0,
+  //   },
+  // });
 
   if (data) console.log("send data----------------->", data);
   if (signature) console.log("sign data----------------->", signature);
