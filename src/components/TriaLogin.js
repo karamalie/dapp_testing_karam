@@ -88,6 +88,7 @@ const TriaLogin = ({
             'ARBITRUM',
             'AVALANCHE',
             'FANTOM',
+            'SOLANA'
           ]}
           uiType='yes'
           darkMode={true}
