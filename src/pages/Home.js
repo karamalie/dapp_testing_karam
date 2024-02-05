@@ -755,6 +755,26 @@ const Home = () => {
                       "linear-gradient(to bottom right,rgba(54, 54, 54, 0.70) 0%,rgba(26, 26, 26, 0.19) 60%)",
                   }}
                   className="w-full mt-5 p-2 3xl:h-[33vh] h-[28vh] group hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] bg-opacity-70 rounded-xl border border-stone-800 backdrop-blur-[100px] flex-col justify-between items-center inline-flex">
+                  <div className="absolute top-3 right-3">
+                    <select value={chainName} onChange={(e) => setChainName(e.target.value)} className="focus:outline-none border border-stone-800 text-xs bg-transparent text-white rounded-md p-2 font-['NeueHaasGroteskDisplayPro-65Medium',_sans-serif]">
+                      <option value="MUMBAI">Mumbai</option>
+                      <option value="POLYGON">Polygon</option>
+                      <option value="METIS">Metis</option>
+                      <option value="METIS-TESTNET">Metis Testnet</option>
+                      <option value="MANTA">Manta</option>
+                      <option value="MANTA-TESTNET">Manta Testnet</option>
+                      <option value="MANTLE">Mantle</option>
+                      <option value="MANTLE-TESTNET">Mantle Testnet</option>
+                      <option value="FUSE">Fuse</option>
+                      <option value="ETH">Eth</option>
+                      <option value="BINANCE">Binance</option>
+                      <option value="OPTIMISM">Optimism</option>
+                      <option value="SOLANA">Solana</option>
+                      <option value="ARBITRUM">Arbitrum</option>
+                      <option value="FANTOM">Fantom</option>
+                      <option value="AVALANCHE">Avalanche</option>
+                    </select>
+                  </div>
                   <div className="">
                     <div className="">
                       <div className="flex justify-center">
@@ -770,6 +790,7 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
+
                   <div onClick={() => callSign()}
                     className="rounded-[78px] cursor-pointer px-6 py-2 w-[150px] flex flex-row mb-4 gap-0 bg-white text-black hover:text-stone-950 hover:text-opacity-60 hover:transition duration-200 items-center justify-center shrink-0  relative overflow-hidden"
 
@@ -1038,9 +1059,9 @@ const Home = () => {
                         {walletColor === "#7D40FF" ? <img src="/icons/card_purple.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#D7FF01" ? <img src="/icons/card_green.svg" className="h-[100%] w-full absolute" /> : null}
                         {walletColor === "#FF249D" ? <img src="/icons/card_pink.svg" className="h-[100%] w-full absolute" /> : null} */}
-                        <div className="absolute top-4 right-1">
-                          <img src="/icons/tria_name_card_logo.svg" alt="tria-logo" />
-                        </div>
+                      <div className="absolute top-4 right-1">
+                        <img src="/icons/tria_name_card_logo.svg" alt="tria-logo" />
+                      </div>
 
                       <div className="w-full flex justify-center h-full items-center ">
                         <div className={`w-16 h-16 relative  bg-neutral-50 bg-opacity-20 justify-center items-center flex rounded-full`}>
