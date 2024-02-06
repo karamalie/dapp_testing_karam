@@ -30,6 +30,7 @@ const Home = () => {
   const { setWalletColor, walletColor, setReloadFlag, reloadFlag, setLaunchTria, launchTria, clicked, setClicked } = useContext(Context)
 
   const [openLogout, setOpenLogout] = useState(false)
+  const [logged_user, setLoggedUser] = useState("")
 
   const [clickedTap, setClickedTap] = useState(false)
 
@@ -194,18 +195,27 @@ const Home = () => {
     localStorage.setItem("tria.wallet.store", JSON.stringify(data));
   };
 
-  const logged_user = JSON.parse(
-    localStorage.getItem("tria.wallet.store")
-  )?.triaName;
+  // const logged_user = JSON.parse(
+  //   localStorage.getItem("tria.wallet.store")
+  // )?.triaName;
 
   const [bg, setBg] = useState("");
   const [avatar, setAvatar] = useState("");
 
   useEffect(() => {
-    const logged_user = JSON.parse(
-      localStorage.getItem("tria.wallet.store")
-    )?.triaName;
-    getTriaImage(logged_user);
+    if (localStorage.getItem("tria.wallet.store") !== null) {
+      setLoggedUser(JSON.parse(
+        localStorage.getItem("tria.wallet.store")
+      )?.triaName)
+      getTriaImage(logged_user);
+    } else {
+      let evm_address = JSON.parse(
+        localStorage.getItem("wagmi.store")
+      )?.state?.data?.account
+      const start = evm_address?.slice(0, 5)
+      const end = evm_address?.slice(-4)
+      setLoggedUser(start + "..." + end)
+    }
   }, []);
 
   const getTriaImage = async (item) => {
@@ -415,15 +425,15 @@ const Home = () => {
             {windowSize.innerWidth > 500 ?
               <div onClick={() => setOpenLogout(!openLogout)} className="flex gap-4 cursor-pointer hover:transition duration-[500ms] hover:duration-[500ms] hover:scale-[0.95] items-center ">
                 <div className="text-neutral-50 text-md font-normal font-['Neue Haas Grotesk Display Pro'] ">{logged_user}</div>
-                <div style={{ background: bg }} className={`w-10 h-10 justify-center items-center flex rounded-full`}>
+                {localStorage?.getItem("tria.wallet.store") !== null ? <div style={{ background: bg }} className={`w-10 h-10 justify-center items-center flex rounded-full`}>
                   {avatar && <img alt="avatar" className="w-10 h-10 rounded-[32.73px]" src={avatar} />}
-                </div>
+                </div> : null}
               </div> :
               <div onClick={() => setOpenLogout(!openLogout)} className="flex gap-2 items-center">
                 <div className="text-neutral-50 text-sm md:text-md font-normal font-['Neue Haas Grotesk Display Pro'] ">{logged_user}</div>
-                <div style={{ background: bg }} className={`w-8 h-8  justify-center items-center flex rounded-full`}>
+                {localStorage?.getItem("tria.wallet.store") !== null ? <div style={{ background: bg }} className={`w-8 h-8  justify-center items-center flex rounded-full`}>
                   {avatar && <img alt="avatar" className="w-8 h-8 rounded-[32.73px]" src={avatar} />}
-                </div>
+                </div> : null}
               </div>}
           </div>
         </div>
