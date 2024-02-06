@@ -207,7 +207,9 @@ const Home = () => {
       setLoggedUser(JSON.parse(
         localStorage.getItem("tria.wallet.store")
       )?.triaName)
-      getTriaImage(logged_user);
+      getTriaImage(JSON.parse(
+        localStorage.getItem("tria.wallet.store")
+      )?.triaName);
     } else {
       let evm_address = JSON.parse(
         localStorage.getItem("wagmi.store")
