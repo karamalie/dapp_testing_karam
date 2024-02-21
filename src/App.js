@@ -16,7 +16,7 @@ ReactGA.initialize("G-8B9M5DSMB4", {
 function App() {
   const { globalData } = useTriaConnector({
     authUrl: "https://auth-tria-lit.vercel.app",
-    walletUrl: "https://staging-tria-wallet.vercel.app",
+    walletUrl: "https://tria-wallet-tria-triahq.vercel.app/",
   });
 
   const [walletColor, setWalletColor] = useState("#FF4E17");
