@@ -1,3 +1,5 @@
+const webpack = require("webpack");
+
 module.exports = {
   webpack: {
     configure: (config) => {
@@ -23,8 +25,17 @@ module.exports = {
           os: require.resolve("os-browserify"),
           url: require.resolve("url"),
           zlib: require.resolve("browserify-zlib"),
+          buffer: require.resolve("buffer"),
         },
       };
+
+      config.plugins = [
+        ...config.plugins,
+        new webpack.ProvidePlugin({
+          process: "process/browser",
+          Buffer: ["buffer", "Buffer"],
+        }),
+      ];
 
       return config;
     },

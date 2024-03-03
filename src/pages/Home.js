@@ -6,10 +6,9 @@ import {
   useSignMessage,
   useSendTransaction,
   useContractWrite,
-  useContractRead,
   writeContract,
   disconnect,
-  getAccount,
+  getUserAddressByChain,
   readContract,
 } from "@tria-sdk/connect-staging";
 import axios from "axios";
@@ -78,8 +77,8 @@ const Home = () => {
   }, []);
 
   const getUserWallet = async () => {
-    const user = await getAccount();
-    setUserWalletAddress(user.evm.address);
+    const userAddress = getUserAddressByChain(chainName);
+    setUserWalletAddress(userAddress);
   };
 
   const callReadContract = async () => {
@@ -258,7 +257,7 @@ const Home = () => {
       action: "Clicked on Mint",
       label: "Dashboard Page",
     });
-    const userAddress = await getAccount();
+    const userAddress = getUserAddressByChain(chainName);
     console.log("useAddress", userAddress);
     const data = await writeContract(
       {
@@ -279,7 +278,7 @@ const Home = () => {
             },
           ],
           functionName: "airdropCoupon",
-          args: [2, 1, userAddress.evm.address],
+          args: [2, 1, userAddress],
         },
       },
       undefined,
@@ -314,12 +313,12 @@ const Home = () => {
 
   const fundTriaWallet = async () => {
     setLoader(true);
-    const userAddress = await getAccount();
+    const userAddress = getUserAddressByChain(chainName);
     try {
       const call = await axios.post(
         "https://staging.tria.so/api/v2/wallet/fundWallet",
         {
-          walletAddress: userAddress?.evm?.address,
+          walletAddress: userAddress,
           chainName: "MUMBAI",
           origin: "https://demo-tria.vercel.app",
         }
