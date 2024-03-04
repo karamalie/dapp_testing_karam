@@ -98,6 +98,10 @@ const TriaLogin = ({
           customWalletVisible={launchTria}
           customWalletButton={windowSize.innerWidth > 500 ? false : true}
           clientId="fca5dd50-97af-4296-8fef-781199467c3c"
+          AnalyticsKeys = {{
+            clientId: "1c0fd605-f945-4514-90a5-1a722556a928",
+            projectId: "6ea5eb88-394a-4f05-8272-892f9a020652"
+          }}
         />
       ) : null}
     </div>
