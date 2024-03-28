@@ -89,6 +89,10 @@ const TriaLogin = ({
             "AVALANCHE",
             "FANTOM",
             "SOLANA",
+            "FUSESPARK",
+            "ZKLINK-NOVA",
+            "ZKLINK-NOVA-TESTNET",
+            "BITLAYER-TESTNET",
           ]}
           uiType='yes'
           triaEnvironment='staging'
