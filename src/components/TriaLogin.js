@@ -95,6 +95,7 @@ const TriaLogin = ({
             "BITLAYER-TESTNET",
           ]}
           uiType='yes'
+          litStaging={true}
           triaEnvironment='staging'
           walletEnvironment='staging'
           darkMode={true}
